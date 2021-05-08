@@ -39,6 +39,11 @@ module.exports = {
                     position: 'left',
                 },
                 {
+                    to: 'https://summer.iscas.ac.cn/#/org/orgdetail/serverlessdevs',
+                    label: ' 🔥🔥 开源之夏2021',
+                    position: 'left',
+                },
+                {
                     href: 'https://github.com/serverless-devs/serverless-devs',
                     label: 'GitHub',
                     position: 'right',
