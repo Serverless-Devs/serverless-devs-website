@@ -44,7 +44,7 @@ module.exports = {
                     position: 'right',
                 },
                 {
-                    href: 'https://gitee.com/serverless-devs/serverless-devs',
+                    href: 'https://gitee.com/serverless-devs/Serverless-Devs',
                     label: 'Gitee',
                     position: 'right',
                 },
@@ -85,7 +85,7 @@ module.exports = {
                         },
                         {
                             label: 'Gitee',
-                            href: 'https://gitee.com/Serverless-Devs/Serverless-Devs/',
+                            href: 'https://gitee.com/serverless-devs/Serverless-Devs',
                         },
                     ],
                 },
@@ -107,7 +107,7 @@ module.exports = {
                     showReadingTime: true,
                     // Please change this to your repo.
                     editUrl:
-                        'https://github.com/Serverless-Devs/Serverless-Devs/',
+                        'https://gitee.com/serverless-devs/Serverless-Devs',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),

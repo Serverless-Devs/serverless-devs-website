@@ -154,13 +154,13 @@ google:     PrivateKeyData
 - 通过环境变量获取密钥方法： 这一部分可能会根据不同的文档有不同的可能性，所以需要参考对应的文档进行环境变量对应的`Key-Value`确定。
 
 - 常见云厂商密钥获取地址：
-    - [阿里云](./others/provider-config/alibabacloud.md)
-    - [百度云](./others/provider-config/baiducloud.md)
-    - [AWS](./others/provider-config/aws.md)
-    - [Azure](./others/provider-config/azure.md)
-    - [Google Cloud](./others/provider-config/gcp.md)
-    - [华为云](./others/provider-config/huaweicloud.md)
-    - [腾讯云](./others/provider-config/tencentcloud.md)
+    - [阿里云](./provider-config/alibabacloud.md)
+    - [百度云](./provider-config/baiducloud.md)
+    - [AWS](./provider-config/aws.md)
+    - [Azure](./provider-config/azure.md)
+    - [Google Cloud](./provider-config/gcp.md)
+    - [华为云](./provider-config/huaweicloud.md)
+    - [腾讯云](./provider-config/tencentcloud.md)
 
 
 ### config get 命令
