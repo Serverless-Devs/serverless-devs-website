@@ -40,7 +40,7 @@ module.exports = {
                     position: 'left',
                 },
                 {
-                    to: 'https://summer.iscas.ac.cn/#/org/orgdetail/serverlessdevs',
+                    to: '/blog/open-source-summer-2021',
                     label: ' 🔥🔥 开源之夏2021',
                     position: 'left',
                 },

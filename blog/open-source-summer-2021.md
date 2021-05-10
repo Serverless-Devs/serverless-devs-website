@@ -66,3 +66,5 @@ Serverless Devs 目前已经在参加 [开源之夏 2021](https://summer.iscas.a
 # 总结
 
 Serverless是非常前沿的技术，Serverless devs是非常重要的工具链体系，我们愿意和大家一起努力，一起奋进，为推动Serverless的发展而不断前行。
+
+* 传送门：[开源之夏2021 Serverless Devs](https://summer.iscas.ac.cn/#/org/orgdetail/serverlessdevs)
