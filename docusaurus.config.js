@@ -23,6 +23,7 @@ module.exports = {
                     position: 'left',
                     label: '帮助文档',
                 },
+                {to: '/blog', label: '最新动态', position: 'left'},
                 {
                     to: 'https://github.com/Serverless-Devs/Serverless-Devs/discussions',
                     label: '交流论坛',
