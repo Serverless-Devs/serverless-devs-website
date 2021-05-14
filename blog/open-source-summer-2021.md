@@ -14,12 +14,13 @@ Serverless Devs 目前已经在参加 [开源之夏 2021](https://summer.iscas.a
 
 在开源之夏中，我们将会提交以下项目，欢迎同学们积极报名：
 
-- [Serverless 调试&依赖安装优化](https://summer.iscas.ac.cn/#/org/orgdetail/oiwiki/proid210770469)： Serverless架构很新，很热，被很多人关注，但是其被吐槽的点还是有一些的，例如调试复杂，安装依赖复杂。所以通过该项目进行调试和依赖安装的相关调研，并参与到开源项目中，提供行业的解决方案。
-- [Serverless架构环境划分方案探索](https://summer.iscas.ac.cn/#/org/orgdetail/oiwiki/proid210770468)： Serverless架构发展速度很快，但是也有很多问题，例如环境划分（开发环境，线上环境，测试环境）等，希望通过该项目，可以通过工具链层面提供一种环境划分的方案，并将其实现成Serverless Devs的组件。
-- [Serverless Devs 云厂商组件开发](https://summer.iscas.ac.cn/#/org/orgdetail/oiwiki/proid210770467)：Serverless devs是一个无厂商锁定的Serverless开发者工具，目前已经支持阿里云、腾讯云、AWS等多家云厂商的Serverless产品，希望通过本项目可以进一步拓展云厂商的组件。
-- [Serverless与前端的碰撞](https://summer.iscas.ac.cn/#/org/orgdetail/oiwiki/proid210770463)：Serverless架构被称为是云计算的下一个十年，更是被很多前端工程师视为“改变命运的转折点”，通过Serverless架构，“前端不再是单纯的前端”，通过Serverless架构，“人人都是全栈工程师”，那么Serverless架构和前端的碰撞到底是什么样子的？希望通过该项目，更多的同学可以对Serverless有一个更深入的了解，对Serverless架构有一个更深刻的认识，同时希望可以进一步探索Serverless架构与前端的结合点，并做出一些有趣的事情吧！
-- [Serverless工具链新形态的探索](https://summer.iscas.ac.cn/#/org/orgdetail/oiwiki/proid210770461)：Serverless架构是一个比较新的话题，Serverless架构的工具链更是比较受关注的点，那么Serverless架构的工具链和传统的例如K8S工具，和一些监控告警工具有什么区别呢？Serverless架构的工具更应该注意什么问题呢？它长什么样子呢？目前Serverless Devs作为Serverless的工具链开源项目，包括Serverless CLI，Serverless Desktop，Serverless Cloud以及Serverless Hub，Serverless Registry等几个部分，那么这些模块又是如何划分，有什么作用呢？通过本项目，希望大家可以对Serverless有一定的了解，对Serverles是架构工具链有一定的自主思考能力，并且参与到Serverless架构工具链的创新中。
-- [Serverless CI/CD探索](https://summer.iscas.ac.cn/#/org/orgdetail/oiwiki/proid210770460)：Serverless架构是相对来说比较新的技术，也是目前比较火热的技术，随着时间的不断发展，其也被更多人所重视，成为更多企业技术选型的首选。通过Serverless架构虽然在一定程度上做到了降本提效，但是却可能产生更细腻的资源，这些资源的管理，持续集成/发布，逐渐的成为了比较重要的关注点，所以本项目将会是Serverless CI/CD的探索，主要包括Serverless架构下的CI/CD是什么样子的，Serverless本身是否可以做CI/CD，Serverless架构工具链和CI/CD结合后是什么样子的。
+- [Serverless Devs测试用例的完善](https://summer.iscas.ac.cn/#/org/prodetail/210770565)： Serverless Devs现在的包括主仓库和组件库两个部分。 例如Serverless Devs repo：https://github.com/serverless-devs 在这个repo中，由于Serverless Devs项目是发展中的，所以测试用例目前并不完善。所以该项目的工作是为该项目编写测试用例。 主要包括： https://github.com/serverless-devs 和 https://github.com/devsapp
+- [Serverless 调试&依赖安装优化](https://summer.iscas.ac.cn/#/org/prodetail/210770469)： Serverless架构很新，很热，被很多人关注，但是其被吐槽的点还是有一些的，例如调试复杂，安装依赖复杂。所以通过该项目进行调试和依赖安装的相关调研，并参与到开源项目中，提供行业的解决方案。
+- [Serverless架构环境划分方案探索](https://summer.iscas.ac.cn/#/org/prodetail/210770468)： Serverless架构发展速度很快，但是也有很多问题，例如环境划分（开发环境，线上环境，测试环境）等，希望通过该项目，可以通过工具链层面提供一种环境划分的方案，并将其实现成Serverless Devs的组件。
+- [Serverless Devs 云厂商组件开发](https://summer.iscas.ac.cn/#/org/prodetail/210770467)：Serverless devs是一个无厂商锁定的Serverless开发者工具，目前已经支持阿里云、腾讯云、AWS等多家云厂商的Serverless产品，希望通过本项目可以进一步拓展云厂商的组件。
+- [Serverless与前端的碰撞](https://summer.iscas.ac.cn/#/org/prodetail/210770463)：Serverless架构被称为是云计算的下一个十年，更是被很多前端工程师视为“改变命运的转折点”，通过Serverless架构，“前端不再是单纯的前端”，通过Serverless架构，“人人都是全栈工程师”，那么Serverless架构和前端的碰撞到底是什么样子的？希望通过该项目，更多的同学可以对Serverless有一个更深入的了解，对Serverless架构有一个更深刻的认识，同时希望可以进一步探索Serverless架构与前端的结合点，并做出一些有趣的事情吧！
+- [Serverless工具链新形态的探索](https://summer.iscas.ac.cn/#/org/prodetail/210770461)：Serverless架构是一个比较新的话题，Serverless架构的工具链更是比较受关注的点，那么Serverless架构的工具链和传统的例如K8S工具，和一些监控告警工具有什么区别呢？Serverless架构的工具更应该注意什么问题呢？它长什么样子呢？目前Serverless Devs作为Serverless的工具链开源项目，包括Serverless CLI，Serverless Desktop，Serverless Cloud以及Serverless Hub，Serverless Registry等几个部分，那么这些模块又是如何划分，有什么作用呢？通过本项目，希望大家可以对Serverless有一定的了解，对Serverles是架构工具链有一定的自主思考能力，并且参与到Serverless架构工具链的创新中。
+- [Serverless CI/CD探索](https://summer.iscas.ac.cn/#/org/prodetail/210770460)：Serverless架构是相对来说比较新的技术，也是目前比较火热的技术，随着时间的不断发展，其也被更多人所重视，成为更多企业技术选型的首选。通过Serverless架构虽然在一定程度上做到了降本提效，但是却可能产生更细腻的资源，这些资源的管理，持续集成/发布，逐渐的成为了比较重要的关注点，所以本项目将会是Serverless CI/CD的探索，主要包括Serverless架构下的CI/CD是什么样子的，Serverless本身是否可以做CI/CD，Serverless架构工具链和CI/CD结合后是什么样子的。
 
 ## 我们期待你
 
