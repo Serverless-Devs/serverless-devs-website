@@ -1,33 +1,19 @@
-# Website
+# Serverless Devs Website
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+Serverless Devs 社区网站：http://www.serverless-devs.com
 
-## Installation
+## 如何添加文档
 
-```console
-yarn install
-```
+### 添加Blog
 
-## Local Development
+在`/blog`目录下直接增加`markdown`文档即可。
 
-```console
-yarn start
-```
+### 添加Docs
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+在`/docs`目录下直接增加`markdown`文档即可。
 
-## Build
+## 如何发布
 
-```console
-yarn build
-```
+只需要`push`获得合并到`master`即可自动发布到线上。
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-```console
-GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+> 自豪的采用Serverless Devs Website组件进行自动化部署
