@@ -1,0 +1,19 @@
+edition: 1.0.0
+access: website_access
+
+services:
+  website:
+    component: devsapp/website
+    actions:
+      pre-deploy:
+        - run: npm install
+          path: ./
+        - run: npm run build
+          path: ./
+    props:
+      bucket: serverless-devs-website
+      src:
+        codeUri: ./
+        publishDir: ./build
+        index: index.html
+      region: cn-hongkong
