@@ -8,32 +8,38 @@ sidebar_position: 3
 
 ```shell script
 $ s
-
 Usage: s [options] [command]
 
   _________                               .__
  /   _____/ ______________  __ ___________|  |   ____   ______ ______
  \_____  \_/ __ \_  __ \  \/ // __ \_  __ \  | _/ __ \ /  ___//  ___/
  /        \  ___/|  | \/\   /\  ___/|  | \/  |_\  ___/ \___ \ \___ \
-/_______  /\___  >__|    \_/  \___  >__|  |____/\___  >____  >____  >
-        \/     \/                 \/                \/     \/     \/
+/_________/\_____>__|    \_/  \_____>__|  |____/\_____>______>______>
 
-Welcome to the Serverless Devs Cli.
+Welcome to the Serverless Devs.
+You can use the corresponding function through the following instructions.
 
-Documents: https://www.github.com/serverless-devs/docs
+More: 
+📘 Documents: https://www.github.com/serverless-devs/docs
+🙌 Discussions: https://github.com/Serverless-Devs/Serverless-Devs/discussions
+⁉️  Issues: https://github.com/Serverless-Devs/Serverless-Devs/issues
+👀 Current Registry: http://registry.devsapp.cn/simple
+
+Quick start: 
+🍻 Can perform 's init' fast experience
 
 Options:
-  -t, --template           Specify yaml document
-  --skip-actions           Skip the extends section
-  -v, --version            Output the version number
-  -h, --help               Display help for command
+  -v, --version   Output the version number
+  --skip-actions  Skip the extends section
+  --debug         Debug model
+  -h, --help      Display help for command
 
 Commands:
-  config                   Configure cloud service account.
-  init                     Initializing a project.
-  set                      Settings for the tool.
-  cli                      Command line operation through yaml free mode.
-  exec                     Subcommand execution analysis
+  config          👤 Configure cloud service account.
+  init            💞 Initializing a project.
+  cli             🐚 Command line operation through yaml free mode.
+  set             🔧 Settings for the tool.
+  exec            🚀 Subcommand execution analysis.
 
 ```
 
@@ -44,8 +50,6 @@ Commands:
 当我们执行`s config`之后，可以进行相关帮助信息的查看：
 
 ```shell script
-$ s config
-
 Usage: s config [commands] [options]
 
 You can configure provider accounts, including Alibaba Cloud, Baidu Cloud, Huawei Cloud, Tencent Cloud, etc.
@@ -54,10 +58,9 @@ Options:
   -h, --help  Display help for command
 
 Commands:
-  add         Add an account.
-  get         Get accounts.
-  delete      Delete an account.
-  update      Update an account.
+  add         ➕ Add an account
+  get         ✔️  Get accounts
+  delete      ✖️  Delete an account
 ```
 
 ### config add 命令
@@ -67,40 +70,39 @@ Commands:
 通过`-h/--help`可以查看到配置帮助：
 
 ```shell script
-$ s config add -h
+Usage: s config add [commands] [name]
 
-Usage: s config add [options] [name]
-
-You can add an account.
+You can add an account
 
     Example:
-        $ s config add
-        $ s config add --AccessKeyID ****** --AccessKeySecret ****** --AccountID ******
-        $ s config add --AccessKey ****** --SecretKey ******
+	$ s config add
+	$ s config add --AccessKeyID ****** --AccessKeySecret ****** --AccountID ******
+	$ s config add --AccessKey ****** --SecretKey ******
 
     Configuration parameters for cloud vendors:
-        alibaba: AccountID, AccessKeyID, AccessKeySecret
-        aws: AccessKeyID, SecretAccessKey
-        azure: KeyVaultName, TenantID, ClentID, ClientSecret
-        baidu: AccessKeyID, SecretAccessKey
-        huawei: AccessKey, SecretKey
-        google: PrivateKeyData
-        tencent: AccountID, SecretID, SecretKey
+	alibaba: AccountID, AccessKeyID, AccessKeySecret
+	aws: AccessKeyID, SecretAccessKey
+	baidu: AccessKeyID, SecretAccessKey
+	huawei: AccessKey, SecretKey
+	google: PrivateKeyData
+	tencent: AccountID, SecretID, SecretKey
+
+📘 How to get the key: https://github.com/Serverless-Devs/docs/tree/master/zh/others/provider-config
+
 
 Options:
-  -a, --alias-name [name]    Key pair alias, if the alias is not set, use default instead
-  --AccountID [value]        Configure the AccountID
-  --AccessKeyID [value]      Configure the AccessKeyID
-  --AccessKeySecret [value]  Configure the AccessKeySecret
-  --SecretID [value]         Configure the SecretID
-  --SecretKey [value]        Configure the SecretKey
-  --SecretAccessKey [value]  Configure the SecretAccessKey
-  --KeyVaultName [value]     Configure the KeyVaultName
-  --TenantID [value]         Configure the TenantID
-  --ClientID [value]         Configure the ClientID
-  --ClientSecret [value]     Configure the ClientSecret
-  --PrivateKeyData [value]   Configure the PrivateKeyData
-  -h, --help                 Display help for command
+  --AccountID [AccountID]              AccountID of key information
+  --AccessKeyID [AccessKeyID]          AccessKeyID of key information
+  --AccessKeySecret [AccessKeySecret]  AccessKeySecret of key information
+  --SecretAccessKey [SecretAccessKey]  SecretAccessKey of key information
+  --AccessKey [AccessKey]              AccessKey of key information
+  --SecretKey [SecretKey]              SecretKey of key information
+  --SecretID [SecretID]                SecretID of key information
+  --PrivateKeyData [PrivateKeyData]    PrivateKeyData of key information
+  -kl , --keyList [keyList]            Keys of key information, like: -kl key1,key2,key3
+  -il , --infoList [infoList]          Values of key information, like: -kl info1,info2,info3
+  -a , --aliasName [name]              Key pair alias, if the alias is not set, use default instead
+  -h, --help                           Display help for command
 ```
 
 可以通过`config add`直接进行密钥的添加：
@@ -125,9 +127,6 @@ $ s config add
 s config add 
 
 ? Please select a provider: Alibaba Cloud (alibaba)
-
-Config document: https://github.com/Serverless-Devs/docs/blob/master/zh/others/provider-config
-
 ? AccountID **********
 ? AccessKeyID **********
 ? AccessKeySecret **********
@@ -137,6 +136,11 @@ Config document: https://github.com/Serverless-Devs/docs/blob/master/zh/others/p
 也可以通过命令式直接进行密钥的添加：
 ```shell script
 $ s config add --AccessKeyID ****** --AccessKeySecret ****** --AccountID ******
+```
+
+或者添加自定义内容：
+```shell script
+$ s config add --AccessKeyID ****** -kl key1,key2,key3 -il info1,info2,info3
 ```
 
 - 常见云厂商密钥配置内容
@@ -154,13 +158,13 @@ google:     PrivateKeyData
 - 通过环境变量获取密钥方法： 这一部分可能会根据不同的文档有不同的可能性，所以需要参考对应的文档进行环境变量对应的`Key-Value`确定。
 
 - 常见云厂商密钥获取地址：
-    - [阿里云](./provider-config/alibabacloud.md)
-    - [百度云](./provider-config/baiducloud.md)
-    - [AWS](./provider-config/aws.md)
-    - [Azure](./provider-config/azure.md)
-    - [Google Cloud](./provider-config/gcp.md)
-    - [华为云](./provider-config/huaweicloud.md)
-    - [腾讯云](./provider-config/tencentcloud.md)
+    - [阿里云](./others/provider-config/alibabacloud.md)
+    - [百度云](./others/provider-config/baiducloud.md)
+    - [AWS](./others/provider-config/aws.md)
+    - [Azure](./others/provider-config/azure.md)
+    - [Google Cloud](./others/provider-config/gcp.md)
+    - [华为云](./others/provider-config/huaweicloud.md)
+    - [腾讯云](./others/provider-config/tencentcloud.md)
 
 
 ### config get 命令
@@ -209,39 +213,6 @@ Options:
   -h,--help                 Display help for command
 ```
 
-### config update 命令
-
-通过`config update`指令，您可以修改配置过的账号信息。
-
-通过`-h/--help`可以查看到配置帮助：
-
-```shell script
-$ s config update -h
-
-Usage: s config  update [options] [name]
-
-You can update an account.
- 
-     Example:
-        $ s config update -a demo
-        $ s config update -a demo --AccountID ************
-
-
-Options:
-  -a , --alias-name [name]   Key pair alia, if the alias is not set, use default instead
-  --AccountID [value]        Configure the AccountID
-  --AccessKeyID [value]      Configure the AccessKeyID
-  --AccessKeySecret [value]  Configure the AccessKeySecret
-  --SecretID [value]         Configure the SecretID
-  --SecretKey [value]        Configure the SecretKey
-  --SecretAccessKey [value]  Configure the SecretAccessKey
-  --KeyVaultName [value]     Configure the KeyVaultName
-  --TenantID [value]         Configure the TenantID
-  --ClientID [value]         Configure the ClientID
-  --ClientSecret [value]     Configure the ClientSecret
-  --PrivateKeyData [value]   Configure the PrivateKeyData
-  -h, --help                 Display help for command
-```
 
 ## init指令
 
@@ -272,23 +243,30 @@ Options:
 
 ```shell script
 $ s init
-? Hello, serverlessor.
-  Which template do you like? … 
-
- ⊙ Hello World Example
-❯ Node.js 12 HTTP : An Alibaba Cloud FC example
-  Node.js 12.x HTTP : An AWS Lambda example
-  Node.js 12 HTTP : A Tencent Cloud SCF example
-
- ⊙ Web Framework Example
-  Express : A Express example for Alibaba Cloud FC
-  Flask : A Flask example for Alibaba Cloud FC
-  Midway-FaaS : A front and rear integration example for Alibaba Cloud FC
-
- ⊙ Serverless Dev template
-  Application : Serverless Devs application template
-  Component : Serverless Devs component template
-  Plugin : Serverless Devs plugin template
+? Hello, serverlessor. Which template do you like? (Use arrow keys or type to search)
+  
+👋 Hello World Example
+❯ Aliyun FC node.js12-http 
+  AWS Lambda nodejs12.x-http 
+  Tencent SCF nodejs12.x-http 
+  
+🚢 Web Framework Example
+  Express 
+  Flask 
+  Zblog 
+  Midway 
+  Malagu 
+  
+🖥️  Static Website
+  Vue 
+  React 
+  Docusaurus 
+  Hexo 
+  Vuepress 
+  
+🍼 Serverless Dev template
+  Application 
+  Component 
 ```
 
 ## cli指令
@@ -345,60 +323,17 @@ Options:
 
 ```shell script
 $ s set -h
-
 Usage: s set [commands] [options]
 
 You can make some default settings for the tool here.
 
 Options:
-  -h, --help    Display help for command
+  -h, --help  Display help for command
 
 Commands:
-  language      Output language switch
-  analysis      Upload your usage habits to help us improve our products
-  registry      Config registry for Serverless Devs
+  registry    👀 Set up a custom registry
 ```
 
-
-### set language 命令
-
-配置语言，通过`-h/--help`可以看到效果：
-
-```shell script
-$ s set language -h
-
-Usage: s set language [language]
-
-Set language.
-
-     Example:
-        $ s set language zh
-        $ s set language en
-
-Options:
-  -h, --help  Display help for command
-```
-
-### set analysis 命令
-
-配置数据上报习惯，通过`-h/--help`可以看到效果：
-
-```shell script
-$ s set analysis -h
-
-Usage: s set analysis [options]
-
-Upload your usage habits to help us improve our products
-
-    Example:
-        # Upload your usage habits:
-            $ s set analysis enable
-        # Do not upload your usage habits: 
-            $ s set analysis disable
-
-Options:
-  -h, --help  Display help for comman
-```
 
 ### set registry 命令
 
@@ -416,5 +351,7 @@ Upload your usage habits to help us improve our products
         $ s set registry https://registry.serverlessfans.cn/
 
 Options:
-  -h, --help  Display help for comman
+  -h, --help  Display help for command
 ```
+
+
