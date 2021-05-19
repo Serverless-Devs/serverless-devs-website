@@ -20,7 +20,7 @@ tags: [命令行, Serverless, 官网]
 
 经过一些简单的调研，我们决定用Serverless Devs建设Serverless Devs官网，并将其部署到Serverless架构上，很绕嘴是吧？但是，这个过程却真的很“经典”：
 
-1. 我们通过Serverless devs初始化了Docusaurus：`s init devsapp/website-docusaurus`，这一部分可以参考文档：https://github.com/devsapp/website-example
+我们通过Serverless devs初始化了Docusaurus：`s init devsapp/website-docusaurus`，这一部分可以参考文档：https://github.com/devsapp/website-example
 
 讲真，虽然也就是一行代码的事情，但是整个初始化还是比较“赏心悦目”的，作为一个Serverless应用全生命周期的工具，Serverless Devs在脚手架和引导层面还是下了很多功夫的：
 
