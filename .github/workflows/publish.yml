@@ -3,8 +3,6 @@ name: Website Publish
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   publish-website:
