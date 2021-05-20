@@ -6,6 +6,7 @@ author_title: Serverless Devs
 author_url: https://github.com/anycodes
 author_image_url: https://avatars.githubusercontent.com/u/21079031?v=4
 tags: [命令行, Serverless, 输出格式]
+date: 2021-05-18
 ---
 
 # 命令行工具升级：不仅仅是更多的Emoji 
