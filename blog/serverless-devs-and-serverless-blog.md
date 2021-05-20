@@ -17,9 +17,7 @@ date: 2021-05-20
 
 一个博客对于一个人而言可能会承载很多事情，尤其是一个技术博客对于一个程序员而言，不仅仅是自己学习、成长的见证，也是自己的工作、生活的一个见证，甚至在很多的技术面试过程中，拥有一个自己的技术博客都是一个非常不错的加分项。但是传统意义上的很多研发同学建设的技术博客都会面临服务器的问题，因为技术博客往往并没有太大的流量，也很难产生很大的收入，单纯为了自己的兴趣、爱好来购买服务器，并且进行一些后期运维工作，在成本支出、精力支出上确实不太合适。所以基于Serverless架构的博客系统就显得非常重要了，因为基于Serverless架构建设的博客系统，不仅仅可以体验学习进技术，也可以直接得到Serverless架构带来的技术红利
 
-## 基于Serverless部署技术博客
-
-### 安装Serverless Devs开发者工具
+## 安装Serverless Devs开发者工具
 
 通过 [npm](https://www.npmjs.com/) 包管理安装：适用于已经预装了 npm 的 Windows、Mac、Linux 平台。在 Windows、Mac、Linux 平台执行以下命令安装 Serverless Devs Tool工具。
 
@@ -37,7 +35,7 @@ $ yarn global add @serverless-devs/s
 > - 如果在 Linux 或 MacOS 下执行该命令报错且报错信息为 Error: EACCES: permission denied，请执行命令 sudo npm install @serverless-devs/s -g。   
 > - 如果安装过程较慢，可以考虑使用淘宝 npm 源，安装命令为 npm --registry=https://registry.npm.taobao.org install @serverless-devs/s -g。
 
-### 快速部署博客系统
+## 快速部署博客系统
 
 Serverless devs提供了多种类型的博客系统：
 - Zblog
@@ -48,7 +46,7 @@ Serverless devs提供了多种类型的博客系统：
 
 > 在部署过程中可能需要获取阿里云密钥信息，可以参考：https://config.devsapp.net/account/alibaba
 
-#### Zblog
+### Zblog
 
 Zblog是一款轻量级的PHP开源框架，拥有独立的后台管理能力，支持Sqlite和Mysql等数据库。    
 使用该博客系统涉及到阿里云函数计算、容器镜像、硬盘挂载等产品。
@@ -59,7 +57,7 @@ Zblog是一款轻量级的PHP开源框架，拥有独立的后台管理能力，
 - 进入项目：`cd start-zblog`
 - 部署项目：`s deploy`
 
-#### Wordpress
+### Wordpress
 
 Wordpress是一款PHP开源框架，拥有独立的后台管理能力，支持Mysql等数据库。    
 使用该博客系统涉及到阿里云函数计算、容器镜像、硬盘挂载等产品。
@@ -70,11 +68,11 @@ Wordpress是一款PHP开源框架，拥有独立的后台管理能力，支持My
 - 进入项目：`cd start-wordpress`
 - 部署项目：`s deploy`
 
-#### Hexo
+### Hexo
 
 Hexo是一款轻量级的前端开源框架。    
 
-##### 部署到函数计算
+#### 部署到函数计算
 
 针对该博客系统，您可以选择把他部署在函数计算上，涉及到阿里云函数计算、容器镜像、硬盘挂载等产品。
 
@@ -85,7 +83,7 @@ Hexo是一款轻量级的前端开源框架。
 - 部署项目：`s deploy`
 
 
-##### 部署到对象存储
+#### 部署到对象存储
 
 您也可以选择把他部署在对象存储上，涉及到阿里云函数计算、对象存储、CDN等产品。
 
@@ -95,7 +93,7 @@ Hexo是一款轻量级的前端开源框架。
 - 进入项目：`cd website-hexo`
 - 部署项目：`s deploy`
 
-#### Vuepress
+### Vuepress
 
 Vuepress可以作为一款轻量级的前端博客系统。     
 使用该博客系统涉及到阿里云函数计算、对象存储、CDN等产品。
@@ -106,7 +104,7 @@ Vuepress可以作为一款轻量级的前端博客系统。
 - 进入项目：`cd website-vuepress`
 - 部署项目：`s deploy`
 
-#### Django Blog
+### Django Blog
 
 Django Blog是一款基于Python Django框架编写的博客系统，拥有独立的后台管理能力，支持Sqlite和Mysql等数据库。    
 使用该博客系统涉及到阿里云函数计算、容器镜像、硬盘挂载等产品。
