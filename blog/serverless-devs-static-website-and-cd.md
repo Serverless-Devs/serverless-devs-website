@@ -6,6 +6,7 @@ author_title: Serverless Devs
 author_url: https://github.com/anycodes
 author_image_url: https://avatars.githubusercontent.com/u/21079031?v=4
 tags: [命令行, Serverless, 官网]
+date: 2021-05-19
 ---
 
 # Serverless Devs的官网是通过Serverless Devs部署的
