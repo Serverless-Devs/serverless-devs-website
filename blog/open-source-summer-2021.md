@@ -6,6 +6,7 @@ author_title: Serverless Devs
 author_url: https://github.com/anycodes
 author_image_url: https://avatars.githubusercontent.com/u/21079031?v=4
 tags: [开源之夏, Serverless]
+date: 2021-05-1
 ---
 
 # Serverless Devs 开源之夏 2021
