@@ -91,6 +91,8 @@ s test 去全量执行
 2.然后开发初始化逻辑，比如对已有项目初始化配置文件，支持添加cicd配置文件，添加api文件等
 3.使用 s cli platform publish（其实已经内置到组件模板的npm publish指令了，可以直接使用npm run publish） 发布到应用市场。
 之后其他的开发者就能够使用这个组件 ，通过 s cli init 引导式的初始化配置，并且 使用s deploy将自己的静态站点发布，整个过程行云流水，效率奇高，并且核心模块完全不受影响，完全不用担心影响到其他的功能使用
+
+##### 关于如何快速开发自己的组件[请戳这里](https://github.com/Serverless-Devs/Serverless-Devs/discussions/62)
 ## 未来的扩展
 除了platform,init 这些官方的能力，我们也欢迎更加优秀的场景方案透出到指令设计上。这边我可以把场景大家分享一下，具体实现可以交给大家
 ### 场景1
