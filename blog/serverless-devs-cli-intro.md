@@ -75,7 +75,7 @@ s test 去全量执行
 配置式的指令执行方式固然有着他自己的强大和独到之处，但是相关的依赖也让很多自动化的流程变的更加的复杂，所以团队考虑再三决定推出无配置的指令集 **s cli**
 ![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13970/1622790598634-d454a58b-6c12-46d7-99db-fac56ed6703a.png#clientId=ue380b034-bff6-4&from=paste&height=239&id=u86c479ff&margin=%5Bobject%20Object%5D&name=image.png&originHeight=478&originWidth=1768&originalType=binary&size=191300&status=done&style=none&taskId=u888a7e42-b775-4ed9-9a66-ce503aa1794&width=884)
 
-实际上有了他，我可以在数小时或半天只能扩展一个新的功能点，而且对用户而言无需更新他们的工具集，即可使用我开发的功能。
+实际上有了他，我可以在数小时或半天之内扩展一个新的功能点，而且对用户而言无需更新他们的工具集，即可使用我开发的功能。
 
 ### 真实组件例子
 #### platform - 登录，注册，发布
