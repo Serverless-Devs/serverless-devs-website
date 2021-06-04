@@ -26,7 +26,7 @@ date: 2021-06-04
 
 **以上的静态指令集主要可以帮助新用户快速使用s工具，掌握s工具的基本能力。**
 除了上面的静态指令，还有就是检测到有配置文件s.yaml会自动生成的动态指令，这些动态指令是根据具体执行组件的方法来确认的。举个例子，如果有一个配置文件如下，他包含了一个标准服务 component-demo,
-服务所关联的逻辑组件是demo-test。
+服务所关联的逻辑组件是s-demo。
 ```yaml
 edition: 1.0.0        #  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范
 name: component-demo   #  项目名称
@@ -67,10 +67,10 @@ services:
 而你不希望 s component-demo test  ， s component-demo2 test  这样一个一个的去执行，也可以通过
 s test 去全量执行
 ![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13970/1622789389445-666be5b2-16be-4e66-be87-4724942a87ca.png#clientId=ue380b034-bff6-4&from=paste&height=131&id=u11561a55&margin=%5Bobject%20Object%5D&name=image.png&originHeight=262&originWidth=2250&originalType=binary&size=438340&status=done&style=none&taskId=u979ad809-adda-439f-9e84-5d3d665ad22&width=1125)
-系统会提示要执行的全量服务，并且会把最终结果做汇总，一起输出，这样的好处是简化了多服务并且之间有依赖关系的执行方式，是应用编排能力的具体实现。
-及时只有一个服务也可以 使用 s test，最起码输入的字符更少，更加节省时间。
+系统会提示要执行的全量服务，并且会把最终结果做汇总，一起输出，这样的好处是简化了多服务并且之间有依赖关系的执行方式，**是应用编排能力的具体实现**。
+即使只有一个服务也可以 使用 s test，最起码输入的字符更少，更加节省时间。
 ## cli - 无配置执行组件的指令
-单独把这个指令拿出来说是因为他是本篇文章的主角，体现Serverless devs 强大扩展能力的关键点之一。
+##### 单独把这个指令拿出来说是因为他是本篇文章的主角，体现Serverless devs 强大扩展能力的关键点之一。
 实际上我们知道，随着一个工具支持的能力越来越多，他的使用复杂度也会越来越高，我们一直想需要一个设计上的平衡，**既能够让新用户快速上手，不让那些复杂的指令迷人眼，也能够支持老用户的进阶，满足他们更高层次的需求**。
 配置式的指令执行方式固然有着他自己的强大和独到之处，但是相关的依赖也让很多自动化的流程变的更加的复杂，所以团队考虑再三决定推出无配置的指令集 **s cli**
 ![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13970/1622790598634-d454a58b-6c12-46d7-99db-fac56ed6703a.png#clientId=ue380b034-bff6-4&from=paste&height=239&id=u86c479ff&margin=%5Bobject%20Object%5D&name=image.png&originHeight=478&originWidth=1768&originalType=binary&size=191300&status=done&style=none&taskId=u888a7e42-b775-4ed9-9a66-ce503aa1794&width=884)
