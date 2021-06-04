@@ -18,11 +18,12 @@ date: 2021-06-04
 ![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13970/1622787931570-6bc376df-e4bc-4a2c-a5c8-df1fabf4ea34.png#clientId=ue380b034-bff6-4&from=paste&height=95&id=ub651dc36&margin=%5Bobject%20Object%5D&name=image.png&originHeight=190&originWidth=1224&originalType=binary&size=97993&status=done&style=none&taskId=u1f0500a8-c942-477f-bab7-c526c7ffec3&width=612)
 
 
-配置云商场秘钥的【conifg】
-初始化应用/组件的 【init】
-以及无配置式执行指令的 【cli】
-数据源设置【set】 
-以及可以用来支持 复杂指令执行的 【exec】
++ 配置云商秘钥的【conifg】
++ 初始化应用/组件的 【init】
++ 以及无配置式执行指令的 【cli】
++ 数据源设置【set】 
++ 以及可以用来支持 复杂指令执行的 【exec】
+
 **以上的静态指令集主要可以帮助新用户快速使用s工具，掌握s工具的基本能力。**
 除了上面的静态指令，还有就是检测到有配置文件s.yaml会自动生成的动态指令，这些动态指令是根据具体执行组件的方法来确认的。举个例子，如果有一个配置文件如下，他包含了一个标准服务 component-demo,
 服务所关联的逻辑组件是demo-test。
