@@ -23,7 +23,7 @@ services:
     component: vue-component  # 组件名称
     props: #  组件的属性值
       src: ./frontend_src
-      url: ${backend.output.url}
+      url: url
     actions: # 自定义执行逻辑
       pre-deploy: # 在deploy之前运行
         - run: s exec -- publish  # 要运行的命令行
@@ -43,7 +43,7 @@ services:
     component: express
     props:
       app: ./express-blog
-      url: ${domain}
+      url: ${vars.domain}
     actions:
       pre-deploy:
         - run: npm run build
