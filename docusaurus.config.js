@@ -9,6 +9,24 @@ module.exports = {
     favicon: 'img/favicon.ico',
     organizationName: 'facebook', // Usually your GitHub org/user name.
     projectName: 'Serverless Devs', // Usually your repo name.
+    // plugins: [
+    //     [
+    //         '@docusaurus/plugin-content-blog',
+    //         {
+    //             editUrl: ({locale, blogDirPath, blogPath, permalink}) => {
+    //                 return `https://github.com/facebook/docusaurus/edit/master/website/${blogDirPath}/${blogPath}`;
+    //             },
+    //             editLocalizedFiles: false,
+    //             blogTitle: 'Blog title',
+    //             blogDescription: 'Blog',
+    //             blogSidebarCount: 10,
+    //             routeBasePath: 'blog',
+    //             include: ['*.md', '*.mdx'],
+    //             postsPerPage: 10,
+    //             showReadingTime: true,
+    //         },
+    //     ],
+    // ],
     themeConfig: {
         navbar: {
             title: 'Serverless Devs',
@@ -106,14 +124,14 @@ module.exports = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
-                    editUrl:
-                        'https://github.com/Serverless-Devs/Serverless-Devs/',
+                    editUrl: 'https://github.com/Serverless-Devs/website/blob/master/docs/',
                 },
                 blog: {
+                    blogSidebarCount: 30,
                     showReadingTime: true,
-                    // Please change this to your repo.
-                    editUrl:
-                        'https://gitee.com/serverless-devs/Serverless-Devs',
+                    editUrl: ({locale, blogDirPath, blogPath, permalink}) => {
+                        return `https://github.com/Serverless-Devs/website/blob/master/${blogDirPath}/${blogPath}`;
+                    },
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
