@@ -57,6 +57,17 @@ Zblog是一款轻量级的PHP开源框架，拥有独立的后台管理能力，
 - 进入项目：`cd start-zblog`
 - 部署项目：`s deploy`
 
+### Typecho
+
+Typecho是一款PHP开源框架，拥有独立的后台管理能力，支持Sqlite和Mysql等数据库。    
+使用该博客系统涉及到阿里云函数计算、容器镜像、硬盘挂载等产品。
+
+部署流程：
+
+- 初始化一个模版项目：`s init devsapp/start-typecho`
+- 进入项目：`cd start-typecho`
+- 部署项目：`s deploy`
+
 ### Wordpress
 
 Wordpress是一款PHP开源框架，拥有独立的后台管理能力，支持Mysql等数据库。    
