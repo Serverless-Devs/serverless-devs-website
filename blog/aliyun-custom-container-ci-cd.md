@@ -137,8 +137,9 @@ Examples with CLI
 ```
 
 可以根据自己需求，选择：
--  'acr-internet': 公共
--  'acr-vpc': 私有   
+-  'acr-internet': 目标 registry 地址设为公网地址。
+-  'acr-vpc': 目标 registry 地址设为专有网络（vpc）地址。
+-  '${registry url}': 自定义 registry 地址。
 
 
 关于上述整个操作的基本流程：
@@ -231,6 +232,10 @@ services:
 - 获取Yaml中其他项目的结果变量：${projectName.output.*}
 
 > 实战举例，例如当我需要访问数据库等，此时我并不想把密钥明文配置到Yaml中，此时可以考虑，将密钥配置到环境变量中，进行直接使用。
+
+关于 **构建** 问题：
+
+如果使用 `s build --use-docker` 构建镜像，则需要确保 s.yml 中的 `codeUri` 字段指向的目录中包含 `Dockerfile`。
 
 关于 **权限** 问题：
 
