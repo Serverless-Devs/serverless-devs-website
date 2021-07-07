@@ -86,7 +86,8 @@ s cli fc-api updateFunction --region cn-hangzhou --serviceName fc-deploy-service
 > 你是怎么知道传递`--code '{"zipFile": "./"}'`的？
 >
 > 因为在我们看帮助文档的时候，题已经提醒了我们这是一个JSON String，同时在帮助文档最上面是有链接地址：
-> 
+
+
 ```
     Usage
     
@@ -102,6 +103,7 @@ s cli fc-api updateFunction --region cn-hangzhou --serviceName fc-deploy-service
       --functionName string            The description of the function.                                              
       --code string                    [JSON String] The code of the function. The code must be packaged into a ZIP file.                                        
 ```
+
 > 此时，我们可以打开https://help.aliyun.com/document_detail/189986.html：
 
 ![image](https://user-images.githubusercontent.com/21079031/124550239-f5fb9900-de62-11eb-819b-9e662cb80fe6.png)
