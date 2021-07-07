@@ -11,7 +11,7 @@ date: 2021-07-2
 
 # 阿里云Custom Container的CI/CD最佳实践案例
 
-在实际生产过程中，我们往往会遇到这样一个通用的项目持续发布的流程：_
+在实际生产过程中，我们往往会遇到这样一个通用的项目持续发布的流程：
 
 Git Clone -> Docker Build -> Docker Push -> Deploy Function
 
