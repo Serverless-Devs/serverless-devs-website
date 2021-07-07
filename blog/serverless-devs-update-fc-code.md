@@ -1,6 +1,6 @@
 ---
 slug: serverless-devs-update-fc-code
-title: 基于Serverless Devs原子化操作阿里云函数计算
+title: 只更新代码，然后发布版本：基于Serverless Devs原子化操作阿里云函数计算
 author: Anycodes
 author_title: Serverless Devs
 author_url: https://github.com/anycodes
