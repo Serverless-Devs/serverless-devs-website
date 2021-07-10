@@ -6,10 +6,10 @@ author_title: Serverless Devs
 author_url: https://github.com/anycodes
 author_image_url: https://avatars.githubusercontent.com/u/21079031?v=4
 tags: [命令行, Serverless, CICD, SAE]
-date: 2021-07-2
+date: 2021-07-10
 ---
 
-# Serverless Devs: SAE与Github Action珠合璧联，让CD从未如此简单
+# Serverless Devs: SAE与Github Action珠联璧合，让CD从未如此简单
 
 ## 前言
 
@@ -131,7 +131,7 @@ services:
 
 关于这种方法的妙用还有很多：
 
-例如，当我们需要配置一写密钥信息等，是不是也可以通过这种方法，将密钥放入环境变量，然后在Yaml中直接引用？
+例如，当我们需要配置一下密钥信息等，是不是也可以通过这种方法，将密钥放入环境变量，然后在Yaml中直接引用？
 
 接下来还需要编写一个Github Action相关的Yaml：
 
@@ -196,7 +196,7 @@ jobs:
         run: s deploy
 ```
 
-致此，我们完整了所有的基础准备。
+至此，我们完整了所有的基础准备。
 
 在上面的Yaml中，每一个过程都有注释，整体来说，下载Serverless Devs，到部署项目，其实只有3条命令：
 
