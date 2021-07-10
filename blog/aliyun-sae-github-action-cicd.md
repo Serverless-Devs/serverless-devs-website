@@ -9,7 +9,7 @@ tags: [命令行, Serverless, CICD, SAE]
 date: 2021-07-10
 ---
 
-# Serverless Devs: SAE与Github Action珠联璧合，让CD从未如此简单
+# Serverless Devs：SAE与Github Action珠联璧合，让CD从未如此简单
 
 ## 前言
 
