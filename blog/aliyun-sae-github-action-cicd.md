@@ -1,6 +1,6 @@
 ---
 slug: aliyun-sae-github-action-cicd
-title: Serverless Devs: SAE与Github Action珠合璧联，让CD从未如此简单
+title: Serverless Devs - SAE与Github Action珠合璧联，让CD从未如此简单
 author: Anycodes
 author_title: Serverless Devs
 author_url: https://github.com/anycodes
@@ -9,7 +9,7 @@ tags: [命令行, Serverless, CICD, SAE]
 date: 2021-07-10
 ---
 
-# Serverless Devs：SAE与Github Action珠联璧合，让CD从未如此简单
+# Serverless Devs - SAE与Github Action珠联璧合，让CD从未如此简单
 
 ## 前言
 
