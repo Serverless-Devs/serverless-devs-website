@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
     title: 'Serverless Devs',
-    tagline: '一款可以在Serverless应用全生命周发挥作用的开发者工具',
+    tagline: '一款可以在Serverless应用全生命周期发挥作用的开发者工具',
     url: 'https://www.serverless-devs.com',
     baseUrl: '/',
     onBrokenLinks: 'throw',
