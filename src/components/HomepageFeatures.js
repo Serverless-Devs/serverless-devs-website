@@ -22,7 +22,7 @@ const FeatureList = [
           Serverless Devs 拥有可视化编辑和部署流程。在 Serverless Desktop 中，使用者可以通过关键词快速检索所需的应用案例或组件，并且通过可视化编辑完成项目配置，通过鼠标点击即可完成项目部署。无论是进行项目体验，还是进行项目开发、运维，在应用中心的加持下，在可视化编辑和部署的加持下，Serverless 项目的整体部署时间缩短了近 1 倍。
         </>
         <>
-          <a style={{ display: 'block' }} href="https://serverlessdesktop.oss-cn-beijing.aliyuncs.com/ServerlessDesktop-0.0.4-mac.zip" target="_blank">下载 MAC 版 Serverless Desktop</a>
+          <a style={{ display: 'block' }} href="https://serverlessdesktop.oss-cn-beijing.aliyuncs.com/ServerlessDesktop.dmg.zip" target="_blank">下载 MAC 版 Serverless Desktop</a>
         </>
         <>
           <a style={{ display: 'block' }} href="https://serverlessdesktop.oss-cn-beijing.aliyuncs.com/ServerlessDesktop-0.0.4-win.zip" target="_blank">下载 Windows 版 Serverless Desktop</a>
