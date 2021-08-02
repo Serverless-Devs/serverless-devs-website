@@ -25,7 +25,7 @@ const FeatureList = [
           <a style={{ display: 'block' }} href="https://serverlessdesktop.oss-cn-beijing.aliyuncs.com/ServerlessDesktop.dmg.zip" target="_blank">下载 MAC 版 Serverless Desktop</a>
         </>
         <>
-          <a style={{ display: 'block' }} href="https://serverlessdesktop.oss-cn-beijing.aliyuncs.com/ServerlessDesktop-0.0.4-win.zip" target="_blank">下载 Windows 版 Serverless Desktop</a>
+          <a style={{ display: 'block' }} href="https://serverlessdesktop.oss-cn-beijing.aliyuncs.com/ServerlessDesktop%20Setup.exe.zip" target="_blank">下载 Windows 版 Serverless Desktop</a>
         </>
       </>
     ),
