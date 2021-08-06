@@ -6,6 +6,7 @@ author_title: Serverless Desktop
 author_url: https://github.com/hanxie-crypto
 author_image_url: https://avatars.githubusercontent.com/u/4457084?v=4
 tags: [Serverless, 桌面应用, Electron ,应用平台]
+date: 2021-08-06
 ---
 
 # Serverless Desktop介绍
