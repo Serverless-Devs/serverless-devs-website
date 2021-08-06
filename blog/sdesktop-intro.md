@@ -105,7 +105,7 @@ Serverless Devs 工具链中提供的压测有别于传统的压测，除了能�
 
 
 当你的组件开发好之后可以通过2中方式被使用
-第一种 是通过 s cli <component> <method>
+第一种 是通过 s cli \<component\> \<method\>
 比如我想使用刚才本地写好的组件，调用他的deploy 方法，可以这么用
 s cli <本地组件的目录地址> deploy
 ![use.gif](https://intranetproxy.alipay.com/skylark/lark/0/2021/gif/13970/1628250414113-a3574f0c-7c67-4b60-8837-707a7741ee1c.gif#clientId=ufd54e6bc-ca8d-4&from=drop&id=u18b9fc8c&margin=%5Bobject%20Object%5D&name=use.gif&originHeight=905&originWidth=1347&originalType=binary&ratio=1&size=460360&status=done&style=none&taskId=u9f1042a5-53d8-41f4-b5dd-c1323e3ab2f)
