@@ -96,6 +96,7 @@ date: 2021-08-16
 ![](https://img.alicdn.com/imgextra/i4/O1CN01WLU8qJ1noKtRk44PT_!!6000000005136-2-tps-3464-1924.png#id=yRNte&originHeight=1924&originWidth=3464&originalType=binary&ratio=1&status=done&style=none)
 #### 
 打开ServerlessDesktop 进入配置中心，解除右边配置文件注释的api 部分，然后执行部署操作
+![api注释掉](https://img.alicdn.com/imgextra/i1/O1CN010a1MJ21lUyvNM70JK_!!6000000004823-2-tps-2700-1830.png)
 ![](https://img.alicdn.com/imgextra/i3/O1CN019gKcNi1J9dDo8BbcO_!!6000000000986-1-tps-1356-914.gif#id=Klxh9&originHeight=914&originWidth=1356&originalType=binary&ratio=1&status=done&style=none)
 ​
 
