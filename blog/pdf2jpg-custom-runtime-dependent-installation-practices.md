@@ -221,5 +221,5 @@ End of method: invoke
 ## 附录与参考
 
 - [本文代码](https://github.com/JasonLamv-t/serverless-devs-ghostscript_example)
-- [awesome-fc/ghostscript_example: 基于 GhostScript 的 PDF 转 JPG ](https://github.com/awesome-fc/ghostscript_example)
+- [最佳实践-Start-PDF2IMG](https://github.com/devsapp/start-pdf2img)
 
