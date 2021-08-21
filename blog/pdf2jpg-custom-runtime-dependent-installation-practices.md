@@ -1,3 +1,14 @@
+---
+slug: pdf2jpg-custom-runtime-dependent-installation-practices
+title: Serverless-Devs实践-基于 GhostScript 的 PDF 转 JPG
+author: JasonLamv-t
+author_title: Serverless Devs
+author_url: https://github.com/JasonLamv-t
+author_image_url: https://avatars.githubusercontent.com/u/39087996?s=48&v=4
+tags: [命令行, GhostScript, PDF, JPG]
+date: 2021-09-9
+---
+
 # Serverless-Devs实践-基于 GhostScript 的 PDF 转 JPG
 
 该项目是基于GhostScript的PDF转JPG工具，借助[Serverless-Devs](https://github.com/Serverless-Devs/Serverless-Devs/blob/master/readme_zh.md)工具进行依赖安装并部署到阿里云函数计算，是一个serverless的简单示例。
