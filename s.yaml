@@ -10,6 +10,8 @@ services:
           path: ./
         - run: npm run build
           path: ./
+        - run: rm -rf node_modules
+          path: ./
     props:
       bucket: serverless-devs-website
       src:
