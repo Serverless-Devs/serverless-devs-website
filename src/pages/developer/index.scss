@@ -89,7 +89,7 @@ $animation5Height: 460px;
       margin-bottom: 84px;
   }
   .product-list {
-      width: 960px;
+      width: 1160px;
       margin: 42px auto;
       display: flex;
 
@@ -108,8 +108,13 @@ $animation5Height: 460px;
             margin-bottom: 32px;
         }
         .product-download {
+            display: flex;
+            justify-content: center;
             height: 48px;
             line-height: 48px;
+            .mac {
+              margin-right: 10px;
+            }
         }
       }
   }

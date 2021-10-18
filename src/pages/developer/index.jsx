@@ -85,10 +85,10 @@ class Developer extends Language {
                                     <div>企业级Serverless应用管理平台</div>
                                 </div>
                                 <div className="product-download">
-                                    <div >
+                                    <div className="product-client mac">
                                         <Button link={MAC_DOWNLOAD_LINK}>mac版下载</Button>
                                     </div>
-                                    <div >
+                                    <div className="product-client window">
                                         <Button link={WIN_DOWNLOAD_LINK}>windows版下载</Button>
                                     </div>
                                 </div>
