@@ -1,0 +1,317 @@
+{
+  "en-us": [
+    {
+      "filename": "blog1.md",
+      "link": "/en-us/blog/blog1.html",
+      "meta": {
+        "key1": "hello",
+        "key2": "world"
+      }
+    },
+    {
+      "filename": "blog2.md",
+      "link": "/en-us/blog/blog2.html",
+      "meta": {
+        "key1": "hello",
+        "key2": "world"
+      }
+    },
+    {
+      "filename": "blog3.md",
+      "link": "/en-us/blog/blog3.html",
+      "meta": {
+        "key1": "hello",
+        "key2": "world"
+      }
+    },
+    {
+      "filename": "blog4.md",
+      "link": "/en-us/blog/blog4.html",
+      "meta": {
+        "key1": "hello",
+        "key2": "world"
+      }
+    },
+    {
+      "filename": "blog5.md",
+      "link": "/en-us/blog/blog5.html",
+      "meta": {
+        "key1": "hello",
+        "key2": "world"
+      }
+    },
+    {
+      "filename": "blog6.md",
+      "link": "/en-us/blog/blog6.html",
+      "meta": {
+        "key1": "hello",
+        "key2": "world"
+      }
+    },
+    {
+      "filename": "blog7.md",
+      "link": "/en-us/blog/blog7.html",
+      "meta": {
+        "key1": "hello",
+        "key2": "world"
+      }
+    }
+  ],
+  "zh-cn": [
+    {
+      "filename": "aliyun-custom-container-ci-cd.md",
+      "link": "/zh-cn/blog/aliyun-custom-container-ci-cd.html",
+      "meta": {
+        "slug": "aliyun-custom-container-ci-cd",
+        "title": "阿里云Custom Container的CI/CD最佳实践案例",
+        "author": "Anycodes",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/anycodes",
+        "author_image_url": "https://avatars.githubusercontent.com/u/21079031?v=4",
+        "tags": "[命令行, Serverless, CICD]",
+        "date": "2021-07-2"
+      }
+    },
+    {
+      "filename": "aliyun-online-serverless-devs.md",
+      "link": "/zh-cn/blog/aliyun-online-serverless-devs.html",
+      "meta": {
+        "slug": "aliyun-online-serverless-devs",
+        "title": "阿里云Cloudshell助力Serverless Devs快速体验",
+        "author": "Anycodes",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/anycodes",
+        "author_image_url": "https://avatars.githubusercontent.com/u/21079031?v=4",
+        "tags": "[命令行, Serverless, Cloudshell]",
+        "date": "2021-05-21"
+      }
+    },
+    {
+      "filename": "aliyun-sae-github-action-cicd.md",
+      "link": "/zh-cn/blog/aliyun-sae-github-action-cicd.html",
+      "meta": {
+        "slug": "aliyun-sae-github-action-cicd",
+        "title": "Serverless Devs - SAE与Github Action珠合璧联，让CD从未如此简单",
+        "author": "Anycodes",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/anycodes",
+        "author_image_url": "https://avatars.githubusercontent.com/u/21079031?v=4",
+        "tags": "[命令行, Serverless, CICD, SAE]",
+        "date": "2021-07-10"
+      }
+    },
+    {
+      "filename": "gitee-gitee-go-serverless-devs-ci-cd.md",
+      "link": "/zh-cn/blog/gitee-gitee-go-serverless-devs-ci-cd.html",
+      "meta": {
+        "slug": "gitee-gitee-go-serverless-devs-ci-cd",
+        "title": "通过Gitee+Serverless Devs快速实现函数代码更新与版本发布",
+        "author": "Anycodes",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/anycodes",
+        "author_image_url": "https://avatars.githubusercontent.com/u/21079031?v=4",
+        "tags": "[命令行, Serverless, CICD, 原子化操作, 阿里云]",
+        "date": "2021-07-2"
+      }
+    },
+    {
+      "filename": "intro.md",
+      "link": "/zh-cn/blog/intro.html",
+      "meta": {
+        "key1": "serverless"
+      }
+    },
+    {
+      "filename": "new-serverless-devs-20-1.md",
+      "link": "/zh-cn/blog/new-serverless-devs-20-1.html",
+      "meta": {
+        "slug": "new-serverless-devs-20-1",
+        "title": "从玩具到生产力 1：Serverless Devs的新手引导",
+        "author": "Anycodes",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/anycodes",
+        "author_image_url": "https://avatars.githubusercontent.com/u/21079031?v=4",
+        "tags": "[命令行, Serverless, 全新版本]",
+        "date": "2021-05-21"
+      }
+    },
+    {
+      "filename": "new-serverless-devs-output-format.md",
+      "link": "/zh-cn/blog/new-serverless-devs-output-format.html",
+      "meta": {
+        "slug": "new-serverless-devs-output-format",
+        "title": "命令行工具升级：不仅仅是更多的Emoji",
+        "author": "Anycodes",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/anycodes",
+        "author_image_url": "https://avatars.githubusercontent.com/u/21079031?v=4",
+        "tags": "[命令行, Serverless, 输出格式]",
+        "date": "2021-05-18"
+      }
+    },
+    {
+      "filename": "node-based-frondend-ci-cd.md",
+      "link": "/zh-cn/blog/node-based-frondend-ci-cd.html",
+      "meta": {}
+    },
+    {
+      "filename": "open-source-summer-2021.md",
+      "link": "/zh-cn/blog/open-source-summer-2021.html",
+      "meta": {
+        "slug": "open-source-summer-2021",
+        "title": "Serverless Devs 开源之夏 2021",
+        "author": "Anycodes",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/anycodes",
+        "author_image_url": "https://avatars.githubusercontent.com/u/21079031?v=4",
+        "tags": "[开源之夏, Serverless]",
+        "date": "2021-05-1"
+      }
+    },
+    {
+      "filename": "pdf2jpg-custom-runtime-dependent-installation-practices.md",
+      "link": "/zh-cn/blog/pdf2jpg-custom-runtime-dependent-installation-practices.html",
+      "meta": {}
+    },
+    {
+      "filename": "quick-start-go-serverless-devs.md",
+      "link": "/zh-cn/blog/quick-start-go-serverless-devs.html",
+      "meta": {
+        "slug": "quick-start-go-serverless-devs",
+        "title": "从玩具到生产力 2： 从脚手架到快速部署",
+        "author": "Anycodes",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/anycodes",
+        "author_image_url": "https://avatars.githubusercontent.com/u/21079031?v=4",
+        "tags": "[命令行, Serverless, 脚手架, 快速部署]",
+        "date": "2021-06-21"
+      }
+    },
+    {
+      "filename": "sdesktop-intro.md",
+      "link": "/zh-cn/blog/sdesktop-intro.html",
+      "meta": {
+        "slug": "sdesktop-intro",
+        "title": "Serverless Desktop介绍",
+        "author": "hanxie-crypto",
+        "author_title": "Serverless Desktop",
+        "author_url": "https://github.com/hanxie-crypto",
+        "author_image_url": "https://avatars.githubusercontent.com/u/4457084?v=4",
+        "tags": "[Serverless, 桌面应用, Electron ,应用平台]",
+        "date": "2021-08-06"
+      }
+    },
+    {
+      "filename": "serverless-devs-and-serverless-blog.md",
+      "link": "/zh-cn/blog/serverless-devs-and-serverless-blog.html",
+      "meta": {
+        "slug": "serverless-devs-and-serverless-blog",
+        "title": "简单几步完成Serverless架构下的Blog建设",
+        "author": "Anycodes",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/anycodes",
+        "author_image_url": "https://avatars.githubusercontent.com/u/21079031?v=4",
+        "tags": "[命令行, Serverless, 博客建设]",
+        "date": "2021-05-20"
+      }
+    },
+    {
+      "filename": "serverless-devs-ci-cd-github-action-usage.md",
+      "link": "/zh-cn/blog/serverless-devs-ci-cd-github-action-usage.html",
+      "meta": {
+        "slug": "serverless-devs-ci-cd-github-action-usage",
+        "title": "如何通过Github Action使用Serverless Devs做CI/CD",
+        "author": "Anycodes",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/anycodes",
+        "author_image_url": "https://avatars.githubusercontent.com/u/21079031?v=4",
+        "tags": "[命令行, Serverless, CI/CD]",
+        "date": "2021-06-04"
+      }
+    },
+    {
+      "filename": "serverless-devs-cli-intro.md",
+      "link": "/zh-cn/blog/serverless-devs-cli-intro.html",
+      "meta": {
+        "slug": "serverless-devs-cli-intro",
+        "title": "透过指令集设计去看Serverless Devs 的扩展能力",
+        "author": "hanxie-crypto",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/hanxie-crypto",
+        "author_image_url": "https://avatars.githubusercontent.com/u/4457084?v=4",
+        "tags": "[命令行, Serverless, Cloudshell]",
+        "date": "2021-06-04"
+      }
+    },
+    {
+      "filename": "serverless-devs-fc-perception.md",
+      "link": "/zh-cn/blog/serverless-devs-fc-perception.html",
+      "meta": {
+        "slug": "serverless-devs-fc-perception",
+        "title": "阿里云函数计算组件感知线上“异动”：让发布更安全",
+        "author": "Anycodes",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/anycodes",
+        "author_image_url": "https://avatars.githubusercontent.com/u/21079031?v=4",
+        "tags": "[命令行, Serverless, 感知]",
+        "date": "2021-07-12"
+      }
+    },
+    {
+      "filename": "serverless-devs-static-website-and-cd.md",
+      "link": "/zh-cn/blog/serverless-devs-static-website-and-cd.html",
+      "meta": {
+        "slug": "serverless-devs-static-website-and-cd",
+        "title": "Serverless Devs的官网是通过Serverless Devs部署的",
+        "author": "Anycodes",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/anycodes",
+        "author_image_url": "https://avatars.githubusercontent.com/u/21079031?v=4",
+        "tags": "[命令行, Serverless, 官网]",
+        "date": "2021-05-19"
+      }
+    },
+    {
+      "filename": "serverless-devs-update-fc-code.md",
+      "link": "/zh-cn/blog/serverless-devs-update-fc-code.html",
+      "meta": {
+        "slug": "serverless-devs-update-fc-code",
+        "title": "只更新代码，然后发布版本：基于Serverless Devs原子化操作阿里云函数计算",
+        "author": "Anycodes",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/anycodes",
+        "author_image_url": "https://avatars.githubusercontent.com/u/21079031?v=4",
+        "tags": "[命令行, Serverless, CICD, 原子化操作, 阿里云]",
+        "date": "2021-07-2"
+      }
+    },
+    {
+      "filename": "serverless-site.md",
+      "link": "/zh-cn/blog/serverless-site.html",
+      "meta": {
+        "slug": "sdesktop-intro",
+        "title": "构建高性能Web站点详细教程",
+        "author": "hanxie-crypto",
+        "author_title": "Serverless Desktop",
+        "author_url": "https://github.com/hanxie-crypto",
+        "author_image_url": "https://avatars.githubusercontent.com/u/4457084?v=4",
+        "tags": "[Serverless, Web站点,应用平台,jamstack]",
+        "date": "2021-08-16"
+      }
+    },
+    {
+      "filename": "yunxiao-dotnet-serverless-devs-ci-cd.md",
+      "link": "/zh-cn/blog/yunxiao-dotnet-serverless-devs-ci-cd.html",
+      "meta": {
+        "slug": "yunxiao-dotNET-serverless-devs-ci-cd",
+        "title": "云效+Serverless Devs快速实现.NET5函数计算代码更新",
+        "author": "GotzeWong",
+        "author_title": "Serverless Devs",
+        "author_url": "https://github.com/GotzeWong",
+        "author_image_url": "https://avatars.githubusercontent.com/u/7664030?s=400&u=2f76225e0bbe1b735d6f3552498266c20025282e&v=4",
+        "tags": "[命令行, Serverless, OSS, CICD]",
+        "date": "2021-07-13"
+      }
+    }
+  ]
+}

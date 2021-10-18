@@ -14,7 +14,7 @@ services:
       bucket: serverless-devs-website
       src:
         codeUri: ./
-        publishDir: ./build
+        publishDir: ./
         index: index.html
         subDir:
           type: index

@@ -1,0 +1,6 @@
+{
+  "filename": "aws.md",
+  "__html": "<h1 id=\"aws%E5%AF%86%E9%92%A5%E8%8E%B7%E5%8F%96\">AWS密钥获取 <a class=\"header-anchor\" href=\"#aws%E5%AF%86%E9%92%A5%E8%8E%B7%E5%8F%96\">#</a></h1>\n<p>AWS官网：<a href=\"https://www.AWS.com\">https://www.AWS.com</a></p>\n<ul>\n<li>打开 <a href=\"https://www.AWS.com\">AWS官网</a> 进行登录，登录后选择右上角【我的凭证】：\n<img src=\"https://images.devsapp.cn/access/aws-page.jpg\" alt=\"获取密钥页面\"></li>\n<li>点击【访问密钥】，并且【创建新的访问密钥】：\n<img src=\"https://images.devsapp.cn/access/aws-create.jpg\" alt=\"\"></li>\n<li>完成之后即可看到密钥详情：\n<img src=\"https://images.devsapp.cn/access/aws-access.jpg\" alt=\"\"></li>\n</ul>\n<blockquote>\n<p>为帮助保护您的安全，请妥善保存私有访问密钥，切勿与他人共享。</p>\n</blockquote>\n",
+  "link": "/zh-cn/docs/provider-config/aws.html",
+  "meta": {}
+}

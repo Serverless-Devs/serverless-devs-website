@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="gitee-gitee-go-serverless-devs-ci-cd" />
+	<meta name="description" content="gitee-gitee-go-serverless-devs-ci-cd" />
+	<!-- 网页标签标题 -->
+	<title>通过Gitee+Serverless Devs快速实现函数代码更新与版本发布</title>
+	<link rel="shortcut icon" href="/img/docsite.ico"/>
+	<link rel="stylesheet" href="/build/blogDetail.css" />
+</head>
+<body>
+	<div id="root"><div class="blog-detail-page" data-reactroot=""><header class="header-container header-container-normal"><a href="/zh-cn/index.html" class="logo-link"><img class="logo" src="/img/sdLogoblack.png"/></a><div class="header-body"><div class="header-menu"><img class="header-menu-toggle" src="/img/system/menu_gray.png"/><ul><li class="menu-item menu-item-normal"><div class="nav-container"><a href="/zh-cn/products/index.html"><div class="word">产品</div></a><ul class="sub-nav-container" style="width:220px"><li><a href="/zh-cn/desktop/index.html" target="_blank" style="display:block;width:100%;height:100%">Serverless Desktop</a></li><li><a href="/zh-cn/cli/index.html" target="_blank" style="display:block;width:100%;height:100%">Serverless Cli</a></li><li><a href="https://serverlesshub.resume.net.cn?spm=serverlessdevs.topbar.0.0.0" target="_blank" style="display:block;width:100%;height:100%">Serverless Hub</a></li></ul> </div></li><li class="menu-item menu-item-normal"><div class="nav-container"><a href="/zh-cn/developer/index.html"><div class="word">开发者</div></a><ul class="sub-nav-container" style="width:220px"><li><a href="/zh-cn/docs/overview/intro.html" target="_blank" style="display:block;width:100%;height:100%">文档</a></li><li><a href="/zh-cn/docs/quickstart/desktop-quickstart.html" target="_blank" style="display:block;width:100%;height:100%">快速开始</a></li><li><a href="https://github.com/Serverless-Devs/Serverless-Devs/discussions" target="_blank" style="display:block;width:100%;height:100%">社区活动</a></li><li><a href="https://github.com/Serverless-Devs/Serverless-Devs" target="_blank" style="display:block;width:100%;height:100%">开源</a></li></ul> </div></li><li class="menu-item menu-item-normal"><span><a href="https://serverlesshub.resume.net.cn?spm=serverlessdevs.topbar.0.0.0" target="_blank">应用中心</a></span></li><li class="menu-item menu-item-normal"><div class="nav-container"><a href=""><div class="word">企业级Serverless解决方案</div></a><ul class="sub-nav-container" style="width:220px"><li><a href="https://www.aliyun.com/product/fc?spm=serverlessdevs..topbar.0.0.0" target="_blank" style="display:block;width:100%;height:100%">函数计算 FC</a></li><li><a href="https://www.aliyun.com/product/aliware/sae?spm=serverlessdevs..topbar.0.0.0" target="_blank" style="display:block;width:100%;height:100%">Serverless 应用引擎</a></li></ul> </div></li><li class="menu-item menu-item-normal menu-item-normal-active"><span><a href="/zh-cn/blog/index.html">博客</a></span></li><li class="menu-item menu-item-normal"><span><a href="https://github.com/Serverless-Devs/Serverless-Devs/discussions" target="_blank">社区</a></span></li></ul></div><div class="header-more-action"><div style="float:right" class="get-start"><a class="button button-primary" target="_self" href="/zh-cn/developer/index.html">开始使用</a></div><div class="search search-normal"><span class="icon-search"></span></div></div></div></header><section class="blog-content markdown-body"><h1 id="%E9%80%9A%E8%BF%87gitee%2Bserverless-devs%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E5%87%BD%E6%95%B0%E4%BB%A3%E7%A0%81%E6%9B%B4%E6%96%B0%E4%B8%8E%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83">通过Gitee+Serverless Devs快速实现函数代码更新与版本发布 <a class="header-anchor" href="#%E9%80%9A%E8%BF%87gitee%2Bserverless-devs%E5%BF%AB%E9%80%9F%E5%AE%9E%E7%8E%B0%E5%87%BD%E6%95%B0%E4%BB%A3%E7%A0%81%E6%9B%B4%E6%96%B0%E4%B8%8E%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83">#</a></h1>
+<p>在上一篇文章中，我们介绍了如何通过Github + Github Action进行单纯的代码更新以及版本发布，在本篇文章中，将会分享如何通过Gitee + Gitee Go实现：</p>
+<ol>
+<li>单纯更新函数代码</li>
+<li>进行版本发布</li>
+</ol>
+<h2 id="%E5%AE%9E%E8%B7%B5%E5%87%86%E5%A4%87">实践准备 <a class="header-anchor" href="#%E5%AE%9E%E8%B7%B5%E5%87%86%E5%A4%87">#</a></h2>
+<p>首先，我们在开始正式实践之前，我们要做几个事情：</p>
+<ol>
+<li>安装Serverless开发者工具</li>
+<li>部署一个函数到线上</li>
+</ol>
+<h3 id="%E5%AE%89%E8%A3%85serverless%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7">安装Serverless开发者工具 <a class="header-anchor" href="#%E5%AE%89%E8%A3%85serverless%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7">#</a></h3>
+<p>通过 <a href="https://www.npmjs.com/">npm</a> 包管理安装：适用于已经预装了 npm 的 Windows、Mac、Linux 平台。在 Windows、Mac、Linux 平台执行以下命令安装 Serverless Devs Tool工具。</p>
+<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> npm install @serverless-devs/s -g</span>
+</code></pre>
+<p>或者 通过 <a href="https://yarnpkg.com/">yarn</a> 进行安装</p>
+<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> yarn global add @serverless-devs/s</span>
+</code></pre>
+<blockquote>
+<p><strong>说明</strong>:</p>
+<ul>
+<li>如果在 Linux 或 MacOS 下执行该命令报错且报错信息为 <code>未找到命令</code>，请执行命令 <code>ln -s serverless-devs安装位置 /usr/bin</code>，serverless-devs安装位置可以通过<code>find / -name s</code> 查找。</li>
+<li>如果在 Linxu 下执行该命令报错且报错信息为 <code>Error: EACCES: permission denied</code>，请执行命令 <code>sudo npm install @serverless-devs/s -g</code>。</li>
+<li>如果安装过程较慢，可以考虑使用淘宝 npm 源，安装命令为 <code>npm --registry=https://registry.npm.taobao.org install @serverless-devs/s -g</code>。</li>
+</ul>
+</blockquote>
+<h3 id="%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E5%88%B0%E7%BA%BF%E4%B8%8A">部署一个函数到线上 <a class="header-anchor" href="#%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E5%88%B0%E7%BA%BF%E4%B8%8A">#</a></h3>
+<ol>
+<li>在本地初始化一个基于nodejs运行时的koa项目</li>
+</ol>
+<pre><code>s init nodejs-koa
+</code></pre>
+<p>初始化的时候会让我们填写相关内容，例如项目目录，选择密钥等：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124715032-17c55080-df35-11eb-867d-f1e8eec12ccc.png" alt="image"></p>
+<p>如何配置阿里云密钥信息，可以参考：<a href="http://www.serverless-devs.com/docs/provider-config/alibabacloud">http://www.serverless-devs.com/docs/provider-config/alibabacloud</a></p>
+<ol start="2">
+<li>进入到项目目录，并进行部署操作：</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/21079031/124715149-3cb9c380-df35-11eb-8d90-41fbacb9e5eb.png" alt="image"></p>
+<p>稍等片刻，即可看到项目已经完成部署：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124715442-991ce300-df35-11eb-8069-8555148aeaae.png" alt="image"></p>
+<p>我们打开项目页面：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124715707-dd0fe800-df35-11eb-89df-f271f57e410d.png" alt="image"></p>
+<p>至此，我们的准备环节完成。</p>
+<h2 id="%E5%9F%BA%E4%BA%8Egitee%E7%9A%84cd%E8%83%BD%E5%8A%9B%E5%BB%BA%E8%AE%BE">基于Gitee的CD能力建设 <a class="header-anchor" href="#%E5%9F%BA%E4%BA%8Egitee%E7%9A%84cd%E8%83%BD%E5%8A%9B%E5%BB%BA%E8%AE%BE">#</a></h2>
+<p>在这一步，我们需要做几个事情：</p>
+<ol>
+<li>有一个Gitee仓库</li>
+<li>在仓库中push我们的代码</li>
+<li>配置环境变量</li>
+<li>开启Gitee Go</li>
+<li>更新代码</li>
+</ol>
+<h2 id="gitee%E4%BB%93%E5%BA%93%E7%9A%84%E5%87%86%E5%A4%87">Gitee仓库的准备 <a class="header-anchor" href="#gitee%E4%BB%93%E5%BA%93%E7%9A%84%E5%87%86%E5%A4%87">#</a></h2>
+<p>创建一个Gitee仓库：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124716206-632c2e80-df36-11eb-97b0-9a6f665b06c4.png" alt="image"></p>
+<h2 id="push%E4%BB%A3%E7%A0%81%E5%88%B0%E4%BB%93%E5%BA%93">push代码到仓库 <a class="header-anchor" href="#push%E4%BB%A3%E7%A0%81%E5%88%B0%E4%BB%93%E5%BA%93">#</a></h2>
+<p><img src="https://user-images.githubusercontent.com/21079031/124716448-ab4b5100-df36-11eb-8054-9d4150c35c86.png" alt="image"></p>
+<p>推送后：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124716480-b4d4b900-df36-11eb-9d08-6acdfab31567.png" alt="image"></p>
+<h2 id="%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">配置环境变量 <a class="header-anchor" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">#</a></h2>
+<p>此时，我们将阿里云的密钥等信息配置到环境变量：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124716639-e5b4ee00-df36-11eb-9dc8-cf2d8eb30e51.png" alt="image"></p>
+<p>例如配置：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124719394-aa67ee80-df39-11eb-84ad-944ccf0486ba.png" alt="image"></p>
+<p>配置后的效果：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124719496-c9ff1700-df39-11eb-8ef6-4ccae28caefc.png" alt="image"></p>
+<h2 id="%E5%BC%80%E5%90%AFgitee-go">开启Gitee Go <a class="header-anchor" href="#%E5%BC%80%E5%90%AFgitee-go">#</a></h2>
+<p>此时开启Gitee Go：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124719913-367a1600-df3a-11eb-9aa6-73b34b9211d7.png" alt="image"></p>
+<p>然后：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124719958-3da12400-df3a-11eb-8e3d-cf530b90591d.png" alt="image"></p>
+<p>点击创建流水线，并输入流水线内容：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124720074-56a9d500-df3a-11eb-8a47-beca02818d1b.png" alt="image"></p>
+<p>流水线文件名：<code>deploy.yml</code></p>
+<p>流水线配置：</p>
+<pre><code>name: koa-cicd
+displayName: 'KOA自动部署流水线'
+triggers:                                  # 流水线触发器配置
+  push:                                    # 设置 master 分支 在产生代码 push 时精确触发（PRECISE）构建
+    - matchType: PRECISE
+      branch: master
+commitMessage: ''                          # 通过匹配当前提交的 CommitMessage 决定是否执行流水线
+stages:                                    # 构建阶段配置
+  - stage:                                 # 定义一个 ID 标识为 deploy-stage ,名为「 Deploy Stage 」的阶段
+      name: deploy-stage
+      displayName: 'Deploy Stage'
+      failFast: false                      # 允许快速失败，即当 Stage 中有任务失败时，直接结束整个 Stage
+
+      steps:                               # 构建步骤配置
+        - step: npmbuild@1                 # 采用 npm 编译环境
+          name: deploy-step                # 定义一个 ID 标识为 deploy-step ,名为「 Deploy Step 」的阶段
+          displayName: 'Deploy Step'
+          inputs:                          # 构建输入参数设定
+            nodeVersion: 14.15             # 指定 node 环境版本为 14.15
+            goals: |                       # 安装依赖，配置相关主题、部署参数并发布部署
+              node -v
+              npm -v
+              npm install -g @serverless-devs/s
+              s config add --AccountID $ACCOUNTID --AccessKeyID $ACCESSKEYID --AccessKeySecret $ACCESSKEYSECRET -a default
+              cd src &amp;&amp; npm install
+              s cli fc-api updateFunction --region cn-hangzhou --serviceName koademo --functionName http-trigger-function --code '{&quot;zipFile&quot;:&quot;./&quot;}'
+              s cli fc-api publishVersion --region cn-hangzhou --serviceName koademo
+</code></pre>
+<p>其实核心部分只有5句话：</p>
+<pre><code>npm install -g @serverless-devs/s
+s config add --AccountID $ACCOUNTID --AccessKeyID $ACCESSKEYID --AccessKeySecret $ACCESSKEYSECRET -a default
+cd src &amp;&amp; npm install
+s cli fc-api updateFunction --region cn-hangzhou --serviceName koademo --functionName http-trigger-function --code '{&quot;zipFile&quot;:&quot;./&quot;}'
+s cli fc-api publishVersion --region cn-hangzhou --serviceName koademo
+</code></pre>
+<ol>
+<li><code>npm install -g @serverless-devs/s</code>: 安装Serverless Devs工具</li>
+<li><code>s config add --AccountID $ACCOUNTID --AccessKeyID $ACCESSKEYID --AccessKeySecret $ACCESSKEYSECRET -a default</code>: 根据刚才配置的环境变量，取环境变量内容配置密钥</li>
+<li><code>cd src &amp;&amp; npm install</code>: 进入src目录，并安装依赖</li>
+<li><code>s cli fc-api updateFunction --region cn-hangzhou --serviceName koademo --functionName http-trigger-function --code '{&quot;zipFile&quot;:&quot;./src/&quot;}'</code>: 更新函数代码</li>
+<li><code>s cli fc-api publishVersion --region cn-hangzhou --serviceName koademo</code>: 发布函数版本</li>
+</ol>
+<h2 id="%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81">更新代码 <a class="header-anchor" href="#%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81">#</a></h2>
+<p>此时，我们可以对Index.js内容进行更改：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124720548-d8016780-df3a-11eb-9412-ef25bdadcf03.png" alt="image"></p>
+<p>然后保存，稍等片刻，可以在流水线中看到这个发布流程：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124720637-ee0f2800-df3a-11eb-8e7b-67cab4a78900.png" alt="image"></p>
+<p>此时，我们可以点到流程中查看详情：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124721010-4e9e6500-df3b-11eb-8dd0-7397aaa2444e.png" alt="image"></p>
+<p>稍等片刻，可以看到CD流程完成：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124722870-0d0eb980-df3d-11eb-8442-6544c30881a7.png" alt="image"></p>
+<p>完成之后，我们可以点击查看线上的代码：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/124734004-4fd58f00-df47-11eb-860e-787d44224954.png" alt="image"></p>
+<h1 id="%E6%80%BB%E7%BB%93">总结 <a class="header-anchor" href="#%E6%80%BB%E7%BB%93">#</a></h1>
+<p>基于Serverless架构进行项目开发，与CI/CD的集成，搞定自动化发布等是必不可少的“课程”，希望通过本文，读者可以对相关的流程有进一步的思路，可以应用到自己的项目中。</p>
+</section><footer class="footer-container"><div class="footer-body"><div class="cols-container"><div class="col col-12"><h3>愿景</h3><p>Serverless Devs 一款可以在Serverless应用全生命周期发挥作用的开发者工具，致力于打造成为 Serverless 应用开发的基础设施</p></div><div class="col col-6"><dl><dt>文档</dt><dd><a href="/zh-cn/docs/intro.html" target="_self">概览</a></dd><dd><a href="/zh-cn/docs/quickstart/desktop-quickstart.html" target="_self">快速开始</a></dd><dd><a href="/zh-cn/developer/index.html" target="_self">开发者指南</a></dd></dl></div><div class="col col-6"><dl><dt>资源</dt><dd><a href="/zh-cn/blog/index.html" target="_self">博客</a></dd><dd><a href="https://github.com/Serverless-Devs/Serverless-Devs/discussions" target="_self">社区</a></dd></dl></div></div><div class="copyright"><span>Copyright © 2021 Serverless Devs,Inc. Built with docsite</span></div></div></footer></div></div>
+	<script src="https://f.alicdn.com/react/15.4.1/react-with-addons.min.js"></script>
+	<script src="https://f.alicdn.com/react/15.4.1/react-dom.min.js"></script>
+	<script>
+		window.rootPath = '';
+  </script>
+	<script src="/build/blogDetail.js"></script>
+</body>
+</html>

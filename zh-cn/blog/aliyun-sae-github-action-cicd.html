@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="aliyun-sae-github-action-cicd" />
+	<meta name="description" content="aliyun-sae-github-action-cicd" />
+	<!-- 网页标签标题 -->
+	<title>Serverless Devs - SAE与Github Action珠合璧联，让CD从未如此简单</title>
+	<link rel="shortcut icon" href="/img/docsite.ico"/>
+	<link rel="stylesheet" href="/build/blogDetail.css" />
+</head>
+<body>
+	<div id="root"><div class="blog-detail-page" data-reactroot=""><header class="header-container header-container-normal"><a href="/zh-cn/index.html" class="logo-link"><img class="logo" src="/img/sdLogoblack.png"/></a><div class="header-body"><div class="header-menu"><img class="header-menu-toggle" src="/img/system/menu_gray.png"/><ul><li class="menu-item menu-item-normal"><div class="nav-container"><a href="/zh-cn/products/index.html"><div class="word">产品</div></a><ul class="sub-nav-container" style="width:220px"><li><a href="/zh-cn/desktop/index.html" target="_blank" style="display:block;width:100%;height:100%">Serverless Desktop</a></li><li><a href="/zh-cn/cli/index.html" target="_blank" style="display:block;width:100%;height:100%">Serverless Cli</a></li><li><a href="https://serverlesshub.resume.net.cn?spm=serverlessdevs.topbar.0.0.0" target="_blank" style="display:block;width:100%;height:100%">Serverless Hub</a></li></ul> </div></li><li class="menu-item menu-item-normal"><div class="nav-container"><a href="/zh-cn/developer/index.html"><div class="word">开发者</div></a><ul class="sub-nav-container" style="width:220px"><li><a href="/zh-cn/docs/overview/intro.html" target="_blank" style="display:block;width:100%;height:100%">文档</a></li><li><a href="/zh-cn/docs/quickstart/desktop-quickstart.html" target="_blank" style="display:block;width:100%;height:100%">快速开始</a></li><li><a href="https://github.com/Serverless-Devs/Serverless-Devs/discussions" target="_blank" style="display:block;width:100%;height:100%">社区活动</a></li><li><a href="https://github.com/Serverless-Devs/Serverless-Devs" target="_blank" style="display:block;width:100%;height:100%">开源</a></li></ul> </div></li><li class="menu-item menu-item-normal"><span><a href="https://serverlesshub.resume.net.cn?spm=serverlessdevs.topbar.0.0.0" target="_blank">应用中心</a></span></li><li class="menu-item menu-item-normal"><div class="nav-container"><a href=""><div class="word">企业级Serverless解决方案</div></a><ul class="sub-nav-container" style="width:220px"><li><a href="https://www.aliyun.com/product/fc?spm=serverlessdevs..topbar.0.0.0" target="_blank" style="display:block;width:100%;height:100%">函数计算 FC</a></li><li><a href="https://www.aliyun.com/product/aliware/sae?spm=serverlessdevs..topbar.0.0.0" target="_blank" style="display:block;width:100%;height:100%">Serverless 应用引擎</a></li></ul> </div></li><li class="menu-item menu-item-normal menu-item-normal-active"><span><a href="/zh-cn/blog/index.html">博客</a></span></li><li class="menu-item menu-item-normal"><span><a href="https://github.com/Serverless-Devs/Serverless-Devs/discussions" target="_blank">社区</a></span></li></ul></div><div class="header-more-action"><div style="float:right" class="get-start"><a class="button button-primary" target="_self" href="/zh-cn/developer/index.html">开始使用</a></div><div class="search search-normal"><span class="icon-search"></span></div></div></div></header><section class="blog-content markdown-body"><h1 id="serverless-devs---sae%E4%B8%8Egithub-action%E7%8F%A0%E8%81%94%E7%92%A7%E5%90%88%EF%BC%8C%E8%AE%A9cd%E4%BB%8E%E6%9C%AA%E5%A6%82%E6%AD%A4%E7%AE%80%E5%8D%95">Serverless Devs - SAE与Github Action珠联璧合，让CD从未如此简单 <a class="header-anchor" href="#serverless-devs---sae%E4%B8%8Egithub-action%E7%8F%A0%E8%81%94%E7%92%A7%E5%90%88%EF%BC%8C%E8%AE%A9cd%E4%BB%8E%E6%9C%AA%E5%A6%82%E6%AD%A4%E7%AE%80%E5%8D%95">#</a></h1>
+<h2 id="%E5%89%8D%E8%A8%80">前言 <a class="header-anchor" href="#%E5%89%8D%E8%A8%80">#</a></h2>
+<p>SAE是什么？在阿里云官方给的解释是：</p>
+<blockquote>
+<p>Serverless 应用引擎（简称 SAE）是首款面向应用的Serverless PaaS，提供成本更优、效率更高的一站式应用托管方案。支持Spring Cloud/Dubbo/HSF应用零改造上云，提供监控诊断、自动构建镜像、Java全链路加速、多发布策略、秒级自动弹性等能力，支持Jenkins/云效/插件等部署应用，还能通过Docker镜像部署任何语言的应用。</p>
+</blockquote>
+<p>由此可见，SAE实际上是Serverless架构的另一种形态。他将会对镜像，Java等项目有着更好的支持。但是可惜的是，在SAE的官方文档中，最佳实践中，并没有看到与Github Action结合进行自动化发布等相关的描述：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/125149901-6447a080-e16e-11eb-9e19-9429a2d3b857.png" alt="image"></p>
+<p>Github Action这么有趣，怎么可以少的了Github Action的案例呢？所以本文将会是首个，基于Serverless Devs，并且让SAE和Github Action有机结合的实战案例。</p>
+<p>整个案例分为几个部分：</p>
+<ul>
+<li>Github操作
+<ul>
+<li>创建Github仓库</li>
+<li>配置密钥等信息</li>
+</ul>
+</li>
+<li>本地创建应用
+<ul>
+<li>创建一个应用</li>
+<li>编写Dockerfile</li>
+<li>编写s.yaml（用Serverless Devs进行托管）</li>
+<li>编写action所必须的Yaml</li>
+</ul>
+</li>
+<li>启动🚀
+<ul>
+<li>将代码推动到Github，触发CD流程，进行自动化部署</li>
+</ul>
+</li>
+</ul>
+<p>关于<code>编写action所必须的Yaml</code>，主要包括了几个流程：</p>
+<ul>
+<li>登陆阿里云ACR</li>
+<li>Docker Build</li>
+<li>Docker Push</li>
+<li>设置Push后的镜像地址到环境变量</li>
+<li>安装Serverless Devs</li>
+<li>配置Serverless Devs密钥信息</li>
+<li>启动部署操作🚀</li>
+</ul>
+<h2 id="github-%E6%93%8D%E4%BD%9C">Github 操作 <a class="header-anchor" href="#github-%E6%93%8D%E4%BD%9C">#</a></h2>
+<p>首先进行仓库的创建：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/125150349-bdfd9a00-e171-11eb-9a0a-3ec2cb4faeea.png" alt="image"></p>
+<p>例如，我创建的仓库就是：<a href="https://github.com/anycodes/SAE-Container-Action-Demo">https://github.com/anycodes/SAE-Container-Action-Demo</a></p>
+<p>创建完仓库开始进行密钥的配置，可以参考文档：<a href="http://www.serverless-devs.com/blog/serverless-devs-ci-cd-github-action-usage#%E8%B4%A6%E5%8F%B7%E4%BF%A1%E6%81%AF%E9%85%8D%E7%BD%AE">http://www.serverless-devs.com/blog/serverless-devs-ci-cd-github-action-usage#账号信息配置</a></p>
+<p>主要就是在Settings-&gt;Secrets中进行信息配置：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/125148905-234c8d80-e168-11eb-867a-c1dee860e932.png" alt="image"></p>
+<p>配置完成：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/125148932-598a0d00-e168-11eb-930e-e78484142588.png" alt="image"></p>
+<h2 id="%E6%9C%AC%E5%9C%B0%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8">本地创建应用 <a class="header-anchor" href="#%E6%9C%AC%E5%9C%B0%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8">#</a></h2>
+<p>由于本次实践，主要是看Build，Push镜像之后，部署到SAE，所以我就在本地随便准备了一个代码，仅供测试使用：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/125150278-344dcc80-e171-11eb-872f-f9b976bd62dd.png" alt="image"></p>
+<p>完成之后，我们针对这个项目，象征性编写一个Dockerfile：</p>
+<pre><code>FROM node:14.5.0-alpine3.11
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
+
+# Bundle app source
+COPY . .
+
+EXPOSE 8080
+ENTRYPOINT [ &quot;node&quot;, &quot;server.js&quot; ]
+</code></pre>
+<p>编写完成之后，我们再根据SAE组件（可以参考 <a href="https://github.com/devsapp/sae">https://github.com/devsapp/sae</a> ），编写一个s.yaml:</p>
+<pre><code class="language-yaml"><span class="hljs-attr">edition:</span> <span class="hljs-number">1.0</span><span class="hljs-number">.0</span>          <span class="hljs-comment">#  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范</span>
+<span class="hljs-attr">name:</span> <span class="hljs-string">sae-app</span>           <span class="hljs-comment">#  项目名称</span>
+<span class="hljs-attr">access:</span> <span class="hljs-string">publish_access</span>  <span class="hljs-comment">#  秘钥别名</span>
+
+<span class="hljs-attr">services:</span>
+  <span class="hljs-attr">sae-test:</span> <span class="hljs-comment">#  服务名称</span>
+    <span class="hljs-attr">component:</span>  <span class="hljs-string">devsapp/sae</span>
+    <span class="hljs-attr">props:</span>
+      <span class="hljs-attr">Region:</span> <span class="hljs-string">cn-beijing</span>
+      <span class="hljs-attr">Namespace:</span>
+        <span class="hljs-attr">NamespaceId:</span> <span class="hljs-string">cn-beijing:test</span>
+        <span class="hljs-attr">NamespaceName:</span> <span class="hljs-string">serverless-devs</span>
+        <span class="hljs-attr">NamespaceDescription:</span> <span class="hljs-string">namespace</span> <span class="hljs-string">desc</span>
+      <span class="hljs-attr">Application:</span>
+        <span class="hljs-attr">AppName:</span> <span class="hljs-string">serverless-devs-app</span>
+        <span class="hljs-attr">AppDescription:</span> <span class="hljs-string">This</span> <span class="hljs-string">is</span> <span class="hljs-string">a</span> <span class="hljs-string">test</span> <span class="hljs-string">description.</span>
+        <span class="hljs-attr">Code:</span>
+          <span class="hljs-attr">Image:</span> <span class="hljs-string">${env(DOCKER_IMAGE)}</span>
+        <span class="hljs-attr">Cpu:</span> <span class="hljs-number">500</span>
+        <span class="hljs-attr">Memory:</span> <span class="hljs-number">1024</span>
+        <span class="hljs-attr">Replicas:</span> <span class="hljs-number">1</span>
+        <span class="hljs-attr">AutoConfig:</span> <span class="hljs-literal">true</span>
+      <span class="hljs-attr">SLB:</span>
+        <span class="hljs-attr">Internet:</span> <span class="hljs-string">[{"port":80,"targetPort":8080,"protocol":"TCP"}]</span>
+
+</code></pre>
+<p>这里面有一个叫做Image的字段，他是容器镜像的地址，此时使用的是一个环境变量作为引入，也就是说，之后在Github Action实例中，推送镜像之后，将结果打入ENV即可读取到。</p>
+<p>关于这种方法的妙用还有很多：</p>
+<p>例如，当我们需要配置一下密钥信息等，是不是也可以通过这种方法，将密钥放入环境变量，然后在Yaml中直接引用？</p>
+<p>接下来还需要编写一个Github Action相关的Yaml：</p>
+<pre><code class="language-yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Build</span> <span class="hljs-string">and</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">to</span> <span class="hljs-string">SAE</span>
+
+<span class="hljs-attr">on:</span>
+  <span class="hljs-attr">push:</span>
+    <span class="hljs-attr">branches:</span> <span class="hljs-string">[</span> <span class="hljs-string">master</span> <span class="hljs-string">]</span>
+    
+<span class="hljs-comment"># Environment variables available to all jobs and steps in this workflow.</span>
+<span class="hljs-attr">env:</span>
+  <span class="hljs-attr">REGION_ID:</span> <span class="hljs-string">cn-beijing</span>
+  <span class="hljs-attr">REGISTRY:</span> <span class="hljs-string">registry.cn-beijing.aliyuncs.com</span>
+  <span class="hljs-attr">NAMESPACE:</span> <span class="hljs-string">custom-container</span>
+  <span class="hljs-attr">IMAGE:</span> <span class="hljs-string">sae</span>
+  <span class="hljs-attr">TAG:</span> <span class="hljs-string">${{</span> <span class="hljs-string">github.sha</span> <span class="hljs-string">}}</span>
+
+
+<span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">build:</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">environment:</span> <span class="hljs-string">production</span>
+
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span>
+        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span>
+
+      <span class="hljs-comment"># 1.1 Login to ACR</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Login</span> <span class="hljs-string">to</span> <span class="hljs-string">ACR</span> <span class="hljs-string">with</span> <span class="hljs-string">the</span> <span class="hljs-string">AccessKey</span> <span class="hljs-string">pair</span>
+        <span class="hljs-attr">uses:</span> <span class="hljs-string">aliyun/acr-login@v1</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">region-id:</span> <span class="hljs-string">"$<span class="hljs-template-variable">{{ env.REGION_ID }}</span>"</span>
+          <span class="hljs-attr">access-key-id:</span> <span class="hljs-string">"$<span class="hljs-template-variable">{{ secrets.ACCESS_KEY_ID }}</span>"</span>
+          <span class="hljs-attr">access-key-secret:</span> <span class="hljs-string">"$<span class="hljs-template-variable">{{ secrets.ACCESS_KEY_SECRET }}</span>"</span>
+
+      <span class="hljs-comment"># 1.2 Buid and push image to ACR</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span> <span class="hljs-string">and</span> <span class="hljs-string">push</span> <span class="hljs-string">image</span> <span class="hljs-string">to</span> <span class="hljs-string">ACR</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">|
+          docker build --tag "$REGISTRY/$NAMESPACE/$IMAGE:$TAG" .
+          docker push "$REGISTRY/$NAMESPACE/$IMAGE:$TAG"
+</span>      <span class="hljs-comment"># 1.3 et Docker Image to Env</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Set</span> <span class="hljs-string">Docker</span> <span class="hljs-string">Image</span> <span class="hljs-string">to</span> <span class="hljs-string">Env</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">echo</span> <span class="hljs-string">"DOCKER_IMAGE=$REGISTRY/$NAMESPACE/$IMAGE:$TAG"</span> <span class="hljs-string">&gt;&gt;</span> <span class="hljs-string">$GITHUB_ENV</span>
+
+
+      <span class="hljs-comment"># 2.1 Install Serverless Devs</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Install</span> <span class="hljs-string">Serverless</span> <span class="hljs-string">Devs</span>
+        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v2</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">node-version:</span> <span class="hljs-number">12</span>
+          <span class="hljs-attr">registry-url:</span> <span class="hljs-string">https://registry.npmjs.org/</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span> <span class="hljs-string">-g</span> <span class="hljs-string">@serverless-devs/s</span>
+
+
+      <span class="hljs-comment"># 2.2 Config Serverless Devs</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Config</span> <span class="hljs-string">Serverless</span> <span class="hljs-string">Devs</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">s</span> <span class="hljs-string">config</span> <span class="hljs-string">add</span> <span class="hljs-string">--AccountID</span> <span class="hljs-string">${{secrets.Account_ID}}</span> <span class="hljs-string">--AccessKeyID</span> <span class="hljs-string">${{secrets.ACCESS_KEY_ID}}</span> <span class="hljs-string">--AccessKeySecret</span> <span class="hljs-string">${{secrets.ACCESS_KEY_SECRET}}</span> <span class="hljs-string">-a</span> <span class="hljs-string">publish_access</span>
+
+      <span class="hljs-comment"># 2.3 Deploy to SAE</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">to</span> <span class="hljs-string">SAE</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">s</span> <span class="hljs-string">deploy</span>
+</code></pre>
+<p>至此，我们完整了所有的基础准备。</p>
+<p>在上面的Yaml中，每一个过程都有注释，整体来说，下载Serverless Devs，到部署项目，其实只有3条命令：</p>
+<pre><code>npm install -g @serverless-devs/s
+s config add --AccountID ${{secrets.Account_ID}} --AccessKeyID ${{secrets.ACCESS_KEY_ID}} --AccessKeySecret ${{secrets.ACCESS_KEY_SECRET}} -a publish_access
+s deploy
+</code></pre>
+<p>这里要注意，s.yaml中指定的密钥要和我们创建（<code>s config add</code>）时的密钥保持一致。</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/125150572-4fb9d700-e173-11eb-8bab-876b1e98f96a.png" alt="image"></p>
+<h2 id="%E5%90%AF%E5%8A%A8%F0%9F%9A%80">启动🚀 <a class="header-anchor" href="#%E5%90%AF%E5%8A%A8%F0%9F%9A%80">#</a></h2>
+<p>完成之后我们将代码推动到Github：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/125148956-8807e800-e168-11eb-866a-12493d0d8901.png" alt="image"></p>
+<p>推送完成，可以看到线上的代码已经更新，并触发了CD流程：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/125149049-25631c00-e169-11eb-8181-3e03db5a6d7f.png" alt="image"></p>
+<p>此时，我们可以移步到SAE控制台（ <a href="https://sae.console.aliyun.com/">https://sae.console.aliyun.com/</a> ）：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/125149755-5b0a0400-e16d-11eb-9c43-d3b1996e5a5c.png" alt="image"></p>
+<p>此时正在创建/更新应用</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/125149764-6a894d00-e16d-11eb-9b62-804df63274c5.png" alt="image"></p>
+<p>稍等片刻，即在进行SLB等相关的绑定。再稍等片刻，即可看到Github这头的Action已经完成：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/125149797-a6bcad80-e16d-11eb-84b6-51ad9c52d935.png" alt="image"></p>
+<p>此时，我们在看SAE控制台，整个项目算是完成了创建/更新：</p>
+<p><img src="https://user-images.githubusercontent.com/21079031/125149790-9f959f80-e16d-11eb-8e3a-c5ba0b1f8ae6.png" alt="image"></p>
+<h2 id="%E6%80%BB%E7%BB%93">总结 <a class="header-anchor" href="#%E6%80%BB%E7%BB%93">#</a></h2>
+<p>这个是一个典型的SAE+Github ACtion实现CD的案例。希望通过这样一个案例，可以帮助更多人学习和了解Serverless Devs，可以将其应用到自己的项目中。</p>
+</section><footer class="footer-container"><div class="footer-body"><div class="cols-container"><div class="col col-12"><h3>愿景</h3><p>Serverless Devs 一款可以在Serverless应用全生命周期发挥作用的开发者工具，致力于打造成为 Serverless 应用开发的基础设施</p></div><div class="col col-6"><dl><dt>文档</dt><dd><a href="/zh-cn/docs/intro.html" target="_self">概览</a></dd><dd><a href="/zh-cn/docs/quickstart/desktop-quickstart.html" target="_self">快速开始</a></dd><dd><a href="/zh-cn/developer/index.html" target="_self">开发者指南</a></dd></dl></div><div class="col col-6"><dl><dt>资源</dt><dd><a href="/zh-cn/blog/index.html" target="_self">博客</a></dd><dd><a href="https://github.com/Serverless-Devs/Serverless-Devs/discussions" target="_self">社区</a></dd></dl></div></div><div class="copyright"><span>Copyright © 2021 Serverless Devs,Inc. Built with docsite</span></div></div></footer></div></div>
+	<script src="https://f.alicdn.com/react/15.4.1/react-with-addons.min.js"></script>
+	<script src="https://f.alicdn.com/react/15.4.1/react-dom.min.js"></script>
+	<script>
+		window.rootPath = '';
+  </script>
+	<script src="/build/blogDetail.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "filename": "faq.md",
+  "__html": "<h1 id=\"%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98\">常见问题 <a class=\"header-anchor\" href=\"#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98\">#</a></h1>\n<p><a href=\"#1\" target=\"_self\">1.ServerlessDevs 目前支持哪些语言的应用？a&gt;</p>\n<hr>\n<h3 id='1'>Q: 1.ServerlessDevs 目前支持哪些语言的应用？</h3>\n<p><strong>A:</strong>\n目前主要支持 nodejs，python，php 等语言应用，如需其他语言应用可以通过组件能力自行扩展</p>\n<hr>\n",
+  "link": "/zh-cn/docs/overview/faq.html",
+  "meta": {
+    "title": "ServerlessDevs常见问题",
+    "keywords": "Serverless Devs",
+    "description": "ServerlessDevs 常见问题。"
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>star--filled</title>
+    <defs>
+        <linearGradient x1="50.0171558%" y1="73.0823157%" x2="50.0171558%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#FFB114" offset="0.0343116554%"></stop>
+            <stop stop-color="#FFE91C" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#FFF7D0" offset="0%"></stop>
+            <stop stop-color="#FFF4A8" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="12-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Serverless-Devs-Homepage-2.0" transform="translate(-376.000000, -452.000000)">
+            <g id="编组-2" transform="translate(376.000000, 450.000000)">
+                <g id="star--filled" transform="translate(0.000000, 2.000000)">
+                    <polygon id="路径" fill="url(#linearGradient-1)" points="8 0 5.725 4.61 0.64 5.345 4.32 8.935 3.45 14 8 11.61 12.55 14 11.68 8.935 15.36 5.35 10.275 4.61"></polygon>
+                    <path d="M8,0.564922012 L10.1089639,4.83847078 L14.822671,5.524438 L11.4113438,8.84770113 L12.2178667,13.5431479 L8,11.3276091 L3.78213331,13.5431479 L4.58863743,8.84781069 L1.17732905,5.51993105 L5.89096812,4.83860858 L8,0.564922012 Z" id="路径" stroke="url(#linearGradient-2)" stroke-width="0.5"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

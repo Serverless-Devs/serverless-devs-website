@@ -1,0 +1,10 @@
+{
+  "filename": "cliinstall.md",
+  "__html": "<h1 id=\"serverless-cli%E5%AE%89%E8%A3%85\">Serverless Cli安装 <a class=\"header-anchor\" href=\"#serverless-cli%E5%AE%89%E8%A3%85\">#</a></h1>\n<h2 id=\"%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85\">通过命令行工具安装 <a class=\"header-anchor\" href=\"#%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85\">#</a></h2>\n<p>通过 <a href=\"https://www.npmjs.com/\">npm</a> 包管理安装：适用于已经预装了 npm 的 Windows、Mac、Linux 平台。在 Windows、Mac、Linux 平台执行以下命令安装 Serverless Devs Tool工具。</p>\n<pre><code class=\"language-shell\"><span class=\"hljs-meta\">$</span><span class=\"bash\"> npm install @serverless-devs/s -g</span>\n</code></pre>\n<p>或者 通过 <a href=\"https://yarnpkg.com/\">yarn</a> 进行安装</p>\n<pre><code class=\"language-shell\"><span class=\"hljs-meta\">$</span><span class=\"bash\"> yarn global add @serverless-devs/s</span>\n</code></pre>\n<blockquote>\n<p><strong>说明</strong>:</p>\n<ul>\n<li>如果在 Linux 或 MacOS 下执行该命令报错且报错信息为 <code>未找到命令</code>，请执行命令 <code>ln -s serverless-devs安装位置 /usr/bin</code>，serverless-devs安装位置可以通过<code>find / -name s</code> 查找。</li>\n<li>如果在 Linux 或 MacOS 下执行该命令报错且报错信息为 Error: EACCES: permission denied，请执行命令 <code>sudo npm install @serverless-devs/s -g</code>。</li>\n<li>如果安装过程较慢，可以考虑使用淘宝 npm 源，安装命令为 <code>npm --registry=https://registry.npm.taobao.org install @serverless-devs/s -g</code>。</li>\n</ul>\n</blockquote>\n<h2 id=\"%E9%80%9A%E8%BF%87%E8%84%9A%E6%9C%AC%E5%AE%89%E8%A3%85\">通过脚本安装 <a class=\"header-anchor\" href=\"#%E9%80%9A%E8%BF%87%E8%84%9A%E6%9C%AC%E5%AE%89%E8%A3%85\">#</a></h2>\n<p>针对 Mac/Linux 用户</p>\n<pre><code class=\"language-shell\"><span class=\"hljs-meta\">$</span><span class=\"bash\"> curl -o- -L http://cli.so/install.sh | bash</span>\n</code></pre>\n",
+  "link": "/zh-cn/docs/installed/cliinstall.html",
+  "meta": {
+    "title": "Serverless Cli 安装",
+    "keywords": "Serverless Cli，命令行",
+    "description": "Serverless Cli 安装"
+  }
+}

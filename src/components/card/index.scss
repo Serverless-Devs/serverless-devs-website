@@ -1,0 +1,81 @@
+.card-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 10px 20px 10px;
+    box-shadow: 2px 2px 2px 2px #888;
+    background-color: #FFF;
+    border-radius: 10px;
+    color: black;
+    .card-left {
+        width:20%;
+        img {
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            margin: 0 auto;
+            margin-top: 17px;
+            margin-bottom: 8px;
+        }
+        p {
+            text-align: center;
+            font-size: 8px;
+        }
+        .date {
+            color: gray;
+        }
+    }
+    .card-right {
+        flex: 1;
+        .title {
+            width: 100%;
+            height: auto;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            .title-subtitle {
+                display: inline;
+                .split {
+                    border-left: 1px solid black;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+            }
+            .tag {
+                display: inline-block;
+                padding: 2px 4px;
+                background-color: #EAE2FA;
+                color: #997FDC;
+                font-size: 8px;
+                margin-left: 5px;
+                border-radius: 5%;
+            }
+        }
+        .article {
+            width: 100%;
+            height: auto;
+            .body {
+                font-size: 10px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                color: gray;
+                line-height: 20px;
+                letter-spacing: 1px;
+            }
+            .read-more {
+                margin-top: 20px;
+                font-size: 14px;
+                color:gray;
+                margin-bottom: 30px;
+                &:hover {
+                    color:black;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "filename": "azure.md",
+  "__html": "<h1 id=\"azure%E5%AF%86%E9%92%A5%E8%8E%B7%E5%8F%96\">Azure密钥获取 <a class=\"header-anchor\" href=\"#azure%E5%AF%86%E9%92%A5%E8%8E%B7%E5%8F%96\">#</a></h1>\n<p>Azure官网：<a href=\"https://www.azure.com\">https://www.azure.com</a></p>\n<ul>\n<li>通过 <a href=\"https://portal.azure.com/\">Azure网</a> 进入所创建的Azure Web App的管理界面之后进入Identity管理界面</li>\n<li>在Azure网站最上方的搜索栏里搜索Key Vault关键字并进入Key Vault管理总界面\n<img src=\"https://images.devsapp.cn/access/azure-page.jpg\" alt=\"\"></li>\n<li>点击进入创建好的Azure Key Vault实例之后进入Access Policies管理界面</li>\n<li>击添加访问策略按钮，为需要授权的principal添加权限后点击保存按钮即可</li>\n</ul>\n",
+  "link": "/zh-cn/docs/provider-config/azure.html",
+  "meta": {}
+}
