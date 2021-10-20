@@ -173,7 +173,7 @@ jobs:
       - run: s cli fc-api publishVersion --region cn-hangzhou --serviceName fc-deploy-service
 ```
 
-其实，我们只是在最后加了两个人run，一个是发布代码，一个是发布版本，此时我们可以创建一个Github仓库，尝试一下：
+其实，我们只是在最后加了两个 run，一个是发布代码，一个是发布版本，此时我们可以创建一个Github仓库，尝试一下：
 
 ![image](https://user-images.githubusercontent.com/21079031/124551282-7c64aa80-de64-11eb-91e4-bcb97156cfde.png)
 
