@@ -1,9 +1,9 @@
 ---
 slug: modern-web-application
-title: 通过Gitee+Serverless Devs快速实现函数代码更新与版本发布
+title: 让理想中的企业级站点开发走进大众 - ServerlessDevs 1024特别奉献
 author: serverless devs
 author_title: Serverless Devs
-author_url: https://github.com/anycodes
+author_url: https://github.com/Serverless-Devs/Serverless-Devs
 author_image_url: https://avatars.githubusercontent.com/u/21079031?v=4
 tags: [命令行, Serverless, CICD, 原子化操作, 阿里云,apigteway,oss,fc,dns]
 date: 2021-10-25

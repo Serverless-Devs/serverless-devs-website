@@ -4,6 +4,13 @@ export default {
     postsTitle: 'All posts',
     list: [
       {
+        title: '让理想中的企业级站点开发走进大众 - ServerlessDevs 1024特别奉献',
+        author: 'Serverless Devs',
+        dateStr: '2021-10-24',
+        desc: '本篇文章向大家介绍一下，如何使用serverless devs 结合云产品实现一个具备 高安全，高性能，高体验，高容灾，低成本的web站点',
+        link: '/zh-cn/blog/modern-web-application.html',
+      },
+      {
         title: '从玩具到生产力 1：Serverless Devs的新手引导',
         author: 'Anycodes',
         dateStr: '2021-05-21',
@@ -135,6 +142,13 @@ export default {
     barText: '博客',
     postsTitle: '所有文章',
     list: [
+      {
+        title: '让理想中的企业级站点开发走进大众 - ServerlessDevs 1024特别奉献',
+        author: 'Serverless Devs',
+        dateStr: '2021-10-24',
+        desc: '本篇文章向大家介绍一下，如何使用serverless devs 结合云产品实现一个具备 高安全，高性能，高体验，高容灾，低成本的web站点',
+        link: '/zh-cn/blog/modern-web-application.html',
+      },
       {
         title: '从玩具到生产力 1：Serverless Devs的新手引导',
         author: 'Anycodes',

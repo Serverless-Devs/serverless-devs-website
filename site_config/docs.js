@@ -123,9 +123,6 @@ export default {
           }, {
             title: 'Restful API 实现',
             link: '/zh-cn/docs/best-practice/restful.html',
-          }, {
-            title: 'Nuxt实现SSR方案',
-            link: '/zh-cn/docs/best-practice/ssr.html',
           }
         ],
       },
