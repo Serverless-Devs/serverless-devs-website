@@ -214,8 +214,21 @@ s 工具会把 www/build 下的静态资源上传到用户设置好的 bucket �
 ### 访问收尾
 综上配置好之后（域名解析可能需要一段时间，请耐心等待） 我们就可以通过访问 hanxie.serverless-developer.com 来查看访我们的站点了。
 ![image.png](https://img.alicdn.com/imgextra/i3/O1CN01xlaxfc1LUomshJeDY_!!6000000001303-2-tps-3242-1902.png)
-当然这里还没添加 https证书，你可以创建一个免费的证书，添加到 apigateway上。 这样最后可以得到一个完美的https站点。
-![image.png](https://img.alicdn.com/imgextra/i4/O1CN01fZHfUD26ryl8DZWOd_!!6000000007716-2-tps-3082-268.png)
+
+### 证书设置
+
+你可以继续添加 https 证书，访问 阿里云SSL证书产品页 https://www.aliyun.com/product/cas ,点击选购证书，然后购买免费证书
+![serverlessdevs](https://img.alicdn.com/imgextra/i2/O1CN01ob4tdy1VkWWr4tuLy_!!6000000002691-2-tps-3478-1758.png)
+
+购买好之后回到 [ssl 控制台](https://yundunnext.console.aliyun.com/?p=casnext#/certExtend/free)
+
+SSL证书->免费证书->创建证书
+系统会帮助生成一条记录
+![serverless devs](https://img.alicdn.com/imgextra/i4/O1CN01FhXnIo204cNSIhKsi_!!6000000006796-2-tps-2844-260.png)
+然后针对此记录进行证书申请，填写表单项，提交。
+接下来直接点击部署
+![serverless devs](https://img.alicdn.com/imgextra/i4/O1CN01R7k8pY1quhFqzgPah_!!6000000005556-2-tps-2816-216.png)
+选择api网关即可，最后可以得到一个完美的https站点
 ## 关于网站安全能力的设置
 我们的网站有很多可以加的安全防护， 比如开通 apigateway 专享版，通过内网 vpc 转发oss 以及函数计算服务，避免任意服务暴露到外部，其次我们可以通过添加 apigateway 的插件来增加流量控制，jwt鉴权，ip限制等能力，下面我们演示一下 通过apigateway 插件增加 basic auth 来限制 api 访问。
 ![](https://img.alicdn.com/imgextra/i2/O1CN01z6RiT21e1U7TIbGuT_!!6000000003811-1-tps-1777-944.gif#id=XZlJh&originHeight=944&originWidth=1777&originalType=binary&ratio=1&status=done&style=none)
