@@ -24,7 +24,7 @@
 以云服务将安全能力，弹性高可用能力，可观测能力“BAAS化”为前提，结合ServerlessDevs 工具做串联粘合，接下来我们的目标就是要让中国更多的网站变成理想的企业级站点，来看一下如何做到</p>
 <h2 id="%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%8F%8A%E8%AF%B4%E6%98%8E">整体架构设计及说明 <a class="header-anchor" href="#%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%8F%8A%E8%AF%B4%E6%98%8E">#</a></h2>
 <p>在展开介绍实现之前，先来看一下理想中的企业级站点的架构是怎样的</p>
-<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13970/1635067986198-386fbb1b-9030-401c-93ef-efa65012f881.png#clientId=u7ec7e16f-8dd3-4&amp;height=433&amp;id=JrhWb&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=866&amp;originWidth=2188&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none&amp;taskId=u3ea3e204-46b7-4427-a433-fc0d4ee51a0&amp;width=1094" alt="image.png">
+<p><img src="https://img.alicdn.com/imgextra/i2/O1CN01NoFbPR1HbuSNFQvlC_!!6000000000777-2-tps-2188-866.png" alt="image.png">
 从上图可以看到，dns 将我们的域名解析到 apigateway 公网访问二级域名上,  然后依靠 apigateway 来实现动静态分流，流量控制，ip控制等能力，静态资源托管到oss 服务，你可以利用任意 jamatck 框架，最大化的将站点静态化。 这样会带来诸多好处，如安全，seo友好，体验上佳等。至于动态的api 部分我们优选了阿里云函数计算的 faas 方案，本身后端语言采用的是 javascript 对冷启动的支持非常友好，如果你不想重构自己的服务并且又希望拥有 serverless 化的能力的话可以考虑使用 sae 产品，后续我们也会专门做一期相关的案例实践。
 本次 演示的示例  api 服务仅是做数据的组合转发，并未关联数据库，关于数据库的最佳实践我们目前也正在整理中，相信不久就可以跟大家见面。</p>
 <h2 id="%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作 <a class="header-anchor" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">#</a></h2>
@@ -32,27 +32,27 @@
 <ul>
 <li><a href="https://wanwang.aliyun.com/?spm=5176.21213303.1158081.1.4a0d3edaw8aGsw&amp;scm=20140722.S_card@@%E5%8D%A1%E7%89%87@@581._.ID_card@@%E5%8D%A1%E7%89%87@@581-RL_%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C-OR_ser-V_2-P0_0">域名申请</a>, 到任意域名服务商申请自己喜欢的域名即可，不过推荐在阿里云万网，能够统一管理，比如笔者申请了 <a href="http://serverless-developer.com">serverless-developer.com</a> 这样的顶级域名，一年60多块钱</li>
 </ul>
-<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13970/1635067986175-3e3bbd52-6fbb-4a2c-9702-7dfd7d2058db.png#clientId=u7ec7e16f-8dd3-4&amp;height=574&amp;id=F8vQq&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1148&amp;originWidth=2382&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none&amp;taskId=ue0ce19e6-935f-4162-8720-7de73d3d8f3&amp;width=1191" alt="image.png"></p>
+<p><img src="https://img.alicdn.com/imgextra/i4/O1CN01AFvXaF1LmDq8JPgcs_!!6000000001341-2-tps-2382-1148.png" alt="image.png"></p>
 <ul>
 <li><a href="https://www.aliyun.com/product/dns?spm=serverlessdevs">域名解析</a>, 域名申请好应该会自动开通，我们待会会用它来做一个CNAME解析，解析到我们的 apigateway 公网二级域名</li>
 </ul>
-<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13970/1635067986184-d03bab36-3eb5-43b0-b202-0f19de812808.png#clientId=u7ec7e16f-8dd3-4&amp;height=881&amp;id=SaqcE&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1762&amp;originWidth=3468&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none&amp;taskId=u21e2e9e0-ad34-49b9-8917-ff5b3b39b16&amp;width=1734" alt="image.png"></p>
+<p><img src="https://img.alicdn.com/imgextra/i4/O1CN01EGjtZJ1g193l9iDcg_!!6000000004081-2-tps-3468-1762.png" alt="image.png"></p>
 <ul>
 <li><a href="https://www.aliyun.com/product/apigateway?spm=">apigateway</a>  网关服务，开通后会默认赠送 一个共享实例，费用低廉</li>
 </ul>
-<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13970/1635067986201-697c45e0-111a-4d21-a31c-fda41fbddac3.png#clientId=u7ec7e16f-8dd3-4&amp;height=385&amp;id=EXymX&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=770&amp;originWidth=2324&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none&amp;taskId=ub7c08e60-4b4c-42c1-b9d1-5aaee45afbc&amp;width=1162" alt="image.png"></p>
+<p><img src="https://img.alicdn.com/imgextra/i3/O1CN011GRj3v1u08oRY3Qjx_!!6000000005974-2-tps-2324-770.png" alt="image.png"></p>
 <ul>
 <li><a href="https://www.aliyun.com/product/oss?spm=serverlessdevs">oss</a> 对象存储， 用来存储我们的静态资源</li>
 </ul>
-<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13970/1635067986232-de3dbdf2-fdc0-4dbc-aec5-5fcf69c401c8.png#clientId=u7ec7e16f-8dd3-4&amp;height=354&amp;id=NzMv0&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=708&amp;originWidth=2562&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none&amp;taskId=ube22f544-a1c0-469f-b0bf-3eb369ccfe4&amp;width=1281" alt="image.png"></p>
+<p><img src="https://img.alicdn.com/imgextra/i2/O1CN01EDpiJG1K339x9iNxT_!!6000000001107-2-tps-2562-708.png" alt="image.png"></p>
 <ul>
 <li><a href="https://www.aliyun.com/product/fc?spm=serverlessdevs">函数计算</a> ， serverless 后端服务</li>
 </ul>
-<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13970/1635067986633-92df9b63-d1c4-4dfb-a63d-dc6d2c2a0232.png#clientId=u7ec7e16f-8dd3-4&amp;height=380&amp;id=ZBnD2&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=760&amp;originWidth=2306&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none&amp;taskId=uca82db4a-05f4-413f-bc88-76dd7fc21b4&amp;width=1153" alt="image.png"></p>
+<p><img src="https://img.alicdn.com/imgextra/i4/O1CN016nNleE1lnlB60iELW_!!6000000004864-2-tps-2306-760.png" alt="image.png"></p>
 <h2 id="%E5%BA%94%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%88%9D%E5%A7%8B%E5%8C%96">应用模板初始化 <a class="header-anchor" href="#%E5%BA%94%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%88%9D%E5%A7%8B%E5%8C%96">#</a></h2>
 <p>使用s 命令行工具进行应用模板初始化 <code>s init modern-web-application</code>下载
 下载后可以看到整体目录结构比较清晰，就是动态api部分，静态资源部分和配置文件部分
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13970/1635067986835-1e9e66d0-938c-4baf-abde-3104815bf268.png#clientId=u7ec7e16f-8dd3-4&amp;height=444&amp;id=FnTus&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=888&amp;originWidth=874&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none&amp;taskId=u2fc9fdec-42e3-4433-b6d2-c60524e6232&amp;width=437" alt="image.png"></p>
+<img src="https://img.alicdn.com/imgextra/i1/O1CN01r0Rfat23XQ8G4Fdvv_!!6000000007265-2-tps-874-888.png" alt="image.png"></p>
 <p>我们再展开看一下配置文件,配置文件稍稍复杂些</p>
 <pre><code class="language-yaml"><span class="hljs-attr">edition:</span> <span class="hljs-number">1.0</span><span class="hljs-number">.0</span> <span class="hljs-comment">#  命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范</span>
 <span class="hljs-attr">name:</span> <span class="hljs-string">modern-web-application</span> <span class="hljs-comment">#  项目名称</span>
@@ -211,17 +211,26 @@ s 工具会把 www/build 下的静态资源上传到用户设置好的 bucket �
 </ul>
 <h3 id="%E8%AE%BF%E9%97%AE%E6%94%B6%E5%B0%BE">访问收尾 <a class="header-anchor" href="#%E8%AE%BF%E9%97%AE%E6%94%B6%E5%B0%BE">#</a></h3>
 <p>综上配置好之后（域名解析可能需要一段时间，请耐心等待） 我们就可以通过访问 <a href="http://hanxie.serverless-developer.com">hanxie.serverless-developer.com</a> 来查看访我们的站点了。
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13970/1635067988403-fe91a4cb-f952-4e85-901b-105142e45f4f.png#clientId=u7ec7e16f-8dd3-4&amp;height=951&amp;id=KCEX3&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1902&amp;originWidth=3242&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none&amp;taskId=ucee462a3-646b-456d-ab78-9acf7662fe4&amp;width=1621" alt="image.png">
-当然这里还没添加 https证书，你可以创建一个免费的证书，添加到 apigateway上。 这样最后可以得到一个完美的https站点。
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13970/1635076043828-88a883bd-1712-48ba-80e6-1e467acf6a36.png#clientId=u6061a79a-8bcd-4&amp;from=paste&amp;height=134&amp;id=u557042a7&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=268&amp;originWidth=3082&amp;originalType=binary&amp;ratio=1&amp;size=147505&amp;status=done&amp;style=none&amp;taskId=u41a67153-0060-437b-a9a1-4828c7b2104&amp;width=1541" alt="image.png"></p>
+<img src="https://img.alicdn.com/imgextra/i3/O1CN01xlaxfc1LUomshJeDY_!!6000000001303-2-tps-3242-1902.png" alt="image.png"></p>
+<h3 id="%E8%AF%81%E4%B9%A6%E8%AE%BE%E7%BD%AE">证书设置 <a class="header-anchor" href="#%E8%AF%81%E4%B9%A6%E8%AE%BE%E7%BD%AE">#</a></h3>
+<p>你可以继续添加 https 证书，访问 阿里云SSL证书产品页 <a href="https://www.aliyun.com/product/cas">https://www.aliyun.com/product/cas</a> ,点击选购证书，然后购买免费证书
+<img src="https://img.alicdn.com/imgextra/i2/O1CN01ob4tdy1VkWWr4tuLy_!!6000000002691-2-tps-3478-1758.png" alt="serverlessdevs"></p>
+<p>购买好之后回到 <a href="https://yundunnext.console.aliyun.com/?p=casnext#/certExtend/free">ssl 控制台</a></p>
+<p>SSL证书-&gt;免费证书-&gt;创建证书
+系统会帮助生成一条记录
+<img src="https://img.alicdn.com/imgextra/i4/O1CN01FhXnIo204cNSIhKsi_!!6000000006796-2-tps-2844-260.png" alt="serverless devs">
+然后针对此记录进行证书申请，填写表单项，提交。
+接下来直接点击部署
+<img src="https://img.alicdn.com/imgextra/i4/O1CN01R7k8pY1quhFqzgPah_!!6000000005556-2-tps-2816-216.png" alt="serverless devs">
+选择api网关即可，最后可以得到一个完美的https站点</p>
 <h2 id="%E5%85%B3%E4%BA%8E%E7%BD%91%E7%AB%99%E5%AE%89%E5%85%A8%E8%83%BD%E5%8A%9B%E7%9A%84%E8%AE%BE%E7%BD%AE">关于网站安全能力的设置 <a class="header-anchor" href="#%E5%85%B3%E4%BA%8E%E7%BD%91%E7%AB%99%E5%AE%89%E5%85%A8%E8%83%BD%E5%8A%9B%E7%9A%84%E8%AE%BE%E7%BD%AE">#</a></h2>
 <p>我们的网站有很多可以加的安全防护， 比如开通 apigateway 专享版，通过内网 vpc 转发oss 以及函数计算服务，避免任意服务暴露到外部，其次我们可以通过添加 apigateway 的插件来增加流量控制，jwt鉴权，ip限制等能力，下面我们演示一下 通过apigateway 插件增加 basic auth 来限制 api 访问。
 <img src="https://img.alicdn.com/imgextra/i2/O1CN01z6RiT21e1U7TIbGuT_!!6000000003811-1-tps-1777-944.gif#id=XZlJh&amp;originHeight=944&amp;originWidth=1777&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" alt="">
 插件管理-&gt; 创建 -&gt; 选择 basis auther -&gt; 绑定 get api
 可以看到 插件创建好之后我们再次访问 网站会提示401错误，我们再来用 postman 访问一下
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13970/1635067988443-7956d2e8-3df7-49ad-8d5d-f0e297ddb44f.png#clientId=u7ec7e16f-8dd3-4&amp;height=977&amp;id=dfdCL&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1954&amp;originWidth=3584&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none&amp;taskId=u1a661c6e-fb83-40bc-bc09-0e41b1d3b0e&amp;width=1792" alt="image.png">
+<img src="https://img.alicdn.com/imgextra/i3/O1CN01hPbYu11tdF0dhsuyb_!!6000000005924-2-tps-3584-1954.png" alt="image.png">
 一样是401，然后我们添加一下 账号密码再测试一下
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/gif/13970/1635067988470-b6cfc23a-a284-43c4-9048-acd44f4a187a.gif#clientId=u7ec7e16f-8dd3-4&amp;height=944&amp;id=ZCnmi&amp;margin=%5Bobject%20Object%5D&amp;name=dkhttp13.gif&amp;originHeight=944&amp;originWidth=1777&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none&amp;taskId=uae1c39eb-70b5-4469-819f-66c323c833e&amp;width=1777" alt="dkhttp13.gif">
+<img src="https://img.alicdn.com/imgextra/i1/O1CN01vmf8rT1Mb3na8oUX2_!!6000000001452-1-tps-1777-944.gif" alt="dkhttp13.gif">
 可以看到已经通过了。关于其他的安全设置您可以自行尝试</p>
 <h2 id="%E5%85%B3%E4%BA%8E%E8%AE%BF%E9%97%AE%E6%80%A7%E8%83%BD%E7%9A%84%E6%8F%90%E5%8D%87">关于访问性能的提升 <a class="header-anchor" href="#%E5%85%B3%E4%BA%8E%E8%AE%BF%E9%97%AE%E6%80%A7%E8%83%BD%E7%9A%84%E6%8F%90%E5%8D%87">#</a></h2>
 <p>目前我们使用的 apigateway 的共享实例，在并发访问量不大的情况下没有太大问题，当你的网站访问上升，遇到访问慢的时候可以考虑升级到专享实例，这样可以直接通过内网访问静态资源和函数，另外可以按照 jamstak 理念尽量实现最大程度的静态化，可以考虑一些相关的 jamstack框架，关于函数方面，我们目前使用的是 js runtime 部署，冷启动时间会在1s左右浮动， 另外还没有做数据库连接等。如果你觉得比较慢，可以考虑在函数计算上增加预留实例，保障函数的快速运行。</p>
