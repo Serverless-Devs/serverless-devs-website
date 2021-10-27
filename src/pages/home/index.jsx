@@ -153,7 +153,7 @@ class Home extends Language {
 
             </div>
             <div className="quick-start">
-              <Button type="primary" link={`developer/index.html`}>快速开始</Button>
+              <Button type="primary" link={`/${language}/developer/index.html`}>快速开始</Button>
             </div>
           </div>
         </section>
