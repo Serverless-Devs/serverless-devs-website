@@ -8,7 +8,7 @@ description: 引导Serverless 化的restful api。
 ## 说明
 restful api 是我们在日常生产中经常使用到的重要资源，本教程演示如何使用ServerlessDesktop 构建 restful api，本次教程演示使用 javascript语言，更多其他语言[点击查看](https://help.aliyun.com/document_detail/191345.html)
 ## 主体操作
-该部分大约花费5分钟, 本项目源码地址 https://github.com/Serverless-Devs/restful-api-demo
+该部分大约花费5分钟, 本项目[源码地址](https://github.com/hanxie-crypto/ServerlessDevs-restful-api-demo) 
 
 ### 应用选择
 操作路由：Serverless Hub -> 搜索框搜索“dk”，找到 dk-http应用模板 下载使用
