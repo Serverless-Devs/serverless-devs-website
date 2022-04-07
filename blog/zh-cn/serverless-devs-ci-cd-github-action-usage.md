@@ -60,8 +60,6 @@ jobs:
       - run: npm install
       - run: npm install -g @serverless-devs/s
       # 默认密钥配置指令是阿里云密钥配置指令，更多可以参考：
-      # 如何通过Github Action使用Serverless Devs做CI/CD：http://short.devsapp.cn/cicd/github/action/usage
-      # Serverless Devs的官网是通过Serverless Devs部署的: http://short.devsapp.cn/cicd/github/action/practice
       - run: s config add --AccountID ${{secrets.AccountID}} --AccessKeyID ${{secrets.AccessKeyID}} --AccessKeySecret ${{secrets.AccessKeySecret}} -a default
       - run: s deploy
 ```
@@ -80,8 +78,6 @@ jobs:
       - run: npm install
       - run: npm install -g @serverless-devs/s
       # 默认密钥配置指令是阿里云密钥配置指令，更多可以参考：
-      # 如何通过Github Action使用Serverless Devs做CI/CD：http://short.devsapp.cn/cicd/github/action/usage
-      # Serverless Devs的官网是通过Serverless Devs部署的: http://short.devsapp.cn/cicd/github/action/practice
       - run: s config add --AccountID ${{secrets.AccountID}} --AccessKeyID ${{secrets.AccessKeyID}} --AccessKeySecret ${{secrets.AccessKeySecret}} -a default
       - run: s build
       - run: rm -rf ./abc
@@ -177,7 +173,3 @@ Options:
 > s config add -kl tempToken3,tempToken4 -il tempValue3,tempValue4 -a fc_access
 > ```
 
-# Others
-
-Best practices：
-- 🍉 Serverless Devs的官网是通过Serverless Devs部署的: http://short.devsapp.cn/cicd/github/action/practice
