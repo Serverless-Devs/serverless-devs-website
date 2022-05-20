@@ -1,18 +1,714 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="UTF-8">
+    <meta charset="utf-8">
+    <link rel="icon" href="https://img.alicdn.com/imgextra/i4/O1CN01lga0vN28YrRo9VZ1P_!!6000000007945-73-tps-32-32.ico"
+          type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+          content="Serverless Devs 是一个开源开放的 Serverless 开发者平台，致力于为开发者提供强大的工具链体系。通过该平台，开发者不仅可以一键体验多云 Serverless 产品，极速部署 Serverless 项目，还可以在 Serverless 应用全生命周期进行项目的管理，并且非常简单快速的将 Serverless Devs 与其他工具/平台进行结合，进一步提升研发、运维效能。">
+    <meta name="author" content="Serverless Devs">
+    <meta name="keywords" content="Serverless, Serverless Devs, 中文社区, Serverless 社区">
+    <title>Serverless Devs - Serverless 应用全生命周期管理工具 / Serverless 中文社区</title>
+    <!-- Favicon -->
+    <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link href="./assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+    <link href="./assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Argon CSS -->
+    <link type="text/css" href="./assets/css/argon.css?v=1.0.0" rel="stylesheet">
 </head>
+
 <body>
-  <script src="//cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-	<script>
-    window.rootPath = '';
-    window.defaultLanguage = 'zh-cn';
-    var lang = Cookies.get('docsite_language');
-    if (!lang) {
-      lang = 'zh-cn';
+<header class="header-global">
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light">
+        <div class="container">
+            <a class="navbar-brand mr-lg-4" href="./index.html">
+                <img src="./logo.png" style="width: 89px; height: 49px">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global"
+                    aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbar_global">
+                <div class="navbar-collapse-header">
+                    <div class="row">
+                        <div class="col-6 collapse-brand">
+                            <a href="./index.html">
+                                <h3 style="color: white">Serverless Devs</h3>
+                            </a>
+                        </div>
+                        <div class="col-6 collapse-close">
+                            <button type="button" class="navbar-toggler" data-toggle="collapse"
+                                    data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <ul class="navbar-nav navbar-nav-hover align-items-lg-center" style="margin-top: 12px">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                            <i class="ni ni-ui-04 d-lg-none"></i>
+                            <span class="nav-link-inner--text"><b>开始与文档</b></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-xl">
+                            <div class="dropdown-menu-inner">
+                                <a href="https://docs.serverless-devs.com/serverless-devs/quick_start"
+                                   class="media d-flex align-items-center">
+                                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                                        <i class="ni ni-spaceship"></i>
+                                    </div>
+                                    <div class="media-body ml-3">
+                                        <h6 class="heading text-primary mb-md-1">快速开始</h6>
+                                        <p class="description d-none d-md-inline-block mb-0"><b>快速开始使用 Serverless
+                                            Devs</b></p>
+                                    </div>
+                                </a>
+                                <a href="http://docs.serverless-devs.com"
+                                   class="media d-flex align-items-center">
+                                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                                        <i class="ni ni-ui-04"></i>
+                                    </div>
+                                    <div class="media-body ml-3">
+                                        <h5 class="heading text-warning mb-md-1">文档相关</h5>
+                                        <p class="description d-none d-md-inline-block mb-0"><b>查看 Serverless Devs 与相关
+                                            Package 文档</b></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="http://www.devsapp.cn/" class="nav-link" data-toggle="dropdown" role="button">
+                            <i class="ni ni-collection d-lg-none"></i>
+                            <span class="nav-link-inner--text"><b>Registry</b></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="http://www.devsapp.cn/application.html" class="dropdown-item">应用</a>
+                            <a href="http://www.devsapp.cn/component.html" class="dropdown-item">组件</a>
+                            <a href="http://www.devsapp.cn/plugin.html" class="dropdown-item">插件</a>
+                            <a href="http://www.devsapp.cn/faq.html" class="dropdown-item">常见问答</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="http://i.serverless-devs.com/article" class="nav-link" data-toggle="dropdown"
+                           role="button">
+                            <i class="ni ni-collection d-lg-none"></i>
+                            <span class="nav-link-inner--text"><b>Serverless 社区</b></span>
+                        </a>
+                        <div class="dropdown-menu">
+
+                            <a href="http://i.serverless-devs.com/" class="dropdown-item">社区首页</a>
+                            <a href="http://i.serverless-devs.com/portal.php?mod=list&catid=20" class="dropdown-item">社区专栏</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="http://i.serverless-devs.com/portal.php?mod=list&catid=6" class="nav-link" role="button">
+                            <i class="ni ni-collection d-lg-none"></i>
+                            <span class="nav-link-inner--text"><b>社区工作组</b></span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav align-items-lg-center ml-lg-auto" style="margin-top: 12px">
+                    <span class="text-white alpha-7 ml-3">Star on</span>
+                    <a href="https://github.com/serverless-devs/serverless-devs" target="_blank"
+                       title="Support us on Github">
+                        <img src="./assets/img/brand/github-white-slim.png" style="height: 22px; margin-top: -3px">
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="position-relative">
+        <!-- shape Hero -->
+        <section class="section-shaped my-0">
+            <div class="shape shape-style-1 shape-skew shape-primary">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="container shape-container d-flex">
+                <div class="col px-0">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h1 class="display-3  text-white"><b>Serverless Devs</b>
+                                <span><font size="5"><b>Serverless 应用全生命周期管理工具</b></font></span>
+                            </h1>
+                            <p class="lead  text-white"><b>Serverless Devs 是 Serverless
+                                领域的工具链开源项目；通过组件化、应用化的思路，可以让开发者像使用手机一样玩转 Serverless 架构。</b></p>
+                            <div class="btn-wrapper">
+                                <a href="https://github.com/serverless-devs/serverless-devs"
+                                   class="btn btn-white btn-icon mb-3 mb-sm-0">
+                                    <span class="btn-inner--icon"><i class="fa fa-code"></i></span>
+                                    <span class="btn-inner--text">开源项目</span>
+                                </a>
+                                <a href="https://docs.serverless-devs.com/serverless-devs/quick_start"
+                                   class="btn btn-primary btn-icon mb-3 mb-sm-0"
+                                   ni-spaceship>
+                                    <span class="btn-inner--icon"><i class="ni ni-spaceship"></i></span>
+                                    <span class="btn-inner--text">快速开始</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 1st Hero Variation -->
+    </div>
+    <section class="section section-lg pt-lg-0 mt--200">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="row row-grid">
+                        <div class="col-lg-4">
+                            <div class="card card-lift--hover shadow border-0">
+                                <div class="card-body py-5">
+                                    <h6 class="text text-uppercase" style="color: black"><b>开源建设</b></h6>
+                                    <p class="description mt-3"><b>Serverless Devs
+                                        项目以开源形式进行建设，主张人人可参与，人人可贡献，希望通过开源建设，可以让开发者们"做主"自己的工具，共建"生产力"。</b></p>
+                                    <div>
+                                        <span class="badge badge-pill badge-primary">开源</span>
+                                        <span class="badge badge-pill badge-primary">共建</span>
+                                        <span class="badge badge-pill badge-primary">贡献</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card card-lift--hover shadow border-0">
+                                <div class="card-body py-5">
+                                    <h6 class="text text-uppercase" style="color: black"><b>开放生态</b></h6>
+                                    <p class="description mt-3"><b>Serverless Registry 秉承着开放生态的思想进行共建，类似于
+                                        npm、pypi，Serverless Registry 是 Serverless 领域的生态开放基石。</b></p>
+                                    <div>
+                                        <span class="badge badge-pill badge-primary">开放</span>
+                                        <span class="badge badge-pill badge-primary">生态</span>
+                                        <span class="badge badge-pill badge-primary">基石</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card card-lift--hover shadow border-0">
+                                <div class="card-body py-5">
+                                    <h6 class="text text-uppercase" style="color: black"><b>无厂商锁定</b></h6>
+                                    <p class="description mt-3"><b>基于组件化和插件化的设计思路，Serverless Devs
+                                        是无厂商锁定的开发者工具链/生态，可以帮助开发者快速部署基于多云、多产品的应用。</b></p>
+                                    <div>
+                                        <span class="badge badge-pill badge-primary">开放</span>
+                                        <span class="badge badge-pill badge-primary">无锁定</span>
+                                        <span class="badge badge-pill badge-primary">多云</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row row-grid align-items-center">
+                <div class="col-md-6 order-md-2">
+                    <img src="./assets/img/theme/promo-1.png" class="img-fluid floating">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <div class="pr-md-5">
+                        <div class="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
+                            <i class="ni ni-app"></i>
+                        </div>
+                        <h3>Serverless 应用全生命周期管理</h3>
+                        <p><b>致力于为开发者提供 Serverless 全生命周期管理工具，帮助开发者从体验到开发、部署、运维的路径顺畅，提供好用且感动的 Serverless 工具链</b></p>
+                        <ul class="list-unstyled mt-5">
+                            <li class="py-2">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <div class="badge badge-circle badge-success mr-3">
+                                            <i class="ni ni-settings-gear-65"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">应用纬度的创建更新</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-2">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <div class="badge badge-circle badge-success mr-3">
+                                            <i class="ni ni-badge"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">应用纬度的环境划分</h6>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-2">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <div class="badge badge-circle badge-success mr-3">
+                                            <i class="ni ni-satisfied"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">应用纬度的资源管理</h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section bg-secondary">
+        <div class="container">
+            <div class="row row-grid align-items-center">
+                <div class="col-md-6">
+                    <div class="card bg-default shadow border-0">
+                        <img src="./assets/img/02.png" class="card-img-top">
+                        <blockquote class="card-blockquote">
+                            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+                                 class="svg-bg">
+                                <polygon points="0,52 583,95 0,95" class="fill-default"/>
+                                <polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default"/>
+                            </svg>
+                            <h4 class="display-3 font-weight-bold text-white">Serverless Regsitry</h4>
+                            <p class="lead text-italic text-white">Serverless Regsitry 是一个无厂商锁定的 Serverless
+                                包管理平台，可以帮助开发者非常简单、方便、快速的进行上手 Serverless 架构，助力开发者可以像使用手机一样，玩转 Serverless 架构。</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="pl-md-5">
+                        <div class="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
+                            <i class="ni ni-lock-circle-open"></i>
+                        </div>
+                        <h3>开放生态的基石</h3>
+                        <p class="lead">Serverless Registry 通过开源开放的形式建设，致力于成为 Serverless 领域的无厂商所定的包管理平台，构建 Serverless
+                            生态基石</p>
+                        <p>类似于 Python 中的 Pypi，Node.js 中的 npm，Serverless Regsitry 正通过一种更为开发和透明的做法，繁荣 Serverless 生态；</p>
+                        <p>无厂商锁定的做法，有助于开发者可以通过更小的代价，迅速的学习和上手更多 Serverless 架构/平台，或许多云部署，只需一键；</p>
+                        <a href="http://www.devsapp.cn" class="font-weight-bold text-warning mt-5">快速体验 Serverless
+                            Regsitry</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section section-shaped my-0 overflow-hidden">
+        <div class="shape shape-style-1 bg-gradient-warning shape-skew">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="container py-0">
+            <div class="row row-grid align-items-center">
+                <div class="col-md-6 order-lg-2 ml-lg-auto">
+                    <div class="position-relative pl-md-5">
+                        <img src="./assets/img/ill/ill-2.svg" class="img-center img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="d-flex px-3">
+                        <div>
+                            <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                                <i class="ni ni-building text-primary"></i>
+                            </div>
+                        </div>
+                        <div class="pl-4">
+                            <h4 class="display-3 text-white">快速打造现代应用</h4>
+                            <p class="text-white"><b>基于无厂商锁定建设思路，以组件化、插件化的架构基础，Serverless Devs
+                                可以快速帮助开发者构建高可用、高性价比的现代应用</b></p>
+                        </div>
+                    </div>
+                    <div class="card shadow shadow-lg--hover mt-5">
+                        <div class="card-body">
+                            <div class="d-flex px-3">
+                                <div>
+                                    <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                                        <i class="ni ni-satisfied"></i>
+                                    </div>
+                                </div>
+                                <div class="pl-4">
+                                    <h5 class="title text-success">以云原生之名，打造高可用服务</h5>
+                                    <p>从应用纬度进行定义，通过对资源的组织和编排，通过 Serverless 架构的加持，可以让开发者一键部署高可用、高性价比的云原生应用</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow shadow-lg--hover mt-5">
+                        <div class="card-body">
+                            <div class="d-flex px-3">
+                                <div>
+                                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                                        <i class="ni ni-active-40"></i>
+                                    </div>
+                                </div>
+                                <div class="pl-4">
+                                    <h5 class="title text-warning">从灵活到自由，打造现代应用</h5>
+                                    <p>以 Serverless 架构为核心，通过组件化、插件化、应用化结合，助力开发者可以快速的实现应用的开发和部署，快速完成全栈应用的上线</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-lg">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-lg">
+                <div class="col-lg-8">
+                    <h2 class="display-3">iServerless 开发者社区</h2>
+                    <p class="lead text-muted">iServerless 是 Serverless Devs 的开发者社区，在社区中，大家可以自由的发表对 Serverless
+                        的看法、期待，可以与更多志同道合的同学，一起建设 Serverless 生态。</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-2 mb-5 mb-lg-0">
+                    <div class="px-4">
+                        <img src="https://avatars.githubusercontent.com/u/21079031?v=4"
+                             class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+                        <div class="pt-4 text-center">
+                            <h5 class="title">
+                                <span class="d-block mb-1">Anycodes</span>
+                                <small class="h6 text-muted">Maintainer</small>
+                            </h5>
+                            <div class="mt-3">
+                                <a href="http://github.com/anycodes"
+                                   class="btn btn-warning btn-icon-only rounded-circle">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                                <a href="http://bluo.cn/" class="btn btn-warning btn-icon-only rounded-circle">
+                                    <i class="fa fa-pagelines"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2 mb-5 mb-lg-0">
+                    <div class="px-4">
+                        <img src="https://avatars.githubusercontent.com/u/5129967?v=4"
+                             class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+                        <div class="pt-4 text-center">
+                            <h5 class="title">
+                                <span class="d-block mb-1">heimanba</span>
+                                <small class="h6 text-muted">Maintainer</small>
+                            </h5>
+                            <div class="mt-3">
+                                <a href="https://avatars.githubusercontent.com/u/5129967?v=4"
+                                   class="btn btn-primary btn-icon-only rounded-circle">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2 mb-5 mb-lg-0">
+                    <div class="px-4">
+                        <img src="https://avatars.githubusercontent.com/u/45677661?v=4"
+                             class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+                        <div class="pt-4 text-center">
+                            <h5 class="title">
+                                <span class="d-block mb-1">jessie</span>
+                                <small class="h6 text-muted">Contributor</small>
+                            </h5>
+                            <div class="mt-3">
+                                <a href="https://github.com/jessie123jiang"
+                                   class="btn btn-info btn-icon-only rounded-circle">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                                <a href="http://i.serverless-devs.com/home.php?mod=space&uid=2"
+                                   class="btn btn-info btn-icon-only rounded-circle">
+                                    <i class="fa fa-group"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2 mb-5 mb-lg-0">
+                    <div class="px-4">
+                        <img src="https://avatars.githubusercontent.com/u/4457084?s=60&v=4"
+                             class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+                        <div class="pt-4 text-center">
+                            <h5 class="title">
+                                <span class="d-block mb-1">hanxie</span>
+                                <small class="h6 text-muted">Maintainer</small>
+                            </h5>
+                            <div class="mt-3">
+                                <a href="https://github.com/hanxie-crypto"
+                                   class="btn btn-success btn-icon-only rounded-circle">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2 mb-5 mb-lg-0">
+                    <div class="px-4">
+                        <img src="https://avatars.githubusercontent.com/u/5763215?v=4"
+                             class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+                        <div class="pt-4 text-center">
+                            <h5 class="title">
+                                <span class="d-block mb-1">lowkeyrd</span>
+                                <small class="h6 text-muted">Maintainer</small>
+                            </h5>
+                            <div class="mt-3">
+                                <a href="https://github.com/lowkeyrd"
+                                   class="btn btn-danger btn-icon-only rounded-circle">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2 mb-5 mb-lg-0">
+                    <div class="px-4">
+                        <img src="https://avatars.githubusercontent.com/u/16363180?v=4"
+                             class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+                        <div class="pt-4 text-center">
+                            <h5 class="title">
+                                <span class="d-block mb-1">邓超</span>
+                                <small class="h6 text-muted">Contributor</small>
+                            </h5>
+                            <div class="mt-3">
+                                <a href="https://github.com/DevDengChao"
+                                   class="btn btn-light btn-icon-only rounded-circle">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-lg pt-0">
+        <div class="container">
+            <div class="card bg-gradient-warning shadow-lg border-0">
+                <div class="p-5">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <h3 class="text-white">一起加入 iServerless 社区？</h3>
+                            <p class="lead text-white mt-3"><b>欢迎加入社区，和广大 Serverless 开发者们一起玩转
+                                Serverless，在这里，可以提问题，发表意见，还可以参与社区活动，项目建设。</b></p>
+                        </div>
+                        <div class="col-lg-3 ml-lg-auto">
+                            <a href="http://i.serverless-devs.com" class="btn btn-lg btn-block btn-white">加入
+                                iServerless </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-shaped my-0 overflow-hidden">
+        <div class="shape shape-style-3 bg-gradient-default shape-skew">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="container pt-lg pb-300">
+            <div class="row text-center justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="display-3 text-white">联系我们</h2>
+                    <p class="lead text-white">无论是调研 Serverless 工具链，还是想参与贡献项目，都可以和我们取得联系。Serverless Devs
+                        社区欢迎每一位同学和我们一同玩转 Serverless，和我们一同建设 Serverless 开发者生态，繁荣 Serverless 社区。</p>
+                </div>
+            </div>
+            <div class="row row-grid mt-5">
+                <div class="col-lg-4">
+                    <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                        <i class="ni ni-user-run text-primary"></i>
+                    </div>
+                    <h5 class="text-white mt-3">加入社群</h5>
+                    <p class="text-white mt-3">钉钉群号：33947367<br>微信小助手：xiaojiangwh</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                        <i class="ni ni-active-40 text-primary"></i>
+                    </div>
+                    <h5 class="text-white mt-3">代码仓库</h5>
+                    <p class="text-white mt-3"><a href="https://github.com/serverless-devs/serverless-devs"
+                                                  style="color: white">Serverless Devs Github 仓库</a>
+                        <br><a href="https://gitee.com/serverless-devs/serverless-devs" style="color: white">Serverless
+                            Devs Gitee 仓库</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                        <i class="ni ni-email-83 text-primary"></i>
+                    </div>
+                    <h5 class="text-white mt-3">发送邮件</h5>
+                    <p class="text-white mt-3">官方邮箱：service@devsapp.cn<br>发起人邮箱：service@52exe.cn</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-lg pt-lg-0 section-contact-us">
+        <div class="container">
+            <div class="row justify-content-center mt--300">
+                <div class="col-lg-8">
+                    <div class="card bg-gradient-secondary shadow">
+                        <div class="card-body p-lg-5">
+                            <h4 class="mb-1">快速和我们反馈</h4>
+                            <p class="mt-0">您有任何问题，可以在这里和我们快速反馈</p>
+                            <div class="form-group mt-5">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-user-run"></i></span>
+                                    </div>
+                                    <input class="form-control" placeholder="您的名字" type="text" id="name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                    </div>
+                                    <input class="form-control" placeholder="您的邮箱" type="email" id="email">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <textarea class="form-control form-control-alternative" name="name" rows="4" cols="80"
+                                          placeholder="请输入您的目的/需要反馈的事情" id="content"></textarea>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-default btn-round btn-block btn-lg"
+                                        onclick="send()">反馈给我们
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer has-cards">
+    <div class="container">
+        <div class="row row-grid align-items-center my-md">
+            <div class="col-lg-6">
+                <h3 class="text-primary font-weight-light mb-2">感谢您对我们的关注</h3>
+                <h4 class="mb-0 font-weight-light">让我们一起玩转 Serverless 架构</h4>
+            </div>
+            <div class="col-lg-6 text-lg-center btn-wrapper">
+                <a target="_blank" href="https://github.com/serverless-devs/serverless-devs"
+                   class="btn btn-neutral btn-icon-only btn-wechat btn-round btn-lg" data-toggle="tooltip"
+                   data-original-title="Star on Github">
+                    <i class="fa fa-github"></i>
+                </a>
+                <a target="_blank" href="https://gitee.com/serverless-devs/serverless-devs"
+                   class="btn btn-neutral btn-icon-only btn-git btn-round btn-lg" data-toggle="tooltip"
+                   data-original-title="Star on Gitee">
+                    <i class="fa fa-git"></i>
+                </a>
+                <a target="_blank" href="http://docs.serverless-devs.com"
+                   class="btn btn-neutral btn-icon-only btn-git btn-round btn-lg" data-toggle="tooltip"
+                   data-original-title="Docs">
+                    <i class="fa fa-book"></i>
+                </a>
+                <a target="_blank" href="http://www.devsapp.cn"
+                   class="btn btn-neutral btn-icon-only btn-git btn-round btn-lg" data-toggle="tooltip"
+                   data-original-title="Serverless Registry">
+                    <i class="fa fa-desktop"></i>
+                </a>
+                <a target="_blank" href="http://i.serverless-devs.com"
+                   class="btn btn-neutral btn-icon-only btn-git btn-round btn-lg" data-toggle="tooltip"
+                   data-original-title="iServerless">
+                    <i class="fa fa-user"></i>
+                </a>
+            </div>
+        </div>
+        <hr>
+        <div class="row align-items-center justify-content-md-between">
+            <div class="col-md-6">
+                <div class="copyright">
+                    &copy; 2022
+                    <a href="https://www.serverless-devs.com" target="_blank">Serverless Devs</a>.
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ul class="nav nav-footer justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="https://github.com/serverless-devs/serverless-devs"
+                           target="_blank" data-toggle="tooltip" title="Github Repo">
+                            <i class="fa fa-github-alt"></i>
+                            <span class="nav-link-inner--text d-lg-none">Github</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-icon" href="https://gitee.com/serverless-devs/Serverless-Devs"
+                           target="_blank" data-toggle="tooltip" title="Gitee Repo">
+                            <i class="fa fa-git"></i>
+                            <span class="nav-link-inner--text d-lg-none">Gitee</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://docs.serverless-devs.com" class="nav-link" target="_blank">帮助文档</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://i.serverless-devs.com" class="nav-link" target="_blank">Serverless 社区</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://www.devsapp.cn" class="nav-link"
+                           target="_blank">Registry</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Core -->
+<script src="./assets/vendor/jquery/jquery.min.js"></script>
+<script src="./assets/vendor/popper/popper.min.js"></script>
+<script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="./assets/vendor/headroom/headroom.min.js"></script>
+<!-- Argon JS -->
+<script src="./assets/js/argon.js?v=1.0.0"></script>
+
+<script>
+    function send() {
+        const xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+        xmlhttp.open("GET", 'https://registry.devsapp.cn/package/recommend', false);
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                alert("我们已经收到了您的信息，会尽快给您回信")
+            }
+        }
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.open("POST", "https://1767215449378635.cn-hongkong.fc.aliyuncs.com/2016-08-15/proxy/registry_github.LATEST/sendemail/");
+        xmlhttp.setRequestHeader("Content-Type", "text/plain");
+        xmlhttp.send(JSON.stringify({
+            "name": document.getElementById("name").value,
+            "email": document.getElementById("email").value,
+            "content": document.getElementById("content").value,
+        }));
     }
-    window.location = window.rootPath + '/' + lang;
-  </script>
+
+    getPackages()
+</script>
 </body>
+
 </html>

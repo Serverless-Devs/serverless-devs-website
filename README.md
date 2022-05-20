@@ -2,6 +2,10 @@
 <br>
 
 <p align="center">
+  <span><b><a href="README.md">中文</a> ｜ <a href="README_en.md">English</a></b></span><br>
+</p>
+
+<p align="center">
   <span><b>Serverless Devs 社区网站：http://www.serverless-devs.com</b></span><br>
 </p>
 
@@ -11,14 +15,6 @@ Serverless Devs 社区网站自豪的采用 Serverless Devs 开发者工具部�
 # 文档/博客贡献
 
 我们非常希望每一位社区的小伙伴都可以和我们一起来建设和完善 Serverless Devs，但让也包括 Serverless Devs 的官方网站。
-
-## 添加Blog
-
-在`/blog`目录下直接增加`markdown`文档即可。
-
-## 添加Docs
-
-在`/docs`目录下直接增加`markdown`文档即可。
 
 ## 如何发布
 
