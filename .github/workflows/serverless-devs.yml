@@ -16,4 +16,5 @@ jobs:
       - run: npm install -g @serverless-devs/s
       - run: s config add --AccessKeyID ${{secrets.ACCESSKEYID}}  --AccessKeySecret ${{secrets.ACCESSKEYSECRET}}
       - run: rm -rf .git
+      - run: rm -rf .github
       - run: s deploy -t s.oss.yaml
