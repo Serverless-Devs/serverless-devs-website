@@ -1,0 +1,20 @@
+[
+    {
+        "label": "Nacos是什么?",
+        "translations": {
+          "en": "What is Nacos"
+        },
+        "collapsed": false,
+        "items": [
+          {
+            "label": "Nacos 简介",
+            "link": "docs/what-is-nacos/",
+            "translations": {
+                "en": "What is Nacos"
+            }
+          }
+         
+        ]
+    }
+    
+]
