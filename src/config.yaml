@@ -1,6 +1,6 @@
 site:
-  name: Serverless Devs
-  site: 'https://hazel-group.github.io/'
+  name: Serverless Devs 官网
+  site: 'https://serverless-devs.com/'
   base: '/'
   trailingSlash: 'always'
   websiteGithubUrl: 'https://github.com/spring-cloud-alibaba-group/spring-cloud-alibaba-group.github.io/blob/main'
