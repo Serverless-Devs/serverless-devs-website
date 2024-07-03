@@ -225,6 +225,7 @@ export const i18nMap = {
     article: 'blog.article.technical',
     case: 'blog.article.case.best.practices',
     ecosystem: 'blog.article.ecosystem.articles',
+    expertConsultation: 'blog.article.expert.consultation',
     all: 'blog.all.articles'
   },
   "news": {
@@ -250,21 +251,26 @@ export const BLOG_CATEGORY = [
     href: '/blog/'
   },
   {
-    type: 'article',
-    title: '技术文章',
-    href: '/blog/article/'
+    type: 'expertConsultation',
+    title: '专家答疑',
+    href: '/blog/expertConsultation/'
   },
+  // {
+  //   type: 'article',
+  //   title: '技术文章',
+  //   href: '/blog/article/'
+  // },
 
-  {
-    type: 'ecosystem',
-    title: '生态文章',
-    href: '/blog/ecosystem/'
-  },
-  {
-    type: 'case',
-    title: '最佳实践',
-    href: '/blog/case/'
-  },
+  // {
+  //   type: 'ecosystem',
+  //   title: '生态文章',
+  //   href: '/blog/ecosystem/'
+  // },
+  // {
+  //   type: 'case',
+  //   title: '最佳实践',
+  //   href: '/blog/case/'
+  // },
 ];
 
 export const NEWS_CATEGORY = [
@@ -380,12 +386,26 @@ export const categoryMap = {
   article: "blog_article",
   case: "blog_case",
   ecosystem: "blog_ecosystem",
+  expertConsultation: "blog_expertConsultation",
   release: "news_release",
   committer: "news_personnel",
   announcement: "news_announcement",
   cooperate: "news_cooperate",
   "activity-preview": "activity_activity-preview",
   "activity-detail": "activity_activity-preview",
+};
+
+export const blogArticle = {
+	article: "blog.article.technical",
+	case: "blog.article.case.best.practices",
+	ecosystem: "blog.article.ecosystem.articles",
+  expertConsultation: "blog.article.expert.consultation",
+	announcement: "blog.activity.community.announcement",
+	release: "blog.activity.release.statement",
+	committer: "page.blog.news.personnel.promotion",
+	cooperate: "page.blog.news.community.cooperation",
+	"activity-preview": "blog.activity.preview.event",
+	"activity-detail": "blog.activity.detail.event",
 };
 
 export const ProductDisplayCardData = [

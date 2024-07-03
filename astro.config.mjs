@@ -36,7 +36,8 @@ export default defineConfig({
 
 	integrations: [
 		starlight({
-			title: SITE.site,
+			title: SITE.name,
+			favicon: '/favicon.png',
 			social: {
 				github: 'https://github.com/withastro/starlight'
 			},

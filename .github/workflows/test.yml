@@ -1,0 +1,23 @@
+name: Serverless Devs Project CI/CD
+
+on:
+  push:
+    branches: [astro]
+
+jobs:
+  serverless-devs-cd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - run: npm install
+      - run: npm run build   
+      - run: npm install -g @serverless-devs/s
+      - run: s config add --AccessKeyID ${{secrets.ACCESSKEYID}}  --AccessKeySecret ${{secrets.ACCESSKEYSECRET}} --AccountID ${{secrets.ACCOUNTID}} -a default -f 
+      - run: rm -rf .git
+      - run: rm -rf .github
+      - run: rm -rf node_modules
+      - run: s deploy -t s-test.yaml

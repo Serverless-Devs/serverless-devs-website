@@ -14,7 +14,7 @@ Serverless Devs 社区网站自豪的采用 Serverless Devs 开发者工具部�
 
 # 文档/博客贡献
 
-我们非常希望每一位社区的小伙伴都可以和我们一起来建设和完善 Serverless Devs，但让也包括 Serverless Devs 的官方网站。
+我们非常希望每一位社区的小伙伴都可以和我们一起来建设和完善 Serverless Devs，也包括 Serverless Devs 的官方网站。
 
 ## 如何发布
 

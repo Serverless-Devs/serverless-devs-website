@@ -10,6 +10,7 @@ import Sidebar from "@components/starlight/Sidebar.astro";
 import { useTranslations } from "@i18n/util";
 import { SITE } from "@utils/config";
 import Pagination from "@astrojs/starlight/components/Pagination.astro";
+import { blogArticle } from "@/constant.ts";
 
 const t = useTranslations(Astro);
 
@@ -21,17 +22,7 @@ export async function getStaticPaths() {
 	}));
 }
 
-const blogArticle = {
-	article: "blog.article.technical",
-	case: "blog.article.case.best.practices",
-	ecosystem: "blog.article.ecosystem.articles",
-	announcement: "blog.activity.community.announcement",
-	release: "blog.activity.release.statement",
-	committer: "page.blog.news.personnel.promotion",
-	cooperate: "page.blog.news.community.cooperation",
-	"activity-preview": "blog.activity.preview.event",
-	"activity-detail": "blog.activity.detail.event",
-};
+
 
 type Props = CollectionEntry<"blog">;
 
