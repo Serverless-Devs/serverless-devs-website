@@ -10,7 +10,7 @@ export default [
     translations: {
       en: "HOME",
     },
-    route: "/blog/",
+    route: "/",
     trigger: "hover",
     relativePosition: 'page',
     position: "absolute",
@@ -33,5 +33,15 @@ export default [
     // relativePosition: 'page',
     slot: CommunityMenu,
     position:"absolute",
+  },
+  {
+    label: "答疑样例",
+    translations: {
+      en: "FAQ",
+    },
+    route: "/blog/",
+    trigger: "hover",
+    relativePosition: 'page',
+    position: "absolute",
   },
 ];
