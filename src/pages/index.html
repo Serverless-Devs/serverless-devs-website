@@ -24,6 +24,22 @@
     <meta name="msvalidate.01" content="44319F9675676357716A86315318B93E" />
     <!-- baidu ziyuan -->
     <meta name="baidu-site-verification" content="codeva-j8g7mEhCun" />
+    <style>
+        #copilot-booter .footer_operateBtn_right svg {
+            vertical-align: sub;
+            width: 14px;
+            height: 14px;
+        }
+        #copilot-booter .feed_back_wrapper > svg {
+            cursor: pointer;
+            transition: all 0.3s;
+            height: 14px;
+            width: 14px;
+        }
+        #copilot-booter .content_richtext h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+            font-size: initial;
+        }
+    </style>
 </head>
 
 <body>
@@ -686,6 +702,46 @@
     </div>
 </footer>
 <!-- Core -->
+<script>
+    //cnpilot
+    function addCopilot() {
+        const copilotJSScript = document.createElement("script");
+        copilotJSScript.type = "text/javascript";
+        copilotJSScript.src = "https://g.alicdn.com/cm-design/copilot-booter/0.0.26/copilot-booter.js";
+        copilotJSScript.addEventListener("load", function () {
+            if (window.CNPilot) {
+                window.CNPilot.mounted({
+                    CNPilot_OPEN_SOURCE: ["serverless-devs.com"],
+                    CNPilot_OPEN_SOURCE_API: "https://ai.nacos.io",
+                    CNPilot_OPEN_SOURCE_PRODUCT_NAME: "ServerlessDevs",
+                    showFloatICON: true,
+                    globalStyle: {
+                        top: "0px",
+                        // width: "14px",
+                        // height: "14px",
+                    },
+                    // entryIconProps: {
+                    //     "position-type": "updown",
+                    //     "icon-hover-text": "专家答疑",
+                    //     "icon-style": {
+                    //         color: "red", 
+                    //         background: "white", 
+                    //         border: "2px solid red", 
+                    //         borderRadius: "20px"
+                    //     }
+                    // },
+                    headerProps: {
+                        closeIcon: { show: true },
+                        // titleText: "AI答疑专家",
+                    },
+                });
+            }
+        });
+        document.body.append(copilotJSScript);
+    };
+    
+    addCopilot();
+</script>
 <script src="./assets/vendor/jquery/jquery.min.js"></script>
 <script src="./assets/vendor/popper/popper.min.js"></script>
 <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
