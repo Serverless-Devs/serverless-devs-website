@@ -76,28 +76,41 @@ let height,
 
 <script>
   //cnpilot
-  const copilotJSScript = document.createElement("script");
-  copilotJSScript.type = "text/javascript";
-  copilotJSScript.src =
-    "//g.alicdn.com/cm-design/copilot-booter/0.0.21/copilot-booter.js";
-  copilotJSScript.addEventListener("load", function () {
-    // TODO: 设置CNPilot
-    if (window.CNPilot) {
-      window.CNPilot.mounted({
-        CNPilot_NODE_ENV: "development",
-        CNPilot_OPEN_SOURCE: ["nacos.io"],
-        CNPilot_OPEN_SOURCE_API: "https://ai.nacos.io",
-        showFloatICON: true,
-        globalStyle: {
-          top: "64px",
-        },
-        headerProps: {
-          closeIcon: { show: true }, // 关闭按钮
-        },
-      });
-    }
-  });
-  document.body.append(copilotJSScript);
+  function addCopilot() {
+    const copilotJSScript = document.createElement("script");
+    copilotJSScript.type = "text/javascript";
+    copilotJSScript.src = "https://g.alicdn.com/cm-design/copilot-booter/0.0.26/copilot-booter.js";
+    copilotJSScript.addEventListener("load", function () {
+      if (window.CNPilot) {
+        window.CNPilot.mounted({
+          CNPilot_OPEN_SOURCE: ["serverless-devs.com"],
+          CNPilot_OPEN_SOURCE_API: "https://ai.nacos.io",
+          CNPilot_OPEN_SOURCE_PRODUCT_NAME: "ServerlessDevs",
+          showFloatICON: true,
+          globalStyle: {
+            top: "0px",
+          },
+          // entryIconProps: {
+          //     "position-type": "updown",
+          //     "icon-hover-text": "专家答疑",
+          //     "icon-style": {
+          //         color: "red", 
+          //         background: "white", 
+          //         border: "2px solid red", 
+          //         borderRadius: "20px"
+          //     }
+          // },
+          headerProps: {
+            closeIcon: { show: true },
+            // titleText: "AI答疑专家",
+          },
+        });
+      }
+    });
+    document.body.append(copilotJSScript);
+  };
+  
+  addCopilot();
 </script>
 
 <script>
