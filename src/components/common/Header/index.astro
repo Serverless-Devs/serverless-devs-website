@@ -99,20 +99,22 @@ let height,
             // width: "14px",
             // height: "14px",
           },
-          // entryIconProps: {
-          //     "position-type": "updown",
-          //     "icon-hover-text": "专家答疑",
-          //     "icon-style": {
-          //         color: "red",
-          //         background: "white",
-          //         border: "2px solid red",
-          //         borderRadius: "20px"
-          //     }
-          // },
-          headerProps: {
-            closeIcon: { show: true },
-            // titleText: "AI答疑专家",
+          entryIconProps:{                                      // 入口 ICON 配置
+            'position-type':'updown',
+            'icon-hover-text':'专家答疑',
+            'icon-style': {
+            color:'red', // 配置文字颜色
+            background:'white', // 配置背景色
+            border:'2px solid red', // 配置边框
+            borderRadius:'20px', // 配置圆角
+            // ...其他 css
+            }
           },
+          headerProps:{
+            // titleIcon: 'https://xxxxxx.jpeg',                // 自定义 header icon 图片
+            titleText: "无疑 AI答疑专家",                       // 自定义 header 文字
+            closeIcon: { show: true },                          // 展示 header 部分右边关闭按钮
+          }
         });
       }
     });
