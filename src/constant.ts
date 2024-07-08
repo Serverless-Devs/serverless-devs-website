@@ -185,7 +185,7 @@ export const SOLUTION_LIST: Solution[] = [
 // 文档贡献板块的链接列表
 export const getCommunityLinkList = (t: Function): CommunityLink[] => [
   {
-    href: `/blog`,
+    href: `/faq`,
     text: t("rightSidebar.readBlog"),
     icon: "basil:document-outline",
   },
@@ -228,6 +228,13 @@ export const i18nMap = {
     expertConsultation: 'blog.article.expert.consultation',
     all: 'blog.all.articles'
   },
+  "faq": {
+    article: 'blog.article.technical',
+    case: 'blog.article.case.best.practices',
+    ecosystem: 'blog.article.ecosystem.articles',
+    expertConsultation: 'blog.article.expert.consultation',
+    all: 'blog.all.articles'
+  },
   "news": {
     announcement: 'blog.activity.community.announcement',
     release: 'blog.activity.release.statement',
@@ -248,12 +255,12 @@ export const BLOG_CATEGORY = [
   {
     type: 'all',
     title: '全部文章',
-    href: '/blog/'
+    href: '/faq/'
   },
   {
     type: 'expertConsultation',
     title: '专家答疑',
-    href: '/blog/expertConsultation/'
+    href: '/faq/expertConsultation/'
   },
   // {
   //   type: 'article',

@@ -15,7 +15,7 @@ import { blogArticle } from "@/constant.ts";
 const t = useTranslations(Astro);
 
 export async function getStaticPaths() {
-	const posts = await getCollection("blog");
+	const posts = await getCollection("faq");
 	return posts.map((post) => ({
 		params: { slug: post.slug },
 		props: post,
@@ -24,13 +24,13 @@ export async function getStaticPaths() {
 
 
 
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<"faq">;
 
 const post = Astro.props;
 
 const { Content, headings } = await post.render();
 
-const posts = await getCollection("blog");
+const posts = await getCollection("faq");
 
 const sortedPosts = posts.sort(
 	(a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
@@ -54,7 +54,7 @@ sortedPosts.forEach((item) => {
 		articlePosts[0].entries.push({
 			type: "link",
 			label: item.data.title,
-			href: `/blog/${item.slug}/`,
+			href: `/faq/${item.slug}/`,
 			isCurrent: post.id === item.id,
 			attrs: {},
 		});
@@ -80,8 +80,8 @@ const baseLayout_title = post?.data?.title || `${SITE.name} Blog`;
 				<div id="back-btn" class="pt-4 pl-6">
 					<Button
 						variant="secondary"
-						target="_self"
 						class="rounded-3xl"
+						href="/faq/"
 					>
 						<Icon name="left-arrow" class="text-lg align-middle" />
 						<span class="ml-0.5">BACK</span>
@@ -128,10 +128,10 @@ const baseLayout_title = post?.data?.title || `${SITE.name} Blog`;
 	const backBtn: HTMLAnchorElement = document.querySelector("#back-btn a");
 	backBtn.onclick = (e) => {
 		e.preventDefault();
-		if(source && source !== 'undefined') {
+		if(source && source !== 'undefined' && source !== 'blog') {
 			location.href = `/${source}/`;
 		} else {
-			location.href = `/blog/`;
+			location.href = `/faq/`;
 		};
 	};
 </script>

@@ -14,12 +14,12 @@ const t = useTranslations(Astro);
 const { page } = Astro.props;
 
 const allPages = [...Array(page.lastPage).keys()].map((num) => {
-    return `/blog${num === 0 ? "" : `/${String(num + 1)}`}`;
+    return `/faq${num === 0 ? "" : `/${String(num + 1)}`}`;
 });
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     const blogCategories = new Set(BLOG_CATEGORY.map((item) => item.type));
-    const posts = await getCollection("blog", (item) =>
+    const posts = await getCollection("faq", (item) =>
         blogCategories.has(item.data.category),
     );
 
@@ -37,7 +37,6 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
             title={t("blog.all.articles")} 
             type="blog-sub" 
             source="blog"
-            type="home"
             category={BLOG_CATEGORY}
             activeCategory='all'
         />

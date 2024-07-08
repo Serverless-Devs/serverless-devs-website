@@ -39,7 +39,7 @@ export default [
     translations: {
       en: "FAQ",
     },
-    route: "/blog/",
+    route: "/faq/",
     trigger: "hover",
     relativePosition: 'page',
     position: "absolute",

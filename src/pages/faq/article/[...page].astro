@@ -14,7 +14,7 @@ const t = useTranslations(Astro);
 const { page } = Astro.props;
 
 const allPages = [...Array(page.lastPage).keys()].map((num) => {
-    return `/blog/expertConsultation${num === 0 ? "" : `/${String(num + 1)}`}`;
+    return `/faq/article${num === 0 ? "" : `/${String(num + 1)}`}`;
 });
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
@@ -26,7 +26,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     );
 
     const articlePosts = sortedPosts.filter((post) => {
-        return post.data.category === "expertConsultation";
+        return post.data.category === "article";
     });
     return paginate(articlePosts, { pageSize: 9 });
 }
@@ -34,11 +34,11 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 
 <BaseLayout title="Serverless Devs 社区文章">
     <BlogTop 
-        title={t("blog.article.expert.consultation")} 
+        title={t("blog.article.technical")} 
         type="blog-sub" 
         source="blog"
         category={BLOG_CATEGORY}
-        activeCategory="expertConsultation"
+        activeCategory="article"
     />
     <div
         class="flex flex-col items-center gap-20 py-8 lg:p-12 xl:p-20 bg-base-100"

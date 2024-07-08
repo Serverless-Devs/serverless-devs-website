@@ -3,9 +3,9 @@ import type { GetStaticPathsOptions } from "astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import Pagination from "@components/common/Paginate/Pagination.astro";
+import { BLOG_CATEGORY } from "@/constant";
 import BlogTop from "@components/markdownSet/BlogTop.astro";
 import { useTranslations } from "@i18n/util";
-import { BLOG_CATEGORY } from "@/constant";
 import SimpleContainer from '@components/markdownSet/SimpleContainer.astro';
 import type { Post } from '@/types';
 const t = useTranslations(Astro);
@@ -14,7 +14,7 @@ const t = useTranslations(Astro);
 const { page } = Astro.props;
 
 const allPages = [...Array(page.lastPage).keys()].map((num) => {
-    return `/blog/case${num === 0 ? "" : `/${String(num + 1)}`}`;
+    return `/faq/expertConsultation${num === 0 ? "" : `/${String(num + 1)}`}`;
 });
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
@@ -25,20 +25,20 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
             new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
     );
 
-    const casePosts = sortedPosts.filter((post) => {
-        return post.data.category === "case";
+    const articlePosts = sortedPosts.filter((post) => {
+        return post.data.category === "expertConsultation";
     });
-    return paginate(casePosts, { pageSize: 9 });
+    return paginate(articlePosts, { pageSize: 9 });
 }
 ---
 
 <BaseLayout title="Serverless Devs 社区文章">
     <BlogTop 
-        title={t("blog.article.case.best.practices")} 
+        title={t("blog.article.expert.consultation")} 
         type="blog-sub" 
         source="blog"
         category={BLOG_CATEGORY}
-        activeCategory='case'
+        activeCategory="expertConsultation"
     />
     <div
         class="flex flex-col items-center gap-20 py-8 lg:p-12 xl:p-20 bg-base-100"
@@ -103,8 +103,8 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     ul a:hover img {
         box-shadow: var(--box-shadow);
     }
-    @media (max-width: 720px) {
-        .blog-case {
+    @media (max-width: 50rem) {
+        .blog-article {
             padding: 0 1.5rem;
         }
         ul {
