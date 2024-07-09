@@ -21,7 +21,7 @@ services:
       region: ${vars.region}
       website:
         index: index.html
-        error: redirect.html
+        error: 404.html
         subDirType: index
       customDomains:
         - domainName: www.serverless-devs.com
