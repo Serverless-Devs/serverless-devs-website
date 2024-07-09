@@ -23,3 +23,6 @@ services:
         index: index.html
         error: 404.html
         subDirType: index
+      customDomains: # OSS 绑定域名
+        - domainName: auto
+          protocol: HTTP
