@@ -56,9 +56,9 @@ description: "要在函数计算FC中修改Java应用的JVM版本，可以遵循
 
 ## 参考链接 ：
 
-*专家经验：Java应用部署 
+* 专家经验：Java应用部署 
  
- *专家经验：Serverless Devs 和 fc3 组件的关系 
+ * 专家经验：Serverless Devs 和 fc3 组件的关系 
 
 
  <font color="#949494">---------------</font> 
