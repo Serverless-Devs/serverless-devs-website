@@ -53,11 +53,11 @@ description: "根据您的问题，您想了解如何使用`serverless-devs s de
 
 ## 参考链接 ：
 
-*专家经验：关于.fcignore使用方法 
+* 专家经验：关于.fcignore使用方法 
  
- *专家经验：TD serverless dev 本地部署 
+ * 专家经验：TD serverless dev 本地部署 
  
- *专家经验：Serverless Devs 和 fc3 组件的关系 
+ * 专家经验：Serverless Devs 和 fc3 组件的关系 
 
 
  <font color="#949494">---------------</font> 

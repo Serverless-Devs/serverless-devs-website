@@ -55,7 +55,7 @@ description: "要将一个Spring Boot单体应用迁移到阿里云的函数计�
 
 ## 参考链接 ：
 
-*专家经验：Java应用部署 
+* 专家经验：Java应用部署 
 
 
  <font color="#949494">---------------</font> 

@@ -102,11 +102,11 @@ s deploy -y
 
 ## 参考链接 ：
 
-*专家经验：serverless项目的初始化部署 
+* 专家经验：serverless项目的初始化部署 
  
- *专家经验：如何基于Podman，使用Serverless Devs工具进行构建与本地调试？ 
+ * 专家经验：如何基于Podman，使用Serverless Devs工具进行构建与本地调试？ 
  
- *专家经验：Serverless的兼容性情况 
+ * 专家经验：Serverless的兼容性情况 
 
 
  <font color="#949494">---------------</font> 

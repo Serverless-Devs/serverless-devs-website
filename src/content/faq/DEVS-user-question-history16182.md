@@ -43,9 +43,9 @@ description: "要使用Serverless Devs进行本地运行，你需要遵循以下
 
 ## 参考链接 ：
 
-*专家经验：serverless dev本地调试 
+* 专家经验：serverless dev本地调试 
  
- *专家经验：如何基于Podman，使用Serverless Devs工具进行构建与本地调试？ 
+ * 专家经验：如何基于Podman，使用Serverless Devs工具进行构建与本地调试？ 
 
 
  <font color="#949494">---------------</font> 

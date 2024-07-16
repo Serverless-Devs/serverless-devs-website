@@ -44,11 +44,11 @@ description: "要通过VPC链接数据库，您可以遵循以下步骤操作：
 
 ## 参考链接 ：
 
-*专家经验：serverless与数据库集成 以阿里云为例 
+* 专家经验：serverless与数据库集成 以阿里云为例 
  
- *专家经验：serverless项目的初始化部署 
+ * 专家经验：serverless项目的初始化部署 
  
- *专家经验：Serverless Devs 和 fc3 组件的关系 
+ * 专家经验：Serverless Devs 和 fc3 组件的关系 
 
 
  <font color="#949494">---------------</font> 

@@ -52,7 +52,7 @@ description: "要使用Serverless Devs（函数计算fc）连接RDS，我们可�
 
 ## 参考链接 ：
 
-*专家经验：serverless与数据库集成 以阿里云为例 
+* 专家经验：serverless与数据库集成 以阿里云为例 
 
 
  <font color="#949494">---------------</font> 

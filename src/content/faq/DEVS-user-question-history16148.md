@@ -60,7 +60,7 @@ description: "使用Serverless Devs快速搭建Spring Boot应用的详细步骤�
 
 ## 参考链接 ：
 
-*专家经验：Java应用部署 
+* 专家经验：Java应用部署 
 
 
  <font color="#949494">---------------</font> 

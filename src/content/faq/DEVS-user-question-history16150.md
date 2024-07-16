@@ -60,7 +60,7 @@ cd start-springboot-v3 && s deploy -y
 
 ## 参考链接 ：
 
-*专家经验：Java应用部署 
+* 专家经验：Java应用部署 
 
 
  <font color="#949494">---------------</font> 

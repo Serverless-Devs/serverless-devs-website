@@ -63,9 +63,9 @@ WordPress作为一个流行的开源博客平台，其传统部署方式通常�
 
 ## 参考链接 ：
 
-*专家经验：serverless项目的初始化部署 
+* 专家经验：serverless项目的初始化部署 
  
- *专家经验：Serverless Devs 和 fc3 组件的关系 
+ * 专家经验：Serverless Devs 和 fc3 组件的关系 
 
 
  <font color="#949494">---------------</font> 
