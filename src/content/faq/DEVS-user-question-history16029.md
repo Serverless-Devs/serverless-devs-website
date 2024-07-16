@@ -50,9 +50,9 @@ description: "要修改Serverless Java应用的JVM版本，可以按照以下步
 
 ## 参考链接 ：
 
-*专家经验：Java应用部署 
+* 专家经验：Java应用部署 
  
- *专家经验：Serverless Devs 和 fc3 组件的关系 
+ * 专家经验：Serverless Devs 和 fc3 组件的关系 
 
 
  <font color="#949494">---------------</font> 

@@ -43,9 +43,9 @@ description: "要将Java项目迁移到函数计算（Serverless）上，主要�
 
 ## 参考链接 ：
 
-*专家经验：Java应用部署 
+* 专家经验：Java应用部署 
  
- *专家经验：Serverless的兼容性情况 
+ * 专家经验：Serverless的兼容性情况 
 
 
  <font color="#949494">---------------</font> 

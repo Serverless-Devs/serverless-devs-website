@@ -55,7 +55,7 @@ description: "要通过Serverless Devs在Serverless架构下通过VPC连接NAS�
 
 ## 参考链接 ：
 
-*专家经验：serverless 集成nas 存储 
+* 专家经验：serverless 集成nas 存储 
 
 
  <font color="#949494">---------------</font> 

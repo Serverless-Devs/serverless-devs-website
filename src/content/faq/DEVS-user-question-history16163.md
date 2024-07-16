@@ -44,7 +44,7 @@ description: "要将Tomcat、Java应用迁移到serverless上，可以遵循以�
 
 ## 参考链接 ：
 
-*专家经验：Java应用部署 
+* 专家经验：Java应用部署 
 
 
  <font color="#949494">---------------</font> 
