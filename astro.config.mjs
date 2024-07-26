@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
 import partytown from '@astrojs/partytown';
 import preact from "@astrojs/preact";
@@ -15,8 +14,6 @@ import { ANALYTICS, SITE } from './src/utils/config.ts';
 import goatConfig from './goat.config';
 import { starlightAsides } from './node_modules/@astrojs/starlight/integrations/asides';
 import topLevelAwait from "vite-plugin-top-level-await";
-
-import icon from 'astro-icon';
 
 const whenExternalScripts = (items = []) =>
   ANALYTICS.vendors.googleAnalytics.id && ANALYTICS.vendors.googleAnalytics.partytown
