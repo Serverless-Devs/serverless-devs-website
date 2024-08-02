@@ -38,14 +38,14 @@ const download = defineCollection({
 
 
 export const collections = {
-	docs: defineCollection({
-		schema: docsSchema({
-			extend: z.object({
-				keywords: z.string().or(z.array(z.string().or(z.number())).optional()),
-				position: z.number().optional(),
-			}),
-		})
-	}),
+	// docs: defineCollection({
+	// 	schema: docsSchema({
+	// 		extend: z.object({
+	// 			keywords: z.string().or(z.array(z.string().or(z.number())).optional()),
+	// 			position: z.number().optional(),
+	// 		}),
+	// 	})
+	// }),
 	i18n: defineCollection({ type: 'data', schema: i18nSchema() }),
 	blog,
 	download,
