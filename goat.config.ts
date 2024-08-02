@@ -1,10 +1,10 @@
 import fs from "fs/promises";
 import path from "path";
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url";
 const curFilename = fileURLToPath(import.meta.url);
 const curDirname = path.dirname(curFilename);
 
-const starlightPath = path.join(curDirname, 'node_modules/@astrojs/starlight');
+const starlightPath = path.join(curDirname, "node_modules/@astrojs/starlight");
 
 /**
  * @description: 替换 utils/route-data.ts
@@ -13,13 +13,14 @@ const starlightPath = path.join(curDirname, 'node_modules/@astrojs/starlight');
 const replaceRouteData = async () => {
 	const originFile = path.join(starlightPath, "/utils/route-data.ts");
 	const originContent = await fs.readFile(originFile);
-	const replacedContent = originContent.toString().replace(
-		/const sidebar = getSidebar.*?;\n/,
-		'const sidebar = getSidebar(url.pathname, locale, props.categories);\n'
-	);
+	const replacedContent = originContent
+		.toString()
+		.replace(
+			/const sidebar = getSidebar.*?;\n/,
+			"const sidebar = getSidebar(url.pathname, locale, props.categories);\n"
+		);
 	await fs.writeFile(originFile, replacedContent);
-}
-
+};
 
 /**
  * @description: 替换 utils/navigation.ts
@@ -32,7 +33,8 @@ const replaceNavigation = async () => {
 	 */
 	const originFile = path.join(starlightPath, "/utils/navigation.ts");
 	const originContent = await fs.readFile(originFile);
-	const sideBarRegex = /export function getSidebar\(pathname\: string\, locale\: string \| undefined\).+\n(.+)/;
+	const sideBarRegex =
+		/export function getSidebar\(pathname\: string\, locale\: string \| undefined\).+\n(.+)/;
 	const sideBarContent = originContent.toString().replace(
 		sideBarRegex,
 		`export function getSidebar(pathname: string, locale: string | undefined, categories: any): SidebarEntry[] {
@@ -68,7 +70,8 @@ const replaceNavigation = async () => {
 	 * /v2/en/quickstart/quick-start-docker.html => /docs/v2/quickstart/quick-start-docker.html
 	 * /v2/zh-cn/quickstart/quick-start-kubernetes.html => /docs/v2/quickstart/quick-start-docker.html
 	 */
-	const localeDirRegex = /const localeDir = locale \? locale \+ \'\/\' \+ directory \: directory\;/;
+	const localeDirRegex =
+		/const localeDir = locale \? locale \+ \'\/\' \+ directory \: directory\;/;
 	const localeDirContent = sideBarLinkContent.replace(
 		localeDirRegex,
 		`const regex =  /\\docs\\/([^/]+)\\/(en|zh-cn)/;
@@ -76,8 +79,7 @@ const replaceNavigation = async () => {
 	);
 
 	await fs.writeFile(originFile, localeDirContent);
-}
-
+};
 
 /**
  * @description: 替换 index.astro
@@ -86,22 +88,22 @@ const replaceNavigation = async () => {
  */
 const replaceIndexAstro = async () => {
 	const originFile = path.join(starlightPath, "index.astro");
-	const replacedContent = await fs.readFile('./template/index.startlight.tpl');
+	const replacedContent = await fs.readFile("./template/index.startlight.tpl");
 	await fs.writeFile(originFile, replacedContent.toString());
-}
+};
 
 /**
  * @description: 替换 404.astro
  */
 const replace404Astro = async () => {
 	const originFile = path.join(starlightPath, "404.astro");
-	const replacedContent = await fs.readFile('./template/404.startlight.tpl');
+	const replacedContent = await fs.readFile("./template/404.startlight.tpl");
 	await fs.writeFile(originFile, replacedContent.toString());
-}
+};
 
 export default async () => {
 	await replaceRouteData();
 	await replaceNavigation();
 	await replaceIndexAstro();
 	await replace404Astro();
-}
+};
