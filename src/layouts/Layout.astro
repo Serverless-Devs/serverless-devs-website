@@ -1,0 +1,60 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@components/footer.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import "@fontsource-variable/inter/index.css";
+import "@fontsource-variable/bricolage-grotesque";
+import "../style/global.css";
+
+export interface Props {
+	title: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+	"/opengraph.jpg",
+	Astro.site
+).toString();
+
+const { title } = Astro.props;
+
+const makeTitle = title
+	? title + " | " + "Serverless Devs"
+	: "Serverless Devs 官网 - 一键部署AI/WEB/函数应用到多云的开发运维平台";
+---
+
+<!doctype html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<SEO
+			title={makeTitle}
+			canonical={canonicalURL}
+			extend={{
+				meta: [
+					{
+						name: "keywords",
+						content: "Serverless, Serverless Devs, 中文社区, Serverless 社区"
+					},
+					{
+						name: "author",
+						content: "Serverless Devs"
+					}
+				]
+			}}
+		/>
+	</head>
+	<body>
+		<Navbar />
+		<slot />
+		<Footer />
+		<style is:global>
+			img {
+				content-visibility: auto;
+			}
+		</style>
+	</body>
+</html>
