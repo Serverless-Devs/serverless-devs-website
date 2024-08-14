@@ -1,3 +1,6 @@
+---
+title: CICD
+---
 # CICD
 
 小明将函数开发完毕了， 他需要将函数的自动化部署能力集成到现有的 CICD 系统，如 `Github Action`、 `Gitee Go `、  `Jenkins` 以及云效，详情请参考[与 CI/CD 平台/工具集成](../user-guide/cicd.md)

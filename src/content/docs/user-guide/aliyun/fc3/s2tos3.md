@@ -1,4 +1,6 @@
-# fc2.0 yaml 转 fc3.0 yaml
+---
+title: fc2.0 yaml 转 fc3.0 yaml
+---
 
 `s2tos3` 命令是将 fc2.0 的 fc 组件的 s.yaml 转换成 fc3.0 的 s.yaml。
 

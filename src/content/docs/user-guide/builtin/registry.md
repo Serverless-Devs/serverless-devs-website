@@ -1,4 +1,6 @@
-# Registry 命令
+---
+title: Registry 模版管理
+---
 
 `registry`命令是将案例模板发到 [Serverless Registry](https://registry.serverless-devs.com) 并对相关内容进行管理的命令。
 

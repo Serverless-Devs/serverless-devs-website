@@ -1,4 +1,6 @@
-# Serverless Devs
+---
+title: Serverless Devs
+---
 
 **Serverless Devs** 是一个开源开放的 Serverless 开发者平台，致力于为开发者提供强大的工具链体系。通过该平台，开发者不仅可以一键体验多云 Serverless 产品，极速部署 Serverless 项目，还可以在 Serverless 应用全生命周期进行项目的管理，并且非常简单快速的将 Serverless Devs 与其他工具/平台进行结合，进一步提升研发、运维效能。
 
@@ -16,9 +18,9 @@
 
 - **简单快速上手**：通过开放 Serverless Registry 的模型/规范，该项目可以通过应用的模式，为开发者提供多种形式，多种领域以及多种场景的上手案例，通过 `s init` 可以初始化各种案例
 
-- **应用全生命周期管理**：通过组件化的支持，Serverless Devs 可以在应用的全生命周期发挥重要的作用，以 [阿里云函数计算的FC3组件](./user-guide/aliyun/index.md) 为例，开发者可以在项目创建、项目的开发、调试、可观测性等多个层面进行项目的建设和管理；
+- **应用全生命周期管理**：通过组件化的支持，Serverless Devs 可以在应用的全生命周期发挥重要的作用，以 [阿里云函数计算的FC3组件](user-guideliyun/index.md) 为例，开发者可以在项目创建、项目的开发、调试、可观测性等多个层面进行项目的建设和管理；
 
-- **良好的集成与被集成性**：项目具有非常好的集成性与被集成性，可以通过组件化的支持，非常简单的与传统的生态进行有机结合。同时，Serverless Devs 开发者工具也可以非常简单的被集成到海量的自动化流程中，详情请参考 [CI/CD文档](./practices/cicd.md)
+- **良好的集成与被集成性**：项目具有非常好的集成性与被集成性，可以通过组件化的支持，非常简单的与传统的生态进行有机结合。同时，Serverless Devs 开发者工具也可以非常简单的被集成到海量的自动化流程中，详情请参考 [CI/CD文档](practices/cicd.md)
 
 ## 设计哲学
 
@@ -28,9 +30,9 @@ Serverless Devs 是一个开源开发的 Serverless 领域的工具链项目，�
 
 在 Serverless Devs 中，拥有两个角色：
 
-- **开源贡献者**：开源贡献者将按照规范进行[应用的开发](./dev-guide/application.md) 和 [组件的开发](./dev-guide/component.md) ，并将内容发布到Serverless Registry 中，既可以被更多人所使用；
+- **开源贡献者**：开源贡献者将按照规范进行[应用的开发](dev-guide/application.md) 和 [组件的开发](dev-guide/component.md) ，并将内容发布到Serverless Registry 中，既可以被更多人所使用；
 
-- **Serverless开发者**：通过开发者工具 Serverless Devs，进行[应用的初始化](./getting-started.md)，以及组件的使用；通过开发者工具，将业务按照预期部署到线上；
+- **Serverless开发者**：通过开发者工具 Serverless Devs，进行[应用的初始化](getting-started.md)，以及组件的使用；通过开发者工具，将业务按照预期部署到线上；
 
 在这样一个 Serverless Devs 的应用框架上，我们不难发现可以和其他任何一种模式/生态，具有相似的命名以及模块：
 

@@ -1,4 +1,6 @@
-# Component 命令
+---
+title: Component 组件信息
+---
 
 `component`命令是获取已经安装的组件详情信息。
 

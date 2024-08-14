@@ -1,3 +1,6 @@
+---
+title: fc3-domain 组件的 Yaml 完整示例
+---
 # fc3-domain 组件的 Yaml 完整示例
 
 1. 如果您使用 VsCode 开发， 推荐您配置[智能提示和检测](../../intelligent.md)

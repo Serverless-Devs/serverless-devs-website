@@ -1,3 +1,6 @@
+---
+title: 快速入门
+---
 ## 工具安装
 
 - 第一步：安装 [Node.js(14.14.0 以上版本) 与 npm 包管理工具](https://nodejs.org/en/download)；
@@ -15,7 +18,7 @@ $ s -v
 @serverless-devs/s: 3.0.0, s-home: /root/.s, linux-x64, node-v16.13.1
 ```
 
-[更多安装方式请参考](./user-guide/install.md)
+[更多安装方式请参考](user-guidenstall.md)
 
 ## 配置阿里云密钥
 
@@ -58,7 +61,7 @@ s config add
 ? Please create alias for key pair. If not, please enter to skip default
 ```
 
-[更多配置方式请参考](./user-guide/config.md)
+[更多配置方式请参考](user-guideonfig.md)
 
 ## 初始化函数示例
 

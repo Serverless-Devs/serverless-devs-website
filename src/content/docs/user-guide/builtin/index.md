@@ -1,3 +1,7 @@
+---
+title: 概览
+---
+
 # 命令操作文档
 
 Serverless Devs 可以通过`-h`唤起对应命令的帮助文档，例如查看 `s` 命令的帮助信息可以是：`s -h`
@@ -38,7 +42,7 @@ Commands:
 | 参数全称     | 参数缩写 | 默认取值                               | 参数含义                        | 备注                                                                                                                                 |
 | ------------ | -------- | -------------------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | template     | t        | `s.yaml`/`s.yml`                       | 指定资源描述文件                |                                                                                                                                      |
-| access       | a        | `yaml`中所指定的`access`信息/`default` | 指定本次部署时的密钥信息        | 可以使用通过[config命令](./config.md#config-add)配置的密钥信息，以及[配置到环境变量的密钥信息](./config.md#通过环境变量配置密钥信息) |
+| access       | a        | `yaml`中所指定的`access`信息/`default` | 指定本次部署时的密钥信息        | 可以使用通过[config命令](config.md#config-add)配置的密钥信息，以及[配置到环境变量的密钥信息](config.md#通过环境变量配置密钥信息) |
 | debug        | -        | -                                      | 开启`Debug`模式                 | 开启`Debug`模式后可以查看到更多的工具执行过程信息                                                                                    |
 | output-format | o        | `default`                              | 指定数据的输出格式              | 支持`default`, `json`, `yaml`, `raw`格式                                                                                             |
 | version      | v        | -                                      | 查看版本信息                    | -                                                                                                                                    |
@@ -47,13 +51,13 @@ Commands:
 
 ## 命令详情
 
-- [config: 密钥配置](./config.md)
-- [init: 项目初始化](./init.md)
-- [cli: 纯命令行模式](./cli.md)
-- [clean: 工具清理](./clean.md)
-- [component: 组件信息](./component.md)
-- [custom: 自定义命令](./custom.md)
-- [registry: 模板管理](./registry.md)
-- [preview: 预览渲染结果](./preview.md)
-- [verify: 校验Yaml内容](./verify.md)
-- [set: 设置工具配置](./set.md)
+- [config: 密钥配置](config.md)
+- [init: 项目初始化](init.md)
+- [cli: 纯命令行模式](cli.md)
+- [clean: 工具清理](clean.md)
+- [component: 组件信息](component.md)
+- [custom: 自定义命令](custom.md)
+- [registry: 模板管理](registry.md)
+- [preview: 预览渲染结果](preview.md)
+- [verify: 校验Yaml内容](verify.md)
+- [set: 设置工具配置](set.md)

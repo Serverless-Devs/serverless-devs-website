@@ -1,4 +1,6 @@
-# 配置 Serverless Devs 工具
+---
+title: 配置 Serverless Devs 工具
+---
 
 以阿里云为例
 

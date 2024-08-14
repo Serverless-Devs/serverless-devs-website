@@ -1,4 +1,6 @@
-# Verify 命令
+---
+title: Verify 校验Yaml内容
+---
 
 `verify`命令可以验证 Serverless Devs Yaml 文件内容（格式和数值）是否合法。
 

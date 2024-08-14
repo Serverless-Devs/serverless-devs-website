@@ -1,4 +1,6 @@
-# 安装 Serverless Devs 工具
+---
+title: 安装 Serverless Devs 工具
+---
 
 ## 通过命令行工具安装
 

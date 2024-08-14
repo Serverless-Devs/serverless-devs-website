@@ -1,4 +1,6 @@
-# lambda 组件
+---
+title: AWS Lambda 组件
+---
 
 通过本组件，您可以简单快速的将项目部署到Lambda。
 

@@ -1,4 +1,6 @@
-# 本地调试函数
+---
+title: 本地调试
+---
 
 `local` 命令是在本地对函数调试的命令。
 
@@ -192,7 +194,7 @@ s local invoke --config intellij --debug-port 3000
 
 
 ## 注意事项
-如您在函数构建过程中设置了[局部 Action](../../../user-guide/spec.md#action_1)，也建议对local指令设置相关的局部 Action，以免项目无法正常调试。示例如下：
+如您在函数构建过程中设置了[局部 Action](../..n_1)，也建议对local指令设置相关的局部 Action，以免项目无法正常调试。示例如下：
 ```
 resources:
   hello_world:

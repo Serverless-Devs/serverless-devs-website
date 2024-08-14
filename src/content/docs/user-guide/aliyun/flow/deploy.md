@@ -1,6 +1,9 @@
+---
+title: 部署
+---
 # 部署工作流
 
-`deploy` 命令是对 CloudFlow 流程进行部署的命令，即将本地在 [`Yaml` 文件](./spec.md) 中声明的资源部署到线上。
+`deploy` 命令是对 CloudFlow 流程进行部署的命令，即将本地在 [`Yaml` 文件](spec.md) 中声明的资源部署到线上。
 
 ## 命令解析
 

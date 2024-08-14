@@ -1,4 +1,6 @@
-# Init 命令
+---
+title: Init 项目初始化
+---
 
 `init`命令是初始化Serverless项目的脚手架。
 

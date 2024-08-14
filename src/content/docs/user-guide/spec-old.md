@@ -1,7 +1,10 @@
+---
+title: 旧版描述文件
+---
 # 旧版描述文件 Serverless User Model 
 
 > **注意：该规范仅适用于 `edition` 不为 `3.0.0` 的旧版YAML文件。**  
-> 旧版规范已不再维护，若想使用最新功能，可以使用[fc3组件提供的方法](https://manual.serverless-devs.com/user-guide/aliyun/fc3/s2tos3/)自动升级，也可以根据[新版规范](./spec.md)手动升级。
+> 旧版规范已不再维护，若想使用最新功能，可以使用[fc3组件提供的方法](https://manual.serverless-devs.com/user-guide/aliyun/fc3/s2tos3/)自动升级，也可以根据[新版规范](spec.md)手动升级。
 
 Serverless User Model 部分介绍了 Serverless Application 规范以及 Serverless Package Component 使用规范。
 

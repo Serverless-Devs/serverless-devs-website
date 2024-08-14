@@ -1,3 +1,6 @@
+---
+title: Config 密钥配置
+---
 # Config 命令
 
 当执行`s config -h`之后，可以进行相关帮助信息的查看：

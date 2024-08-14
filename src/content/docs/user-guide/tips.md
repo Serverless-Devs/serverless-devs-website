@@ -1,3 +1,6 @@
+---
+title: 常见小贴士
+---
 # 常见小贴士
 
 ## Serverless Devs 和 fc3 组件的关系
@@ -23,7 +26,7 @@ Serverless Devs 开发者工具从根本上提供了两种使用方法。
 1. 如果想要使用 Yaml 模式，在当前目录下，必须要有`s.yaml`/`s.yml`文件，或通过`-t`/`--template`指定的资源部描述文件；
 2. 如果想要试用 Cli 模式，则必须是 `s cli 组件名 方法 参数`的格式进行，此时不需要 Yaml 文件；
 
-更多详情请参考[Yaml 模式 Cli 模式对比](./spec.md#yaml-cli)
+更多详情请参考[Yaml 模式 Cli 模式对比](spec.md#yaml-cli)
 
 ## 如何声明/部署多个函数
 
@@ -104,7 +107,7 @@ resources:
 
 `s init start-fc3-custom-domain -d start-fc3-custom-domain`
 
-有关 fc3-domain 组件请参考 [fc3-domain](./aliyun/fc3-domain/spec.md)
+有关 fc3-domain 组件请参考 [fc3-domain](aliyun/fc3-domain/spec.md)
 
 ## 如何解决Yaml配置重复冗余的问题
 
@@ -146,7 +149,7 @@ resources:
       code: ./code2
 ```
 
-更多请参考 [extend template](./spec.md#template) 和 [yaml 继承](./spec.md#yaml) 完成配置冗余的问题
+更多请参考 [extend template](spec.md#template) 和 [yaml 继承](spec.md#yaml) 完成配置冗余的问题
 
 ## 如何实现函数多 region 部署
 
@@ -184,13 +187,13 @@ resources:
 
 ## 如何快速克隆一个函数的代码和配置
 
-可以使用 s 工具的 [sync](./aliyun/fc3/sync.md) 指令快速完成函数的代码和配置同步到本地， 然后修改 s.yaml 中的 region 或者函数名字， 然后执行 `s deploy` 实现函数的克隆。
+可以使用 s 工具的 [sync](aliyun/fc3/sync.md) 指令快速完成函数的代码和配置同步到本地， 然后修改 s.yaml 中的 region 或者函数名字， 然后执行 `s deploy` 实现函数的克隆。
 
-> 函数计算2.0 也可以使用 [sync](./aliyun/fc/command/sync.md) 指令
+> 函数计算2.0 也可以使用 [sync](aliyun/fc/command/sync.md) 指令
 
 ## 智能提示和检测
 
-给`VSCode`插件做智能提示和检测, 详情参考[intelligent](./intelligent.md)
+给`VSCode`插件做智能提示和检测, 详情参考[intelligent](intelligent.md)
 
 ## 关于`.fcignore`使用方法
 
@@ -277,7 +280,7 @@ Serverless Devs 的 Yaml 规范本身支持全局变量、环境变量以及外�
   本质是获取 `s config get`中变量值
 - 获取当前模块的信息：`${this.xx}`, 比如 `${this.props.name}`
 
-> 详情可以参考：[Serverless Devs Yaml 规范文档](./spec.md)
+> 详情可以参考：[Serverless Devs Yaml 规范文档](spec.md)
 
 ## 如何实现函数代码包上传走内网更新部署
 
@@ -331,7 +334,7 @@ lrwxrwxrwx 1 root root 15 Jan  5 09:30 /usr/bin/docker -> /usr/bin/podman
 
 ## fc2.0 的 fc 组件和 fc3.0 的 fc3 组件关系是什么？
 
-详情请参考 [fc组件(旧版/fc2.0)](./aliyun/fc/index.md)
+详情请参考 [fc组件(旧版/fc2.0)](aliyun/fc/index.md)
 
 ## 使用指令卡死了，无法退出，要怎么办？
 

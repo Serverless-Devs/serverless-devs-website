@@ -1,3 +1,6 @@
+---
+title: Parameters 参数
+---
 # Parameters 规范
 
 Parameters 参数是 Publish.yaml 中用来描述 yaml 的相关参数，严格遵守Json Schema规范标准

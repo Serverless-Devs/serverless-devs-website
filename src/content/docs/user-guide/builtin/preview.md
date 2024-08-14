@@ -1,4 +1,6 @@
-# Preview 命令
+---
+title: Preview 预览渲染结果
+---
 
 `preview`命令可以预览 Serverless Devs Yaml 文件的渲染结果。
 

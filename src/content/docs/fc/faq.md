@@ -1,3 +1,6 @@
+---
+title: FAQ
+---
 # FAQ
 
 ## custom 和 php runtime 如何安装自定义扩展

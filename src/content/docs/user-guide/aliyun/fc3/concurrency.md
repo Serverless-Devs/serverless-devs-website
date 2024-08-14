@@ -1,4 +1,6 @@
-# 函数资源配额操作
+---
+title: 资源配额
+---
 
 `concurrency` 命令是对函数资源配额 concurrency 操作的命令。
 

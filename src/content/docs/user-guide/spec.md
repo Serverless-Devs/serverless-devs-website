@@ -1,6 +1,9 @@
+---
+title: 描述文件格式/规范
+---
 # 描述文件 Spec
 
-> **注意：此文档适用于`edition`为`3.0.0`的YAML文件。** 如果您使用的是`edition`不为`3.0.0`的YAML文件，请参考[旧版YAML规范](./spec-old.md)。
+> **注意：此文档适用于`edition`为`3.0.0`的YAML文件。** 如果您使用的是`edition`不为`3.0.0`的YAML文件，请参考[旧版YAML规范](spec-old.md)。
 
 在非`cli`模式下([Yaml 模式 Cli 模式对比](#yaml-cli))，进行应用的操作、组件的使用，需要按照 Serverless Devs 的规范，提供相对应的资源/行为描述文件，且该文件还需要符合以下条件：
 
@@ -130,7 +133,7 @@ resources:
 |  ----  | ----  | 
 | edition  | 命令行YAML规范版本，遵循语义化版本（Semantic Versioning）规范 | 
 | name  | 项目名称 | 
-| access  | 秘钥别名，可以使用通过[config命令](./builtin/config.md#config-add)配置的密钥信息，以及[通过环境变量设置密钥](../dev-guide/cli_design.md#_11) |
+| access  | 秘钥别名，可以使用通过[config命令](builtin/config.md#config-add)配置的密钥信息，以及[通过环境变量设置密钥](../dev-guide/cli_design.md#_11) |
 | validation | （3.0.5及之后版本可用）是否开启资源属性值校验。设置为true时，会使用[组件提供的schema](../dev-guide/component.md#getschema)校验模板中定义的资源属性值，默认为false |
 | extend  | 所继承的模板 |
 | template  | 可被继承的模板 |
@@ -1006,7 +1009,7 @@ resources:
 
 -----------
 
-> 在一个项目下，如何一键部署整个项目？又或者如何只部署应用中的某个业务模块？可以参考[自定义命令使用指南](./builtin/custom.md)
+> 在一个项目下，如何一键部署整个项目？又或者如何只部署应用中的某个业务模块？可以参考[自定义命令使用指南](builtin/custom.md)
 
 ### Action通配符
 
