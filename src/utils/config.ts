@@ -1,8 +1,8 @@
-import fs from 'fs';
-import yaml from 'js-yaml';
-import merge from 'lodash.merge';
+import fs from "fs";
+import yaml from "js-yaml";
+import merge from "lodash.merge";
 
-import type { MetaData } from '@/types';
+import type { MetaData } from "@/types";
 
 export interface SiteConfig {
   name: string;
@@ -13,7 +13,7 @@ export interface SiteConfig {
   websiteGithubUrl?: string;
   logoUrl?: string;
 }
-export interface MetaDataConfig extends Omit<MetaData, 'title'> {
+export interface MetaDataConfig extends Omit<MetaData, "title"> {
   title?: {
     default: string;
     template: string;
@@ -33,21 +33,28 @@ export interface AnalyticsConfig {
   };
 }
 
-const config = yaml.load(fs.readFileSync('src/config.yaml', 'utf8')) as {
+export interface SidebarItem {
+  label: string;
+  link: string;
+  items?: SidebarItem[];
+}
+
+const config = yaml.load(fs.readFileSync("src/config.yaml", "utf8")) as {
   site?: SiteConfig;
   metadata?: MetaDataConfig;
   algolia?: AlgoliaConfig;
   ui?: unknown;
   analytics?: unknown;
+  sidebar?: SidebarItem;
 };
 
-const DEFAULT_SITE_NAME = 'Website';
+const DEFAULT_SITE_NAME = "Website";
 
 const getSite = () => {
   const _default = {
     name: DEFAULT_SITE_NAME,
     site: undefined,
-    base: '/',
+    base: "/",
     trailingSlash: false,
   };
 
@@ -60,15 +67,15 @@ const getMetadata = () => {
   const _default = {
     title: {
       default: siteConfig?.name || DEFAULT_SITE_NAME,
-      template: '%s',
+      template: "%s",
     },
-    description: '',
+    description: "",
     robots: {
       index: false,
       follow: false,
     },
     openGraph: {
-      type: 'website',
+      type: "website",
     },
   };
 
@@ -77,14 +84,13 @@ const getMetadata = () => {
 
 const getAlgolia = () => {
   const _default = {
-    appId: '1QV814950M',
-    apiKey: '7445da3dec050d45d29f3fe93ed45af3',
-    indexName: 'nacos',
-}
+    appId: "1QV814950M",
+    apiKey: "7445da3dec050d45d29f3fe93ed45af3",
+    indexName: "nacos",
+  };
 
   return merge({}, _default, config?.algolia ?? {}) as AlgoliaConfig;
 };
-
 
 const getUI = () => {
   const _default = {
@@ -112,3 +118,4 @@ export const ALGOLIA = getAlgolia();
 export const METADATA = getMetadata();
 export const UI = getUI();
 export const ANALYTICS = getAnalytics();
+export const SIDEBAR = config?.sidebar;
