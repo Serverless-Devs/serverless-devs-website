@@ -134,7 +134,7 @@ Parameters: # 标准的JSON Scheme
 | Service      | 是   | Struct       | 应用所需要的服务和相关的权限等描述，例如该应用需要函数计算，Serverless工作流等产品/服务作为支持 |
 | Organization | 是   | String       | 应用的组织名称                                                                                  |
 | Effective    | 是   | String       | 应用的可视权限                                                                                  |
-| Parameters   | 是   | Struct       | 应用中Yaml内需要填写的字段，严格遵守Json Schema规范标准， 具体可以参考 [Parameters 规范](./parameters.md)                                        |
+| Parameters   | 是   | Struct       | 应用中Yaml内需要填写的字段，严格遵守Json Schema规范标准， 具体可以参考 [Parameters 规范](parameters.md)                                        |
 
 #### Provider
 
@@ -259,7 +259,7 @@ resources:
     - 如果存在，则默认进行对应；
     - 如果不存在，直接提醒用户需要输入access这样的一个参数，作为Yaml中所必须的参数；
 
-> 关于Parameters参数的格式，严格遵循JSON Scheme的规范标准，更多使用示例可查看[Parameters参数](./parameters.md)文档。
+> 关于Parameters参数的格式，严格遵循JSON Scheme的规范标准，更多使用示例可查看[Parameters参数](parameters.md)文档。
 
 ### 私有应用调试
 
