@@ -1,11 +1,8 @@
-import ui from "@/i18n/zh-cn/ui";
-
 type UiKeys = keyof typeof ui;
-
 
 export interface Customer {
   name: UiKeys;
-  theme: 'gray' | 'dark' | 'light'; 
+  theme: "gray" | "dark" | "light";
   logo: string;
   href: string;
   description: UiKeys;
@@ -45,7 +42,6 @@ export interface MetaData {
   robots?: MetaDataRobots;
 
   description?: string;
-
 }
 
 export interface MetaDataRobots {
@@ -58,10 +54,10 @@ export interface Post {
   body: string;
   collection: string;
   data: {
-      title: string;
-      description: string;
-      date: string;
-      keywords?: any[];
+    title: string;
+    description: string;
+    date: string;
+    keywords?: any[];
   };
   excerpt?: string;
-};
+}
