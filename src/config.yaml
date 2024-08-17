@@ -33,147 +33,86 @@ metadata:
     type: website
 
 sidebar:
-  - label: 首页
-    link: overview
-  - label: Serverless Devs介绍
+  - label: docs
     items:
-      - label: Serverless是什么
-        link: introduction/what-is-serverless
-      - label: Serverless系统整体架构和原理
-        link: introduction/serverless-arch
-      - label: Serverless适用场景
-        link: introduction/serverless-use-cases
-      - label: Serverless Devs的架构和原理
-        link: introduction/serverless-devs-arch
-  - label: 快速入门
-    link: getting-started
-  - label: 用户手册
-    items:
-      - label: 安装
-        link: user-guide/install
-      - label: 配置
-        link: user-guide/config
-      - label: 内置指令
+      - label: 首页
+        link: docs/overview
+      - label: Serverless Devs介绍
+        autogenerate: { directory: 'docs/introduction' }
+      - label: 快速入门
+        link: docs/getting-started
+      - label: 用户手册
         items:
-          - label: 概览
-            link: user-guide/builtin
-          - label: Config 密钥配置
-            link: user-guide/builtin/config
-          - label: Init 项目初始化
-            link: user-guide/builtin/init
-          - label: Verify 校验Yaml内容
-            link: user-guide/builtin/verify
-          - label: Preview 预览渲染结果
-            link: user-guide/builtin/preview
-          - label: Cli 纯命令行模式
-            link: user-guide/builtin/cli
-          - label: Component 组件信息
-            link: user-guide/builtin/component
-          - label: Registry 模版管理
-            link: user-guide/builtin/registry
-          - label: Clean 工具清理
-            link: user-guide/builtin/clean
-          - label: Set 工具设置
-            link: user-guide/builtin/set
-          - label: Env 多环境配置
-            link: user-guide/builtin/env
-          - label: 自定义命令
-            link: user-guide/builtin/custom
-      - label: 描述文件格式/规范
-        link: user-guide/spec
-      - label: 阿里云组件
-        items:
-          - label: 概览
-            link: user-guide/aliyun
-          - label: fc3组件
+          - label: 安装
+            link: docs/user-guide/install
+          - label: 配置
+            link: docs/user-guide/config
+          - label: 内置指令
+            autogenerate: { directory: 'docs/user-guide/builtin' }
+          - label: 描述文件格式/规范
+            link: docs/user-guide/spec
+          - label: 阿里云组件
             items:
-              - label: Yaml 规范
-                link: user-guide/aliyun/fc3/spec
-              - label: 构建&部署
+              - label: 概览
+                link: docs/user-guide/aliyun
+              - label: fc3组件
                 items:
-                  - label: 部署
-                    link: user-guide/aliyun/fc3/deploy
-                  - label: 构建
-                    link: user-guide/aliyun/fc3/build
-                  - label: 移除
-                    link: user-guide/aliyun/fc3/remove
-                  - label: 计划变更
-                    link: user-guide/aliyun/fc3/plan
-              - label: 调用&调试
-                items:
-                  - label: 本地调试
-                    link: user-guide/aliyun/fc3/local
-                  - label: 函数触发
-                    link: user-guide/aliyun/fc3/invoke
-                  - label: 实例登录
-                    link: user-guide/aliyun/fc3/instance
-              - label: 发布&配置
-                items:
-                  - label: 版本
-                    link: user-guide/aliyun/fc3/version
-                  - label: 别名
-                    link: user-guide/aliyun/fc3/alias
-                  - label: 预留
-                    link: user-guide/aliyun/fc3/provision
-                  - label: 资源配额
-                    link: user-guide/aliyun/fc3/concurrency
-                  - label: 层
-                    link: user-guide/aliyun/fc3/layer
-              - label: 其他
-                items:
-                  - label: 日志查询
-                    link: user-guide/aliyun/fc3/logs
-                  - label: 查看函数
-                    link: user-guide/aliyun/fc3/info
-                  - label: 资源同步
-                    link: user-guide/aliyun/fc3/sync
-                  - label: fc2.0 yaml 转 fc3.0 yaml
-                    link: user-guide/aliyun/fc3/s2tos3
-      - label: 其他云厂商组件
-        items:
-          - label: AWS Lambda 组件
-            link: user-guide/other-vendor/lambda
-          - label: 腾讯云 SCF 组件
-            link: user-guide/other-vendor/scf
-          - label: 华为云 Function Graph 组件
-            link: user-guide/other-vendor/fg
-          - label: 百度云 CFC 组件
-            link: user-guide/other-vendor/cfc
-      - label: CICD 平台集成
-        link: user-guide/cicd
-  - label: 实战系列
-    items:
-      - label: 初识 Serverless Devs
-        link: practices/hello-world
-      - label: 调试小试牛刀
-        link: practices/debug
-      - label: 如何提高构建/部署效率
-        link: practices/efficiency
-      - label: 线上问题诊断
-        link: practices/troubleshooting
-      - label: CICD
-        link: practices/cicd
-      - label: 多区域灾备
-        link: practices/multi-region
-      - label: 多环境实践
-        link: practices/multi-env
-  - label: 常见小贴士
-    link: user-guide/tips
-  - label: 进阶开发者手册
-    items:
-      - label: 命令行设计规范
-        link: dev-guide/cli_design
-      - label: 应用开发
-        link: dev-guide/application
-      - label: 组件开发
-        link: dev-guide/component
-      - label: 插件开发
-        link: dev-guide/plugin
-      - label: Parameters 参数
-        link: dev-guide/parameters
-  - label: 关于我们
-    link: about
-
+                  - label: Yaml 规范
+                    link: docs/user-guide/aliyun/fc3/spec
+                  - label: 构建&部署
+                    items:
+                      - label: 部署
+                        link: docs/user-guide/aliyun/fc3/deploy
+                      - label: 构建
+                        link: docs/user-guide/aliyun/fc3/build
+                      - label: 移除
+                        link: docs/user-guide/aliyun/fc3/remove
+                      - label: 计划变更
+                        link: docs/user-guide/aliyun/fc3/plan
+                  - label: 调用&调试
+                    items:
+                      - label: 本地调试
+                        link: docs/user-guide/aliyun/fc3/local
+                      - label: 函数触发
+                        link: docs/user-guide/aliyun/fc3/invoke
+                      - label: 实例登录
+                        link: docs/user-guide/aliyun/fc3/instance
+                  - label: 发布&配置
+                    items:
+                      - label: 版本
+                        link: docs/user-guide/aliyun/fc3/version
+                      - label: 别名
+                        link: docs/user-guide/aliyun/fc3/alias
+                      - label: 预留
+                        link: docs/user-guide/aliyun/fc3/provision
+                      - label: 资源配额
+                        link: docs/user-guide/aliyun/fc3/concurrency
+                      - label: 层
+                        link: docs/user-guide/aliyun/fc3/layer
+                  - label: 其他
+                    items:
+                      - label: 日志查询
+                        link: docs/user-guide/aliyun/fc3/logs
+                      - label: 查看函数
+                        link: docs/user-guide/aliyun/fc3/info
+                      - label: 资源同步
+                        link: docs/user-guide/aliyun/fc3/sync
+                      - label: fc2.0 yaml 转 fc3.0 yaml
+                        link: docs/user-guide/aliyun/fc3/s2tos3
+          - label: 其他云厂商组件
+            autogenerate: { directory: 'docs/user-guide/other-vendor/' }
+          - label: CICD 平台集成
+            link: docs/user-guide/cicd
+      - label: 实战系列
+        autogenerate: { directory: 'docs/practices/' }
+      - label: 常见小贴士
+        link: docs/user-guide/tips
+      - label: 进阶开发者手册
+        autogenerate: { directory: 'docs/dev-guide/' }
+      - label: 关于我们
+        link: docs/about
+  - label: faq
+    autogenerate: { directory: 'faq' }
 
 ui:
   colors:

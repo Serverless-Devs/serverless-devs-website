@@ -18,6 +18,7 @@ import {
 import { ANALYTICS, SIDEBAR, SITE } from "./src/utils/config.ts";
 import { starlightAsides } from "./node_modules/@astrojs/starlight/integrations/asides";
 import topLevelAwait from "vite-plugin-top-level-await";
+import starlightUtils from "@lorenzo_lewis/starlight-utils";
 
 const whenExternalScripts = (items = []) =>
   ANALYTICS.vendors.googleAnalytics.id &&
@@ -54,6 +55,13 @@ export default defineConfig({
         baseUrl: SITE.websiteGithubUrl,
       },
       sidebar: SIDEBAR,
+      plugins: [
+        starlightUtils({
+          multiSidebar: {
+            switcherStyle: "hidden",
+          },
+        }),
+      ],
       // locales,
       // customCss: ['./src/style/global.css','./src/style/fonts.css'],
     }),
@@ -98,8 +106,7 @@ export default defineConfig({
   },
   // TODO: 梳理redirects
   redirects: {
-    "/docs": "/overview",
-    "/fc/": "/user-guide/aliyun/fc/readme",
-    "/serverless-devs/command/readme.md": "/user-guide/aliyun/#fc3",
+    "/fc/": "docs/user-guide/aliyun/fc/readme",
+    "/serverless-devs/command/readme.md": "docs/user-guide/aliyun/#fc3",
   },
 });

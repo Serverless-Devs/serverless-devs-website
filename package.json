@@ -26,6 +26,7 @@
     "@iconify-json/simple-icons": "^1.1.110",
     "@iconify-json/tabler": "^1.1.108",
     "@iconify-json/uil": "^1.1.8",
+    "@lorenzo_lewis/starlight-utils": "^0.1.2",
     "@serverless-cd/goat-ui": "^0.0.28",
     "astro": "^4.3.5",
     "astro-compress": "^2.2.11",

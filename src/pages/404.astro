@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+
+const pathname = Astro.url.pathname;
+
+if (pathname.startsWith('/docs') || pathname === '/overview') {
+  return new Response(null, {
+    status: 302,
+    headers: {
+      Location: "/docs/overview",
+    },
+  });
+}else if (pathname.startsWith('/faq')) {
+    const allContents = await getCollection('docs');
+    const allFaqs = allContents.filter(content=>content.slug.startsWith('faq'));
+
+  const firstFaq = allFaqs[0];
+  const firstFaqPath = firstFaq.slug;
+  const firstFaqUrl = `/${firstFaqPath}`;
+  return new Response(null, {
+    status: 302,
+    headers: {
+      Location: firstFaqUrl,
+    },
+  });
+}else{
+    return new Response(null, {
+        status: 302,
+        headers: {
+            Location: "/",
+        },
+    });
+}
+---
