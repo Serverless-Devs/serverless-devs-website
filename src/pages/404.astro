@@ -1,34 +1,25 @@
 ---
 import { getCollection } from 'astro:content';
 
-const pathname = Astro.url.pathname;
+const allContents = await getCollection('docs');
+const allFaqs = allContents.filter(content=>content.slug.startsWith('faq'));
 
-if (pathname.startsWith('/docs') || pathname === '/overview') {
-  return new Response(null, {
-    status: 302,
-    headers: {
-      Location: "/docs/overview",
-    },
-  });
-}else if (pathname.startsWith('/faq')) {
-    const allContents = await getCollection('docs');
-    const allFaqs = allContents.filter(content=>content.slug.startsWith('faq'));
-
-  const firstFaq = allFaqs[0];
-  const firstFaqPath = firstFaq.slug;
-  const firstFaqUrl = `/${firstFaqPath}`;
-  return new Response(null, {
-    status: 302,
-    headers: {
-      Location: firstFaqUrl,
-    },
-  });
-}else{
-    return new Response(null, {
-        status: 302,
-        headers: {
-            Location: "/",
-        },
-    });
-}
+const firstFaq = allFaqs[0];
+const firstFaqPath = firstFaq.slug;
+const firstFaqUrl = `/${firstFaqPath}`;
 ---
+
+<div data-first-faq-url={firstFaqUrl}></div>
+
+<script>
+    const pathname = window.location.pathname;
+
+    if (pathname.startsWith('/docs') || pathname === '/overview') {
+        window.location.replace("/docs/overview");
+    } else if (pathname.startsWith('/faq')) {
+        window.location.replace(document.querySelector('[data-first-faq-url]').dataset.firstFaqUrl);
+    } else {
+        window.location.replace("/");
+    }
+
+</script>

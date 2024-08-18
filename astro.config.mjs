@@ -38,6 +38,7 @@ export default defineConfig({
   },
 
   integrations: [
+    autoImportComponents(),
     starlight({
       title: SITE.name,
       favicon: "/favicon.png",
@@ -45,6 +46,7 @@ export default defineConfig({
         src: "./src/assets/logo.png",
         replacesTitle: true,
       },
+      disable404Route: true,
       social: {
         github: "https://github.com/Serverless-Devs/Serverless-Devs",
       },
@@ -65,7 +67,6 @@ export default defineConfig({
       // locales,
       // customCss: ['./src/style/global.css','./src/style/fonts.css'],
     }),
-    autoImportComponents(),
     tailwind({ applyBaseStyles: false }),
     icon({
       tabler: ["book", "pencil"],
