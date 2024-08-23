@@ -4,6 +4,7 @@ title: "serverless dev 本地运行"
 date: "2024-07-14"
 category: "expertConsultation"
 description: "要使用Serverless Devs进行本地运行，你需要遵循以下步骤，这些步骤主要依据提供的知识内容：### 1. 确保环境准备- **安装Docker**: 首先确认你的系统中安装了Docker，且版本需=19.03。这是因为在本地调试Serverless应用时，Serverless Devs依赖"
+next: false
 ---
 
 ## 用户问题 ： 

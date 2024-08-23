@@ -113,6 +113,8 @@ sidebar:
         link: docs/about
   - label: faq
     autogenerate: { directory: 'faq' }
+  - label: versions
+    autogenerate: { directory: 'versions' }
 
 ui:
   colors:

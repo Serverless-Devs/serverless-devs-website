@@ -3,13 +3,18 @@ import { getCollection } from 'astro:content';
 
 const allContents = await getCollection('docs');
 const allFaqs = allContents.filter(content=>content.slug.startsWith('faq'));
+const allVersions = allContents.filter(content=>content.slug.startsWith('versions'));
 
 const firstFaq = allFaqs[0];
 const firstFaqPath = firstFaq.slug;
 const firstFaqUrl = `/${firstFaqPath}`;
+
+const firstVersion = allVersions[0];
+const firstVersionPath = firstVersion.slug;
+const firstVersionUrl = `/${firstVersionPath}`;
 ---
 
-<div data-first-faq-url={firstFaqUrl}></div>
+<div data-first-faq-url={firstFaqUrl} data-first-version-url={firstVersionUrl}></div>
 
 <script>
     const pathname = window.location.pathname;
@@ -18,7 +23,9 @@ const firstFaqUrl = `/${firstFaqPath}`;
         window.location.replace("/docs/overview");
     } else if (pathname.startsWith('/faq')) {
         window.location.replace(document.querySelector('[data-first-faq-url]').dataset.firstFaqUrl);
-    } else {
+    }  else if (pathname.startsWith('/versions')) {
+        window.location.replace(document.querySelector('[data-first-version-url]').dataset.firstVersionUrl);
+    }else {
         window.location.replace("/");
     }
 
