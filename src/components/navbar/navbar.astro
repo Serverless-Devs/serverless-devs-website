@@ -29,6 +29,7 @@ const menuItems = [
 
 <Container>
 	<header class="flex flex-col lg:flex-row justify-start lg:gap-20 items-center my-5">
+		<div class="w-full hero-background"></div>
 		<Astronav>
 			<div class="flex flex-row gap-10">
 				<div class="flex w-full lg:w-auto items-center justify-between">
@@ -79,3 +80,15 @@ const menuItems = [
 		</Astronav>
 	</header>
 </Container>
+
+
+<style>
+	.hero-background{
+		position: absolute;
+		z-index:-10000;
+		right: 24%;
+		top: -833px;
+		height: 1647.8px;
+		background: radial-gradient(47.08% 51.77% at 40.57063665217249% 45.69726830970343%, rgba(45, 94, 252, 1) 0%, rgba(255, 255, 255, 1) 99.54%);
+	}
+</style>
