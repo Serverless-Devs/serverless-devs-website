@@ -32,6 +32,10 @@ const config = yaml.load(fs.readFileSync("src/config.yaml", "utf8")) as {
   ui?: unknown;
   analytics?: unknown;
   sidebar?: SidebarItem;
+  tags?: Array<{
+    name: string;
+    slug: string;
+  }>;
 };
 
 const DEFAULT_SITE_NAME = "Website";
@@ -72,3 +76,4 @@ export const SITE = getSite();
 export const UI = getUI();
 export const ANALYTICS = getAnalytics();
 export const SIDEBAR = config?.sidebar;
+export const TAGS = config?.tags;
