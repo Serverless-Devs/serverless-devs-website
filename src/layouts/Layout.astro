@@ -1,5 +1,5 @@
 ---
-import {SEO} from "astro-seo";
+import { SEO } from "astro-seo";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/home/Navbar.astro";
 import "@fontsource-variable/inter/index.css";
@@ -7,114 +7,128 @@ import "@fontsource-variable/bricolage-grotesque";
 import "../style/global.css";
 
 export interface Props {
-    title: string;
+  title: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-const {title} = Astro.props;
+const { title } = Astro.props;
 
 const makeTitle = title
-    ? title + " | " + "Serverless Devs"
-    : "Serverless Devs 官网 | 一键部署AI / 函数 / 应用到多云的开发运维平台";
+  ? title + " | " + "Serverless Devs"
+  : "Serverless Devs 官网 | 一键部署AI / 函数 / 应用到多云的开发运维平台";
 ---
 
 <!doctype html>
 <html lang="zh" data-theme="dark">
-<head>
-    <meta charset="UTF-8"/>
+  <head>
+    <meta charset="UTF-8" />
     <meta name="msvalidate.01" content="44319F9675676357716A86315318B93E" />
-    <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="/src/style/fonts.css"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.png"/>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/src/style/fonts.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <SEO
-            title={makeTitle}
-            canonical={canonicalURL}
-            extend={{
-                meta: [
-                    {
-                        name: "keywords",
-                        content: "Serverless, Serverless Devs, 中文社区, Serverless 社区"
-                    },
-                    {
-                        name: "author",
-                        content: "Serverless Devs"
-                    }
-                ]
-            }}
-    />  
+      title={makeTitle}
+      canonical={canonicalURL}
+      extend={{
+        meta: [
+          {
+            name: "keywords",
+            content: "Serverless, Serverless Devs, 中文社区, Serverless 社区",
+          },
+          {
+            name: "author",
+            content: "Serverless Devs",
+          },
+        ],
+      }}
+    />
     <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?7cd7ede27d94e5534124e44fcdd7fecd";
-            var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
-        })();
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7cd7ede27d94e5534124e44fcdd7fecd";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
     </script>
-</head>
+  </head>
 
-<script>
+  <script>
     //cnpilot
     function addCopilot() {
-        const copilotJSScript = document.createElement("script");
-        copilotJSScript.type = "text/javascript";
-        copilotJSScript.src =
-            "https://g.alicdn.com/cm-design/copilot-booter/0.0.26/copilot-booter.js";
-        copilotJSScript.addEventListener("load", function () {
-            if (window.CNPilot) {
-                window.CNPilot.mounted({
-                    CNPilot_OPEN_SOURCE: [
-                        "www.serverless-devs.com",
-                        "devs-website-test.fcv3.1003293809975419.cn-hangzhou.fc.devsapp.net",
-                    ],
-                    CNPilot_OPEN_SOURCE_API: "https://ai.nacos.io",
-                    CNPilot_OPEN_SOURCE_PRODUCT_NAME: "ServerlessDevs",
-                    showFloatICON: true,
-                    globalStyle: {
-                        top: "0px",
-                        // width: "14px",
-                        // height: "14px",
-                    },
-                    entryIconProps: {                                      // 入口 ICON 配置
-                        'position-type': 'updown',
-                        'icon-hover-text': '专家答疑',
-                        'icon-style': {
-                            color: 'white', // 配置文字颜色
-                            background: 'black', // 配置背景色
-                            border: '1px solid white', // 配置边框
-                            borderRadius: '20px', // 配置圆角
-                            // ...其他 css
-                        }
-                    },
-                    headerProps: {
-                        // titleIcon: 'https://xxxxxx.jpeg',                // 自定义 header icon 图片
-                        titleText: "无疑 AI答疑专家",                       // 自定义 header 文字
-                        closeIcon: {show: true},                          // 展示 header 部分右边关闭按钮
-                    }
-                });
-            }
-        });
-        document.body.append(copilotJSScript);
+      const copilotJSScript = document.createElement("script");
+      copilotJSScript.type = "text/javascript";
+      copilotJSScript.src =
+        "https://g.alicdn.com/cm-design/copilot-booter/0.0.26/copilot-booter.js";
+      copilotJSScript.addEventListener("load", function () {
+        if (window.CNPilot) {
+          window.CNPilot.mounted({
+            CNPilot_OPEN_SOURCE: [
+              "www.serverless-devs.com",
+              "devs-website-test.fcv3.1003293809975419.cn-hangzhou.fc.devsapp.net",
+            ],
+            CNPilot_OPEN_SOURCE_API: "https://ai.nacos.io",
+            CNPilot_OPEN_SOURCE_PRODUCT_NAME: "ServerlessDevs",
+            showFloatICON: true,
+            globalStyle: {
+              top: "0px",
+              height: "100%",
+            },
+            entryIconProps: {
+              "position-type": "updown",
+              "icon-hover-text": "专家答疑",
+              "icon-url":
+                "https://img.alicdn.com/imgextra/i3/O1CN013gOExm1X2g7hKMTjC_!!6000000002866-2-tps-92-92.png",
+              "icon-style": {
+                color: "white",
+                width: "80px",
+                height: "80px",
+                background: "#3D57DA",
+                border: "none",
+                paddingTop: "12px",
+              },
+              "image-style": {
+                width: "46px",
+                height: "46px",
+                borderRadius: "16px",
+              },
+              "icon-text": {
+                color: "#F4F4F6",
+                width: "100%",
+                fontSize: "10px",
+                fontFamily: " Source Han Sans",
+                fontWeight: "normal",
+                lineHeight: "normal",
+                textAlign: "center",
+                letterSpacing: "0em",
+              },
+            },
+            headerProps: {
+              closeIcon: { show: true }, // 关闭按钮
+              titleText: "无疑 专家智能答疑",
+            },
+          });
+        }
+      });
+      document.body.append(copilotJSScript);
     }
 
     addCopilot();
-</script>
+  </script>
 
-<body>
-<Navbar/>
-<slot/>
-<Footer/>
-<style is:global>
-    img {
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+    <style is:global>
+      img {
         content-visibility: auto;
-    }
+      }
 
-    body {
+      body {
         background: #121316;
-    }
-</style>
-</body>
+      }
+    </style>
+  </body>
 </html>
-
-
