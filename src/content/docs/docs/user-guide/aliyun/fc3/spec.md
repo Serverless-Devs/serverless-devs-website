@@ -2,7 +2,7 @@
 title: Yaml 规范
 ---
 
-完整的示例请参考 [fc3 example](example.md)
+完整的示例请参考 [fc3 example](./example.md)
 
 | 参数名                                              | 必填  | 类型                                          | 参数描述                                                                                                                                      |
 | --------------------------------------------------- | ----- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -34,6 +34,10 @@ title: Yaml 规范
 | [vpcConfig](#vpcconfig)                             | False | Enum[简单配置]/[Struct[详细配置]](#vpcconfig) | 专有网络 VPC 配置，配置此参数后，函数可以访问指定的 VPC 资源                                                                                  |
 | [asyncInvokeConfig](#asyncinvokeconfig)             | False | [Struct](#asyncinvokeconfig)                  | 函数异步调用配置                                                                                                                              |
 | [triggers](#triggers)                               | False | [Struct](#triggers)                           | 触发器                                                                                                                                        |
+| [customDomain](#customdomain)                       | False | [Struct](#customdomain)                       | 自定义域名， 仅针对当前函数                                                                                                                   |
+| [concurrencyConfig](#concurrencyconfig)             | False | [Struct](#concurrencyconfig)                  | 函数并发配置                                                                                                                                  |
+| [provisionConfig](#provisionconfig)                 | False | [Struct](#provisionconfig)                    | 设置函数预留实例, 仅针对 LATEST                                                                                                               |
+| tags                                                | False | [List<Struct\>](#tags)                               | 函数标签                                                                                                                                  |
 
 ## code
 
@@ -139,6 +143,13 @@ DB_connection: jdbc:mysql://rm-bp90434sds45c.mysql.rds.aliyuncs.com:3306/litemal
 | enableRequestMetrics  | False | Boolean | RequestMetrics 开关，取值`true`/`false`  |
 | enableInstanceMetrics | False | Boolean | InstanceMetrics 开关，取值`true`/`false` |
 | logBeginRule          | False | String  | 日志是否切分，取值 `DefaultRegex`/`None` |
+
+## tags
+
+| 参数名                | 必填  | 类型    | 参数描述                                 |
+| --------------------- | ----- | ------- | ---------------------------------------- |
+| Key                  | True  | String  | 标签键                                   |
+| Value                | True  | String  | 标签值                                   |
 
 ### 权限配置相关
 
@@ -530,7 +541,7 @@ runtime 目前支持
 
 | 参数名                                  | 必填  | 类型                         | 参数描述                                                                       |
 | --------------------------------------- | ----- | ---------------------------- | ------------------------------------------------------------------------------ |
-| [destinationConfig](#destinationconfig) | False  | [Struct](#destinationconfig) | 异步调用目标的配置结构体                                                       |
+| [destinationConfig](#destinationconfig) | False | [Struct](#destinationconfig) | 异步调用目标的配置结构体                                                       |
 | maxAsyncEventAgeInSeconds               | False | Number                       | 消息最大存活时长，取值范围[1,2592000]。单位：秒                                |
 | maxAsyncRetryAttempts                   | False | Number                       | 异步调用失败后的最大重试次数，默认值为 3。取值范围[0,8]                        |
 | asyncTask                               | False | Boolean                      | 是否开启异步任务。<br/> true：表示已开启异步任务<br/>false：表示未开启异步任务 |
@@ -538,8 +549,8 @@ runtime 目前支持
 
 ### destinationConfig
 
-| 参数名    | 必填 | 类型                   | 参数描述               |
-| --------- | ---- | ---------------------- | ---------------------- |
+| 参数名    | 必填  | 类型                   | 参数描述               |
+| --------- | ----- | ---------------------- | ---------------------- |
 | onSuccess | False | [Struct](#destination) | 异步调用成功的目标服务 |
 | onFailure | False | [Struct](#destination) | 异步调用失败的目标服务 |
 
@@ -806,41 +817,69 @@ TempKey: tempValue
 
 ##### 最大权限
 
-`AliyunFCFullAccess`、`AliyunLogFullAccess`
+`AliyunFCFullAccess`、`AliyunLogFullAccess` 再加一个自定义的 log PassRole policy
+
+```json
+{
+    "Action": "ram:PassRole",
+    "Resource": "*",
+    "Effect": "Allow",
+    "Condition": {
+        "StringEquals": {
+            "acs:Service": "log.aliyuncs.com"
+        }
+    }
+}
+```
 
 ##### 最小权限
 
 ```json
 {
-  "Version": "1",
-  "Statement": [
-    {
-      "Action": [
-        "fc:GetTrigger",
-        "fc:CreateTrigger",
-        "fc:UpdateTrigger",
-        "fc:DeleteTrigger",
-        "fc:ListTriggers"
-      ],
-      "Effect": "Allow",
-      "Resource": "acs:fc:<region>:<account-id>:functions/*/triggers/*"
-    },
-    {
-      "Action": "ram:PassRole",
-      "Resource": "*",
-      "Effect": "Allow",
-      "Condition": {
-        "StringEquals": {
-          "acs:Service": "fc.aliyuncs.com"
+    "Version": "1",
+    "Statement": [
+        {
+            "Action": [
+                "fc:GetTrigger",
+                "fc:CreateTrigger",
+                "fc:UpdateTrigger",
+                "fc:DeleteTrigger",
+                "fc:ListTriggers"
+            ],
+            "Effect": "Allow",
+            "Resource": "acs:fc:<region>:<account-id>:functions/*/triggers/*"
+        },
+        {
+            "Action": "ram:PassRole",
+            "Resource": "*",
+            "Effect": "Allow",
+            "Condition": {
+                "StringEquals": {
+                    "acs:Service": "fc.aliyuncs.com"
+                }
+            }
+        },
+        {
+            "Action": "ram:PassRole",
+            "Resource": "*",
+            "Effect": "Allow",
+            "Condition": {
+                "StringEquals": {
+                    "acs:Service": "log.aliyuncs.com"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "log:GetEtlJob",
+                "log:UpdateEtlJob",
+                "log:CreateEtlJob",
+                "log:DeleteEtlJob"
+            ],
+            "Resource": "*"
         }
-      }
-    },
-    {
-      "Effect": "Allow",
-      "Action": ["log:GetEtlJob", "log:UpdateEtlJob", "log:CreateEtlJob", "log:DeleteEtlJob"],
-      "Resource": "*"
-    }
-  ]
+    ]
 }
 ```
 
@@ -1288,4 +1327,64 @@ provider "alicloud" {
 resource "alicloud_event_bridge_service_linked_role" "service_linked_role" {
   product_name = "AliyunServiceRoleForEventBridgeSendToFC"
 }
+```
+
+## customDomain
+
+快捷针对当前函数配置自定义域名，如果您想使用同一个域名， 配置多个函数， 建议直接使用 [fc3-domain组件](../fc3-domain/spec.md)
+
+| 参数名                    | 必填  | 类型                  | 参数描述                                                                                                         |
+| ------------------------- | ----- | --------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| domainName                | True  | string                | 已在阿里云备案或接入备案的自定义域名名称                                                                         |
+| protocol                  | True  | enum                  | 域名支持的协议类型：</br> HTTP：仅支持HTTP协议 </br> HTTPS：仅支持HTTPS协议</br> HTTP,HTTPS：支持HTTP及HTTPS协议 |
+| [route](#route)           | True  | [Struct](#route)      | 路由表：自定义域名到当前函数的映射规则                                                                           |
+| [certConfig](../fc3-domain/spec.md#certconfig) | False | [Struct](../fc3-domain/spec.md#certconfig) | HTTPS证书的信息                                                                                                  |
+| [tlsConfig](../fc3-domain/spec.md#tlsconfig)   | False | [Struct](../fc3-domain/spec.md#tlsconfig)  | TLS配置信息                                                                                                      |
+| [wafConfig](../fc3-domain/spec.md#wafconfig)   | False | [Struct](../fc3-domain/spec.md#wafconfig)  | Web应用防火墙配置信息                                                                                            |
+
+> ⚠️ 注意：如果域名配置为`auto`，系统会默认分配`***.devsapp.net` 作为临时测试域名，该域名是 CNCF SandBox 项目 Serverless Devs 社区所提供，仅供学习和测试使用，不可用于任何生产使用；社区会对该域名进行不定期地拨测，并在域名下发 30 天后进行回收，强烈建议您绑定自定义域名以获得更好的使用体验。
+
+### route
+
+| 参数名        | 必填  | 类型                     | 参数描述                                                                                               |
+| ------------- | ----- | ------------------------ | ------------------------------------------------------------------------------------------------------ |
+| path          | True  | String                   | 路径                                                                                                   |
+| functionName  | False | String                   | 函数名                                                                                                 |
+| qualifier     | False | String                   | 函数的版本                                                                                             |
+| [rewriteConfig]((../fc3-domain/spec.md#rewriteconfig)) | False | [Struct](../fc3-domain/spec.md#rewriteconfig) | URI 重写配置                                                                                           |
+| methods       | False | List<String\>            | 支持的请求方法列表，支持：HEAD、DELETE、POST、GET、OPTIONS、PUT、PATCH。默认支持GET、POST、PUT、DELETE |
+
+## concurrencyConfig
+
+详情见 API 定义[concurrencyConfig](https://help.aliyun.com/zh/functioncompute/fc-3-0/developer-reference/api-fc-2023-03-30-struct-concurrencyconfig)
+
+```yaml
+concurrencyConfig:
+  reservedConcurrency: 1  # 预留并发，预留并发包括预留实例和按量实例的总并发
+```
+
+## provisionConfig
+
+详情见 API 定义 [PutProvisionConfigInput](https://help.aliyun.com/zh/functioncompute/fc-3-0/developer-reference/api-fc-2023-03-30-struct-putprovisionconfiginput)
+
+```yaml
+provisionConfig:
+  defaultTarget: 1
+  alwaysAllocateCPU: false
+  alwaysAllocateGPU: false
+  scheduledActions:
+    - name: scheduled-actions
+      startTime: '2023-08-15T02:04:00.000Z'
+      endTime: '2033-08-15T03:04:00.000Z'
+      target: 1
+      scheduleExpression: cron(0 0 4 * * *)
+      timeZone: ''
+  # targetTrackingPolicies:
+  #   - name: target-tracking-policies
+  #     startTime: '2023-08-15T02:05:00.000Z'
+  #     endTime: '2033-08-15T02:55:00.000Z'
+  #     metricType: ProvisionedConcurrencyUtilization
+  #     metricTarget: 0.6
+  #     minCapacity: 1
+  #     maxCapacity: 3
 ```

@@ -538,7 +538,7 @@ resources:
 
 ### 使用`{{if}}`语法实现条件判断
 
-Yaml文件支持**键值对**级别的条件判断语法，您能够在Yaml文件中的属性值中使用[`art-template`](https://aui.github.io/art-template/zh-cn/docs/syntax.html)的`{{if}}`语法进行条件判断。以下面的Yaml为例：
+Yaml文件支持**键值对**级别的条件判断语法，您能够在Yaml文件中的属性值中使用[`art-template`](https://goofychris.github.io/art-template/zh-cn/docs/syntax.html)的`{{if}}`语法进行条件判断。以下面的Yaml为例：
 
 ```yaml
 resources:
@@ -559,7 +559,7 @@ layers:
   - acs:xxx/versions/1
 ```
 
-具体的语法请参考[art-template语法文档](https://aui.github.io/art-template/zh-cn/docs/syntax.html)。
+具体的语法请参考[art-template语法文档](https://goofychris.github.io/art-template/zh-cn/docs/syntax.html)。
 
 > 注意：
 >

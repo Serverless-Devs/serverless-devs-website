@@ -108,5 +108,3 @@ A: 根据经验， 通常最有可能的原因是: SpringBoot 应用启动的时
 - 函数所在服务配置日志， 通过日志服务查看 SpringBoot 启动日志。
 
 - 使用[专有版的WebIDE](https://help.aliyun.com/document_detail/601583.html#p-5uk-30m-evu)排查, 专有版的 WebIDE 和您函数的 Service 具有一样的配置， 即 vpc 网络等一致。
-
-- 使用 S 工具[端云联调](https://docs.serverless-devs.com/fc/command/proxied)指令。

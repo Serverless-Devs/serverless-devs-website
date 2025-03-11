@@ -36,8 +36,10 @@ title: 预留
 fc3-deploy-test:
   -
     alwaysAllocateCPU:      false
+    alwaysAllocateGPU:      false
     current:                10
     currentError:
+    defaultTarget:          10
     functionArn:            acs:fc:cn-hangzhou:143**********149:functions/start-python-9fqu
     scheduledActions:       []
     target:                 10
@@ -57,8 +59,10 @@ fc3-deploy-test:
 | region                   | -        | 选填            | 必填           | 地域名称，取值范围参见[函数计算开服地域](https://help.aliyun.com/document_detail/2512917.html)                                       |
 | function-name            | -        | 选填            | 必填           | 函数名                                                                                                                               |
 | qualifier                | -        | 必填            | 必填           | 配置预留的版本，仅支持 LATEST 和别名                                                                                                 |
-| target                   | -        | 必填            | 必填           | 预留实例数量，target 如果大于 0，配置函数预留，**预留资源会持续产生费用，如果不需要请及时释放资源**；target 如果等于 0，释放预留资源 |
-| always-allocate-cpu      | ac       | 选填            | 选填           | 一直给预留实例分配 CPU 资源                                                                                                          |
+| target                   | -        | 必填            | 必填           | (废弃) 预留实例数量，target 如果大于 0，配置函数预留，**预留资源会持续产生费用，如果不需要请及时释放资源**；target 如果等于 0，释放预留资源 |
+| default-target           | -        | 必填            | 必填           | 预留实例数量，defaultTarget 如果大于 0，配置函数预留，**预留资源会持续产生费用，如果不需要请及时释放资源**；预留实例数量，defaultTarget 如果等于 0，释放预留资源 | 
+| always-allocate-cpu      | ac       | 选填            | 选填           | 一直给预留实例分配 CPU 资源（运行环境 CPU 取该值）                                                                                                          |
+| always-allocate-gpu      | ag       | 选填            | 选填           | 一直给预留实例分配 GPU 资源（运行环境 GPU 取该值）                                                                                                          |
 | scheduled-actions        | -        | 选填            | 选填           | 配置预留模式的定时修改限制                                                                                                           |
 | target-tracking-policies | -        | 选填            | 选填           | 配置预留模式的根据指标修改限制                                                                                                       |
 
@@ -88,8 +92,8 @@ fc3-deploy-test:
 
 ### 操作案例
 
-- **有资源描述文件（Yaml）时**，可以直接执行`s provision put`进行版本的发布，例如`s provision put --qualifier release --target 10`；
-- **纯命令行形式（在没有资源描述 Yaml 文件时）**，需要指定函数所在地区以及函数名称，例如`s cli fc3 provision put --region cn-hangzhou --function-name test-function --qualifier LATEST --target 10 -a default`；
+- **有资源描述文件（Yaml）时**，可以直接执行`s provision put`进行版本的发布，例如`s provision put --qualifier release --default-target 10`；
+- **纯命令行形式（在没有资源描述 Yaml 文件时）**，需要指定函数所在地区以及函数名称，例如`s cli fc3 provision put --region cn-hangzhou --function-name test-function --qualifier LATEST --default-target 10 -a default`；
 
 上述命令的执行结果示例：
 
@@ -97,8 +101,9 @@ fc3-deploy-test:
 fc3-deploy-test:
   functionArn:            acs:fc:cn-hangzhou:143**********149:functions/start-python-9fqu
   scheduledActions:       []
-  target:                 10
+  defaultTarget:          10
   targetTrackingPolicies: []
+  target:                 10
 ```
 
 ## provision get 命令
@@ -127,8 +132,10 @@ fc3-deploy-test:
 ```text
 fc3-deploy-test:
   alwaysAllocateCPU:      false
+  alwaysAllocateGPU:      false
   current:                10
   currentError:
+  defaultTarget:          10
   functionArn:            acs:fc:cn-hangzhou:143**********149:functions/test-function
   scheduledActions:       []
   target:                 10

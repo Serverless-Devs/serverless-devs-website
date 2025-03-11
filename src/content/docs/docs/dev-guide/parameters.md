@@ -336,7 +336,7 @@ serviceName:
 
 ### 模版引擎
 
-应用初始化时，使用[art-template](https://aui.github.io/art-template/zh-cn/docs/)进行模版解析
+应用初始化时，使用[art-template](https://goofychris.github.io/art-template/zh-cn/docs/)进行模版解析
 
 比如：编写应用模板时，用户可以自己指定vpc配置，如果指定了就用自定义的，没指定就用auto
 
@@ -368,7 +368,7 @@ serviceName:
         {{/if}}
         ```
 
-> 更多语法支持可以查看[art-template](https://aui.github.io/art-template/zh-cn/docs/syntax.html)文档
+> 更多语法支持可以查看[art-template](https://goofychris.github.io/art-template/zh-cn/docs/syntax.html)文档
 
 ### 自定义过滤器filter
 应用初始化时，对模版解析的时候可以自定义过滤器。

@@ -5,7 +5,7 @@ title: Yaml 规范
 
 ## 参数详情
 
-完整的示例请参考 [fc3-domain example](example.md)
+完整的示例请参考 [fc3-domain example](./example.md)
 
 | 参数名                      | 必填  | 类型                   | 参数描述                                                                                                         |
 | --------------------------- | ----- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -176,9 +176,8 @@ resources:
 | 参数名        | 必填  | 类型                     | 参数描述                                                                                               |
 | ------------- | ----- | ------------------------ | ------------------------------------------------------------------------------------------------------ |
 | path          | True  | String                   | 路径                                                                                                   |
-| serviceName   | False | String                   | 服务名                                                                                                 |
-| functionName  | False | String                   | 函数名                                                                                                 |
-| qualifier     | False | String                   | 服务的版本                                                                                             |
+| functionName  | True | String                   | 函数名                                                                                                 |
+| qualifier     | False | String                   | 函数的版本                                                                                             |
 | rewriteConfig | False | [Struct](#rewriteconfig) | URI 重写配置                                                                                           |
 | methods       | False | List<String\>            | 支持的请求方法列表，支持：HEAD、DELETE、POST、GET、OPTIONS、PUT、PATCH。默认支持GET、POST、PUT、DELETE |
 
@@ -217,7 +216,7 @@ resources:
         "fc:UpdateFunction"
       ],
       "Effect": "Allow",
-      "Resource": "acs:fc:<region>:<account-id>:services/*/functions/*"
+      "Resource": "acs:fc:<region>:<account-id>:functions/*"
     },
     {
       "Action": [
@@ -226,7 +225,7 @@ resources:
         "fc:CreateTrigger"
       ],
       "Effect": "Allow",
-      "Resource": "acs:fc:<region>:<account-id>:services/*/functions/*/triggers/*"
+      "Resource": "acs:fc:<region>:<account-id>:functions/*/triggers/*"
     },
     {
       "Action": "ram:PassRole",
